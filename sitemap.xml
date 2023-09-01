@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://note.lhxcs.cc/</loc>
+         <loc>https://lhxcs.github.io/</loc>
          <lastmod>2023-09-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.lhxcs.cc/ml4360/Stereo_Reconstruction/</loc>
+         <loc>https://lhxcs.github.io/ml4360/Stereo_Reconstruction/</loc>
          <lastmod>2023-09-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.lhxcs.cc/ml4360/Structure_from_Motion/</loc>
+         <loc>https://lhxcs.github.io/ml4360/Structure_from_Motion/</loc>
          <lastmod>2023-09-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.lhxcs.cc/ml4360/image_formation/</loc>
+         <loc>https://lhxcs.github.io/ml4360/image_formation/</loc>
          <lastmod>2023-09-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
