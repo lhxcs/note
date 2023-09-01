@@ -1,0 +1,62 @@
+site_name: lhxcs笔记本
+site_url: https://note.lhxcs.cc/
+repo_name: lhxcs/note
+repo_url: https://github.com/lhxcs/note/
+edit_uri: tree/master/docs
+
+theme: 
+  name: 'material'
+  language: 'zh'
+  icon: 
+    logo: material/notebook-outline
+    repo: fontawesome/brands/github
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+  font: false
+  palette:
+    - scheme: default
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+nav:
+  - Home:
+    - index.md
+  - Computer Vision:
+    - ML4360:
+      - ml4360/image_formation.md
+      - ml4360/Stereo_Reconstruction.md
+      - ml4360/Structure_from_Motion.md
+
