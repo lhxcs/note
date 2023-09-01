@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://lhxcs.github.io/math/</loc>
+         <lastmod>2023-09-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://lhxcs.github.io/ml4360/Stereo_Reconstruction/</loc>
          <lastmod>2023-09-01</lastmod>
          <changefreq>daily</changefreq>
