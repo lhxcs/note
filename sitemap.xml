@@ -5,4 +5,19 @@
          <lastmod>2023-09-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://note.lhxcs.cc/ml4360/Stereo_Reconstruction/</loc>
+         <lastmod>2023-09-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://note.lhxcs.cc/ml4360/Structure_from_Motion/</loc>
+         <lastmod>2023-09-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://note.lhxcs.cc/ml4360/image_formation/</loc>
+         <lastmod>2023-09-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
