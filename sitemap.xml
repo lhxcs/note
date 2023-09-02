@@ -35,4 +35,14 @@
          <lastmod>2023-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://lhxcs.github.io/math/algebra/</loc>
+         <lastmod>2023-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/math/analysis/</loc>
+         <lastmod>2023-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
