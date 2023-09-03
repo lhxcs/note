@@ -52,6 +52,8 @@
     
       <link rel="stylesheet" href="../../../../css/custom.css">
     
+      <link rel="stylesheet" href="../../../../css/counter.css">
+    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -81,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#preliminaries" class="md-skip">
+        <a href="#structure-from-motion" class="md-skip">
           跳转至
         </a>
       
@@ -285,7 +287,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../image_formation/" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -681,6 +683,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -696,16 +702,24 @@
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" checked>
         
-          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
-            
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     ML4360
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_1_1">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_1_1">
@@ -713,6 +727,8 @@
             ML4360
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -786,15 +802,102 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#preliminaries" class="md-nav__link">
+    Preliminaries
+  </a>
+  
+    <nav class="md-nav" aria-label="Preliminaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#camera-calibration" class="md-nav__link">
     Camera Calibration
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#feature-detection-and-description" class="md-nav__link">
     Feature Detection and Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature Detection and Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#siftscale-invariant-feature-transform" class="md-nav__link">
+    SIFT(Scale Invariant Feature Transform)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-frame-sfm" class="md-nav__link">
+    Two-frame SFM
+  </a>
+  
+    <nav class="md-nav" aria-label="Two-frame SFM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#epipolar-geometry" class="md-nav__link">
+    Epipolar Geometry
+  </a>
+  
+    <nav class="md-nav" aria-label="Epipolar Geometry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#derivation-of-essential-matrix" class="md-nav__link">
+    Derivation of essential matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimating-the-epipolar-geometry" class="md-nav__link">
+    Estimating the Epipolar Geometry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-with-unknwon-intrinsics" class="md-nav__link">
+    case with unknwon intrinsics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    Triangulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factorization" class="md-nav__link">
+    Factorization
   </a>
   
 </li>
@@ -878,15 +981,102 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#preliminaries" class="md-nav__link">
+    Preliminaries
+  </a>
+  
+    <nav class="md-nav" aria-label="Preliminaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#camera-calibration" class="md-nav__link">
     Camera Calibration
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#feature-detection-and-description" class="md-nav__link">
     Feature Detection and Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature Detection and Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#siftscale-invariant-feature-transform" class="md-nav__link">
+    SIFT(Scale Invariant Feature Transform)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-frame-sfm" class="md-nav__link">
+    Two-frame SFM
+  </a>
+  
+    <nav class="md-nav" aria-label="Two-frame SFM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#epipolar-geometry" class="md-nav__link">
+    Epipolar Geometry
+  </a>
+  
+    <nav class="md-nav" aria-label="Epipolar Geometry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#derivation-of-essential-matrix" class="md-nav__link">
+    Derivation of essential matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimating-the-epipolar-geometry" class="md-nav__link">
+    Estimating the Epipolar Geometry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-with-unknwon-intrinsics" class="md-nav__link">
+    case with unknwon intrinsics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    Triangulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factorization" class="md-nav__link">
+    Factorization
   </a>
   
 </li>
@@ -909,8 +1099,9 @@
   
 
 
-<h1 id="preliminaries">Preliminaries<a class="headerlink" href="#preliminaries" title="Permanent link">&para;</a></h1>
-<h2 id="camera-calibration">Camera Calibration<a class="headerlink" href="#camera-calibration" title="Permanent link">&para;</a></h2>
+<h1 id="structure-from-motion">Structure from Motion<a class="headerlink" href="#structure-from-motion" title="Permanent link">&para;</a></h1>
+<h2 id="preliminaries">Preliminaries<a class="headerlink" href="#preliminaries" title="Permanent link">&para;</a></h2>
+<h3 id="camera-calibration">Camera Calibration<a class="headerlink" href="#camera-calibration" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Camera calibration is the process of finding the <strong>intrinsic/extrinsic</strong> parameters<ul>
 <li>First, the known calibration target is <em>captured in different poses</em></li>
@@ -919,19 +1110,143 @@
 </ul>
 </li>
 </ul>
-<h2 id="feature-detection-and-description">Feature Detection and Description<a class="headerlink" href="#feature-detection-and-description" title="Permanent link">&para;</a></h2>
+<h3 id="feature-detection-and-description">Feature Detection and Description<a class="headerlink" href="#feature-detection-and-description" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Point features describe the appearance of <strong>local,salient regions</strong>in an image</li>
+<li>Point features describe the appearance of <strong>local,salient regions</strong> in an image</li>
 <li>They can be used to describe and match images taken from different viewpoints.</li>
+<li>They form the basis of sparse 3D reconstruction methods covered in the lecture</li>
 </ul>
-<h1 id="two-frame-sfm">Two-frame SFM<a class="headerlink" href="#two-frame-sfm" title="Permanent link">&para;</a></h1>
-<h2 id="epipolar-geometry">Epipolar Geometry<a class="headerlink" href="#epipolar-geometry" title="Permanent link">&para;</a></h2>
-<h2 id="triangulation">Triangulation<a class="headerlink" href="#triangulation" title="Permanent link">&para;</a></h2>
-<h1 id="factorization">Factorization<a class="headerlink" href="#factorization" title="Permanent link">&para;</a></h1>
-<h1 id="quesitons">Quesitons?<a class="headerlink" href="#quesitons" title="Permanent link">&para;</a></h1>
-<ul>
-<li>I could not fully understand SIFT algorithm</li>
-</ul>
+<p><strong><em>Features should be invariant to perspective effects and illumination,and the same point should have similar vectors independent of pose/viewpoint</em></strong></p>
+<h4 id="siftscale-invariant-feature-transform">SIFT(Scale Invariant Feature Transform)<a class="headerlink" href="#siftscale-invariant-feature-transform" title="Permanent link">&para;</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>For now I could not fully undestand the essence of this algorithem, so the contente here are lost.</p>
+</div>
+<h2 id="two-frame-sfm">Two-frame SFM<a class="headerlink" href="#two-frame-sfm" title="Permanent link">&para;</a></h2>
+<h3 id="epipolar-geometry">Epipolar Geometry<a class="headerlink" href="#epipolar-geometry" title="Permanent link">&para;</a></h3>
+<p><em>Goal:Recovery of camera pose from image correspondences</em></p>
+<p><img alt="" src="../image/3.1.png" /></p>
+<h4 id="derivation-of-essential-matrix">Derivation of essential matrix<a class="headerlink" href="#derivation-of-essential-matrix" title="Permanent link">&para;</a></h4>
+<p>Let <span class="arithmatex">\(K_i \in \mathbb{R}^{3 \times 3}\)</span> denote the camera matrix of camera <span class="arithmatex">\(i\)</span></p>
+<p>Let <span class="arithmatex">\(\tilde{x_i} = {K_i}^{-1} \overline{x_i}\)</span> denote the local ray direction of pixel <span class="arithmatex">\(\overline{x_i}\)</span> in camera <span class="arithmatex">\(i\)</span></p>
+<p>We have: <span class="arithmatex">\(\tilde{x}_2 \propto x_2 = Rx_1 + t \propto R \tilde{x}_1 + st\)</span></p>
+<p>Taking the cross product of both sides with <span class="arithmatex">\(t\)</span> we obtain: <span class="arithmatex">\([t]_{\times}\tilde{x}_2 \propto [t]_{\times}R\tilde{x}_1\)</span></p>
+<p>Taking the dot product of both sides with <span class="arithmatex">\(\tilde{x}_2^{T}\)</span> yields: <span class="arithmatex">\(\tilde{x}_2^{T}[t]_{\times}R\tilde{x}_1 =0\)</span>, which is the <strong>epipolar constraint</strong>, with <strong>essential matrix</strong> <span class="arithmatex">\(\tilde{E} = [t]_{\times}R\)</span></p>
+<p><span class="arithmatex">\(\tilde{E}\)</span> maps a point <span class="arithmatex">\(\tilde{x}_1\)</span> in image 1 to the corresponding epipolar line in image 2:</p>
+<p><span class="arithmatex">\(\tilde{l}_2=\tilde{E}\tilde{x}_1\)</span> as <span class="arithmatex">\(\tilde{x}_2^{T}\tilde{l}_2=0\)</span>, the epipolar line in image 1 is similar, <span class="arithmatex">\(\tilde{l}_1=\tilde{E}^{T}\tilde{x}_2\)</span></p>
+<p>For any point <span class="arithmatex">\(\tilde{x}_1\)</span> in the first image ,the corresponding epipolar line in the second image passes through the epipole <span class="arithmatex">\(\tilde{e}_2\)</span> which therefore satisfied: 
+$$
+\tilde{e}_2^{T}\tilde{l}_2 = \tilde{e}_2^{T}\tilde{E}\tilde{x}_1=0
+$$
+for all <span class="arithmatex">\(\tilde{x}_1\)</span>, It follows that : <span class="arithmatex">\(\tilde{e}_2^{T}\tilde{E} = 0\)</span></p>
+<p>Thus,<span class="arithmatex">\(\tilde{e}_2^{T}\)</span> is the <strong>left null-space</strong> of <span class="arithmatex">\(\tilde{E}\)</span><span class="arithmatex">\(. Similarly,\)</span><span class="arithmatex">\(\tilde{e}_1^{T}\)</span> is the <strong>right null-space</strong> of <span class="arithmatex">\(E\)</span></p>
+<h4 id="estimating-the-epipolar-geometry">Estimating the Epipolar Geometry<a class="headerlink" href="#estimating-the-epipolar-geometry" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>using 8-point algorithm</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">compute_fundamental_matrix</span><span class="p">(</span><span class="n">keypoints1</span><span class="p">,</span> <span class="n">keypoints2</span><span class="p">):</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">    Computes the fundamental matrix from image coordinates using the 8-point </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">    algorithm by constructing and solving the corresponding linear system.</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    Args:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">        keypoints1 (np.ndarray): Nx3 array of correspondence points in first </span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">            view in homogenous image coordinates.</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">        keypoints2 (np.ndarray): Nx3 array of correspondence points in second </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">            view in homogenous image coordinates.</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="sd">        F (np.ndarray): 3x3 fundamental matrix.</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="sd">    &#39;&#39;&#39;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">num_points</span> <span class="o">=</span> <span class="n">keypoints1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="k">assert</span><span class="p">(</span><span class="n">num_points</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="c1"># Assemble homogenous linear system</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="c1"># each correspondence yields one equation in the nine elements of F</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">num_points</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">keypoints1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">keypoints2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                <span class="n">keypoints1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">keypoints2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>                <span class="n">keypoints2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>                <span class="n">keypoints1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">keypoints2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>                <span class="n">keypoints1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">keypoints2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>                <span class="n">keypoints2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>                <span class="n">keypoints1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>                <span class="n">keypoints1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>                <span class="mi">1</span><span class="p">,]</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>    <span class="c1"># Solve the homogeneous linear system via SVD</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">vh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="n">F</span> <span class="o">=</span> <span class="n">vh</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    <span class="c1"># Force rank 2 by zeroing smallest singular value</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    <span class="c1"># see &quot;In defense of the 8-point algorithm&quot;, Hartley, TPAMI 1997</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    <span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">vh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>    <span class="n">F</span> <span class="o">=</span>  <span class="n">u</span> <span class="o">@</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">@</span> <span class="n">vh</span><span class="p">)</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    <span class="c1"># return standardized fundamental matrix</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    <span class="k">return</span> <span class="n">F</span><span class="o">/</span><span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+<h4 id="case-with-unknwon-intrinsics">case with unknwon intrinsics<a class="headerlink" href="#case-with-unknwon-intrinsics" title="Permanent link">&para;</a></h4>
+<p>If the camera calibration <span class="arithmatex">\(K_i\)</span> is unknown, we cannot use the local ray diretion.</p>
+<p>The essential matrix becomes <span class="arithmatex">\(\overline{x}_2^{T}K_2^{-T}\tilde{E}K_1^{-1}\overline{x}_1 = 0\)</span>,where we get the <strong>fundamental matrix</strong>:
+$$
+\tilde{F}=K_2^{-T}\tilde{E}K_1^{-1}
+$$</p>
+<h3 id="triangulation">Triangulation<a class="headerlink" href="#triangulation" title="Permanent link">&para;</a></h3>
+<p>Given noisy 2D image observations, the two rays might not intersect in one point. We like to recover the 3D point <span class="arithmatex">\(x\)</span> that is closest to the two rays.</p>
+<p>Let <span class="arithmatex">\(\tilde{x}_i^s=\tilde P_i\tilde{x}_w\)</span> denote the projection of  a 3D world point <span class="arithmatex">\(\tilde{x}_w\)</span> onto the image of the i'th camera <span class="arithmatex">\(\tilde{x}_i^s\)</span>. We consider the cross product <span class="arithmatex">\(\tilde{x}_i^s \times \tilde {P}_i\tilde{x}_w=0\)</span> and using <span class="arithmatex">\(\tilde{p}_{ik}^{T}\)</span> to denote the k/th row of the matrix <span class="arithmatex">\(\tilde{P}_i\)</span>,we obtain:</p>
+<p><span class="arithmatex">\(\begin{bmatrix}x_i^s \tilde{p}_{i3}^{T}-\tilde{p}_{i1}^{T}\\y_i^s \tilde{p}_{i3}^{T}-\tilde{p}_{i2}^{T}\end{bmatrix}\tilde{x}_w=0\)</span></p>
+<p>Then using DLT.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">triangulate_point</span><span class="p">(</span><span class="n">keypoint1</span><span class="p">,</span> <span class="n">keypoint2</span><span class="p">,</span> <span class="n">K1</span><span class="p">,</span> <span class="n">K2</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">    Triangulates world coordinates given correspondences from two views with</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">    relative extrinsics R and t.</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">    Args:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">        keypoints1 (np.ndarray): Nx3 array of correspondence points in first </span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="sd">            view in homogenous image coordinates.</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="sd">        keypoints2 (np.ndarray): Nx3 array of correspondence points in second </span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="sd">            view in homogenous image coordinates.</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="sd">        K1 (np.ndarray): The 3x3 calibration matrix K for the first </span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="sd">            view/camera.</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="sd">        K2 (np.ndarray): The 3x3 calibration matrix K for the second</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="sd">            view/camera.</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="sd">        R (np.ndarray): 3x3 rotation matrix from first to second view.</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="sd">        t (np.ndarray): 3-d translation vector from first to second view.</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="sd">        x_w (np.ndarray): Nx4 array of 3-d points in homogenous world </span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="sd">            coordinates.</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="sd">    &#39;&#39;&#39;</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="c1"># Initialize extrinsics for reference view as identity transform</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    <span class="n">R0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="n">t0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="c1"># assemble projection matrix P0 for reference view</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>    <span class="n">P0</span> <span class="o">=</span> <span class="n">assemble_projection_matrix</span><span class="p">(</span><span class="n">K1</span><span class="p">,</span> <span class="n">R0</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    <span class="c1"># assemble camera matrix P0 for other view</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    <span class="n">P1</span> <span class="o">=</span> <span class="n">assemble_projection_matrix</span><span class="p">(</span><span class="n">K2</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>        <span class="c1"># A0</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>        <span class="p">[</span><span class="n">keypoint1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">P0</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">P0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        <span class="n">keypoint1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">P0</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">P0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        <span class="c1"># A1</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        <span class="n">keypoint2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">P1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">P1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        <span class="n">keypoint2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">P1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> <span class="o">-</span> <span class="n">P1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">()]</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    <span class="p">)</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>    <span class="c1"># solve linear system</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>    <span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">vh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>    <span class="n">x_w</span> <span class="o">=</span> <span class="n">vh</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>    <span class="c1"># standardize and return</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>    <span class="k">return</span> <span class="n">x_w</span><span class="o">/</span><span class="n">x_w</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="factorization">Factorization<a class="headerlink" href="#factorization" title="Permanent link">&para;</a></h2>
 
 
 
@@ -987,6 +1302,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
         <script src="../../../../js/scheme.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
       
     
   </body>

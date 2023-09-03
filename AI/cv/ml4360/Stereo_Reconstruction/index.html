@@ -50,6 +50,8 @@
     
       <link rel="stylesheet" href="../../../../css/custom.css">
     
+      <link rel="stylesheet" href="../../../../css/counter.css">
+    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -283,7 +285,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../image_formation/" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -679,6 +681,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -694,16 +700,24 @@
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" checked>
         
-          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
-            
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     ML4360
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_1_1">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_1_1">
@@ -711,6 +725,8 @@
             ML4360
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -764,8 +780,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -794,8 +808,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -804,6 +816,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#preliminaries" class="md-nav__link">
+    Preliminaries
+  </a>
+  
+    <nav class="md-nav" aria-label="Preliminaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#two-view-stereo-matching" class="md-nav__link">
     Two-View Stereo Matching
   </a>
@@ -815,6 +835,11 @@
   <a href="#pipeline" class="md-nav__link">
     Pipeline
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -879,8 +904,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -889,6 +912,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#preliminaries" class="md-nav__link">
+    Preliminaries
+  </a>
+  
+    <nav class="md-nav" aria-label="Preliminaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#two-view-stereo-matching" class="md-nav__link">
     Two-View Stereo Matching
   </a>
@@ -900,6 +931,11 @@
   <a href="#pipeline" class="md-nav__link">
     Pipeline
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -933,22 +969,26 @@
   
 
 
-<h1 id="preliminaries">Preliminaries<a class="headerlink" href="#preliminaries" title="Permanent link">&para;</a></h1>
-<p><em>How to bring images in a suitable configuration such tha matching is fast?</em>
+  <h1>Stereo Reconstruction</h1>
+
+<h2 id="preliminaries">Preliminaries<a class="headerlink" href="#preliminaries" title="Permanent link">&para;</a></h2>
+<p><em>How to bring images in a suitable configuration such that matching is fast?</em>
 <em>How to obtain depth from the actual measurements(so called disparities)?</em></p>
 <blockquote>
 <p>How to recover 3D from an image?
 occlusion, parallax, perspective, accomodation, stereopsis……</p>
 </blockquote>
-<p><strong>Why Binocular Stereopsis?</strong>
-- a minimal configuration to percieve depth relatively robustly</p>
-<h2 id="two-view-stereo-matching">Two-View Stereo Matching<a class="headerlink" href="#two-view-stereo-matching" title="Permanent link">&para;</a></h2>
+<p><strong>Why Binocular Stereopsis?</strong></p>
+<ul>
+<li>a minimal configuration to percieve depth relatively robustly</li>
+</ul>
+<h3 id="two-view-stereo-matching">Two-View Stereo Matching<a class="headerlink" href="#two-view-stereo-matching" title="Permanent link">&para;</a></h3>
 <p><em>Goal: Recovering the disparity for every pixel from the input images</em></p>
 <blockquote>
 <p>The <em>disparity</em> defined as the relative displacement between pixels in the two images</p>
 </blockquote>
 <p><em>Task: Construct a dense 3D model from two images of a static scene</em></p>
-<h3 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h3>
+<h4 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h4>
 <p>1.Calibrate cameras intrinsically and extrinsically
 2.Rectify images given the calibration
 3.Compute disparity map for reference image
@@ -1011,6 +1051,8 @@ occlusion, parallax, perspective, accomodation, stereopsis……</p>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
         <script src="../../../../js/scheme.js"></script>
+      
+        <script src="../../../../js/katex.js"></script>
       
     
   </body>
