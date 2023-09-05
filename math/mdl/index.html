@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://lhxcs.github.io/AI/cv/ml4360/image_formation/">
+        <link rel="canonical" href="https://lhxcs.github.io/math/mdl/">
       
       
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../Structure_from_Motion/">
+        <link rel="next" href="../analysis/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
     
     
       
-        <title>Image Formation - Iridescent的cs笔记本</title>
+        <title>Math for deep learning - Iridescent的cs笔记本</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -50,11 +50,11 @@
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-      <link rel="stylesheet" href="../../../../css/custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
-      <link rel="stylesheet" href="../../../../css/counter.css">
+      <link rel="stylesheet" href="../../css/counter.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#primitives-and-transformations" class="md-skip">
+        <a href="#mathematics-for-deep-learning" class="md-skip">
           跳转至
         </a>
       
@@ -97,7 +97,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="Iridescent的cs笔记本" class="md-header__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
+    <a href="../.." title="Iridescent的cs笔记本" class="md-header__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Image Formation
+              Math for deep learning
             
           </span>
         </div>
@@ -209,7 +209,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -229,7 +229,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../cs/c/c/" class="md-tabs__link">
+        <a href="../../cs/c/c/" class="md-tabs__link">
           
   
     
@@ -245,11 +245,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../math/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -265,7 +267,11 @@
         
   
   
+  
     
+    
+      
+  
   
   
     
@@ -273,21 +279,11 @@
       
   
   
-    
-  
   
     
     
-      
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../AI/cv/ml4360/" class="md-tabs__link">
           
   
     
@@ -328,7 +324,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Iridescent的cs笔记本" class="md-nav__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
+    <a href="../.." title="Iridescent的cs笔记本" class="md-nav__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -376,7 +372,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -450,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cs/c/c/" class="md-nav__link">
+      <a href="../../cs/c/c/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -470,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cs/dm/" class="md-nav__link">
+      <a href="../../cs/dm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -495,6 +491,8 @@
       
   
   
+    
+  
   
     
     
@@ -511,18 +509,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../math/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -538,217 +536,10 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             数学基础
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../math/mdl/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Math for deep learning
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../math/analysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    数学分析
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../math/algebra/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    线性代数
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    AI
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            AI
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
-        
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Computer Vision
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            Computer Vision
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    ML4360
-  </span>
-  
-
-            </a>
-            
-              <label class="md-nav__link " for="__nav_4_1_1">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_1_1">
-            <span class="md-nav__icon md-icon"></span>
-            ML4360
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -773,7 +564,7 @@
           
   
   <span class="md-ellipsis">
-    Image Formation
+    Math for deep learning
   </span>
   
 
@@ -784,7 +575,7 @@
         
   
   <span class="md-ellipsis">
-    Image Formation
+    Math for deep learning
   </span>
   
 
@@ -806,58 +597,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2d-points" class="md-nav__link">
-    2D Points
+  <a href="#linear-algebra" class="md-nav__link">
+    Linear Algebra
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Algebra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensors" class="md-nav__link">
+    Tensors
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2d-lines" class="md-nav__link">
-    2D Lines
+        
+          <li class="md-nav__item">
+  <a href="#linear-dependence-and-span" class="md-nav__link">
+    Linear Dependence and Span
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#cross-product" class="md-nav__link">
-    Cross Product
+        
+          <li class="md-nav__item">
+  <a href="#vectors-and-matrix-norms" class="md-nav__link">
+    Vectors and Matrix Norms
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2d-line-arithmetic" class="md-nav__link">
-    2D Line Arithmetic
+        
+          <li class="md-nav__item">
+  <a href="#eigenvalue-decomposition" class="md-nav__link">
+    Eigenvalue Decomposition
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3d-points-and-planes" class="md-nav__link">
-    3D Points and Planes
+        
+          <li class="md-nav__item">
+  <a href="#singular-value-decomposition" class="md-nav__link">
+    Singular Value Decomposition
+  </a>
+  
+    <nav class="md-nav" aria-label="Singular Value Decomposition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relationship-between-evd-and-svd" class="md-nav__link">
+    Relationship between EVD and SVD
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3d-lines" class="md-nav__link">
-    3D Lines
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2d-transformations" class="md-nav__link">
-    2D Transformations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#direct-linear-transformation" class="md-nav__link">
-    Direct Linear Transformation
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -876,7 +672,208 @@
   
   
     <li class="md-nav__item">
-      <a href="../Structure_from_Motion/" class="md-nav__link">
+      <a href="../analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数学分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线性代数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    AI
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            AI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer Vision
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../AI/cv/ml4360/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ML4360
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_1_1">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            ML4360
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/cv/ml4360/image_formation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Formation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/cv/ml4360/Structure_from_Motion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Stereo_Reconstruction/" class="md-nav__link">
+      <a href="../../AI/cv/ml4360/Stereo_Reconstruction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -916,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shape_from_x/" class="md-nav__link">
+      <a href="../../AI/cv/ml4360/shape_from_x/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -980,58 +977,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2d-points" class="md-nav__link">
-    2D Points
+  <a href="#linear-algebra" class="md-nav__link">
+    Linear Algebra
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Algebra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensors" class="md-nav__link">
+    Tensors
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2d-lines" class="md-nav__link">
-    2D Lines
+        
+          <li class="md-nav__item">
+  <a href="#linear-dependence-and-span" class="md-nav__link">
+    Linear Dependence and Span
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#cross-product" class="md-nav__link">
-    Cross Product
+        
+          <li class="md-nav__item">
+  <a href="#vectors-and-matrix-norms" class="md-nav__link">
+    Vectors and Matrix Norms
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2d-line-arithmetic" class="md-nav__link">
-    2D Line Arithmetic
+        
+          <li class="md-nav__item">
+  <a href="#eigenvalue-decomposition" class="md-nav__link">
+    Eigenvalue Decomposition
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3d-points-and-planes" class="md-nav__link">
-    3D Points and Planes
+        
+          <li class="md-nav__item">
+  <a href="#singular-value-decomposition" class="md-nav__link">
+    Singular Value Decomposition
+  </a>
+  
+    <nav class="md-nav" aria-label="Singular Value Decomposition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relationship-between-evd-and-svd" class="md-nav__link">
+    Relationship between EVD and SVD
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3d-lines" class="md-nav__link">
-    3D Lines
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2d-transformations" class="md-nav__link">
-    2D Transformations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#direct-linear-transformation" class="md-nav__link">
-    Direct Linear Transformation
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1053,137 +1055,65 @@
   
 
 
-<p><em>key terms:how a 3D scene is projected onto a 2D image plane</em></p>
-<p><img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f604.svg" title=":smile:" /></p>
-<h1 id="primitives-and-transformations">Primitives and Transformations<a class="headerlink" href="#primitives-and-transformations" title="Permanent link">&para;</a></h1>
-<h2 id="2d-points">2D Points<a class="headerlink" href="#2d-points" title="Permanent link">&para;</a></h2>
+<h1 id="mathematics-for-deep-learning">Mathematics for Deep Learning<a class="headerlink" href="#mathematics-for-deep-learning" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>The goal of this note is to repeat the necessary minimal math background to follow computervision lectures.</p>
+<p>By Prof. Dr.-Ing. Andreas Geiger,University of Tubingen</p>
+</div>
+<h2 id="linear-algebra">Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permanent link">&para;</a></h2>
+<h3 id="tensors">Tensors<a class="headerlink" href="#tensors" title="Permanent link">&para;</a></h3>
 <ul>
-<li>can be wirtten in <strong>inhomogeneous coordinates</strong></li>
-<li>or in <strong>homogeneous coordinates</strong></li>
-<li><strong>projective space</strong></li>
+<li>A tensor is an array with more than 2 axes(e.g.:RGB image)</li>
+<li>Example for tensor of shape <span class="arithmatex">\(M \times N \times K\)</span>: <span class="arithmatex">\(A \in \mathbb{R}^{M\times N\times K}\)</span></li>
 </ul>
+<h3 id="linear-dependence-and-span">Linear Dependence and Span<a class="headerlink" href="#linear-dependence-and-span" title="Permanent link">&para;</a></h3>
+<ul>
+<li>We call <span class="arithmatex">\(A x= \sum_ix_i A\)</span> a linear combination</li>
+<li><span class="arithmatex">\(A x =  b\)</span> has solution <span class="arithmatex">\(\iff\)</span> <span class="arithmatex">\(b\)</span> is in the span of columns of <span class="arithmatex">\(A\)</span></li>
+<li>This particualr span is known as <strong>column space</strong> or <strong>range</strong></li>
+<li>A square matrix with any two linearly dependent columns is called <strong>singular</strong></li>
+</ul>
+<h3 id="vectors-and-matrix-norms">Vectors and Matrix Norms<a class="headerlink" href="#vectors-and-matrix-norms" title="Permanent link">&para;</a></h3>
+<ul>
+<li><span class="arithmatex">\(\mathscr{l}_p\)</span>-norm is defined as : <span class="arithmatex">\(\Vert x\Vert_p=(\sum_i\vert x_i\vert^p)^{\frac{1}{p}}\)</span></li>
+<li><span class="arithmatex">\(\Vert x \Vert_\infty=max_i\vert x_i\vert\)</span></li>
+<li>The size of a matrix can be measured with the <strong>Frobenius norm</strong>: <span class="arithmatex">\(\Vert  A \Vert_F=\sqrt{\sum_{i,j}a_{i,j}^2}\)</span></li>
+</ul>
+<h3 id="eigenvalue-decomposition">Eigenvalue Decomposition<a class="headerlink" href="#eigenvalue-decomposition" title="Permanent link">&para;</a></h3>
+<ul>
+<li><span class="arithmatex">\(Av=\lambda  v\)</span></li>
+<li>We concatenate all eigenvectors to form a matrix <span class="arithmatex">\(V=( v_1,…, v_N)\)</span></li>
+<li>We form all eignvalues into a diagnal matrix <span class="arithmatex">\(\Lambda = diag(\lambda_1,…，\lambda_N)^{T}\)</span></li>
+<li>The eigendecomposition of  <span class="arithmatex">\(A\)</span> is given by: <span class="arithmatex">\(A =  V \Lambda  V^{-1}\)</span></li>
+<li>Every real symmetric matrix <span class="arithmatex">\(A\)</span> can be decomposed into <span class="arithmatex">\(A =  Q \Lambda  Q^{T}\)</span></li>
+<li><span class="arithmatex">\(Q\)</span> is an orthonormal matrix composed of the eigenvectors <span class="arithmatex">\({ v_i}_{i=1}^{N}\)</span>  of  <span class="arithmatex">\(A\)</span></li>
+</ul>
+<p><img alt="" src="../image/mdl1.png" /></p>
+<p><strong><em> <span class="arithmatex">\(A\)</span> distorts the unit circle by scaling space in direction <span class="arithmatex">\(v_i\)</span> by <span class="arithmatex">\(\lambda_i\)</span></em></strong></p>
 <blockquote>
-<p>Homogeneous vectors that differ only by <strong>scale</strong> are considered equivalent and define an equivalence class</p>
+<p>The EVD can be computed easily in NumPy: np.linalg.eig</p>
 </blockquote>
+<h3 id="singular-value-decomposition">Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition" title="Permanent link">&para;</a></h3>
 <ul>
-<li>An inhomogeneous vector x could be converted to a homogeneous vector -&gt;<strong>augmented vector</strong></li>
-<li>Homogeneous points whose last element is <span class="arithmatex">\(0\)</span> are called <strong>ideal points</strong> or <strong>points at infinity</strong></li>
+<li>Eigenvalue decomposition can only be app;ied to square matrices</li>
+<li>For non-square matrices we can use <strong>singular value decomposition</strong></li>
+<li>Factorizes a matrx <span class="arithmatex">\(A \in \mathbb{R}^{M\times N}\)</span> as <span class="arithmatex">\(A = U  D  V^{T}\)</span>, where <span class="arithmatex">\(U \in \mathbb R^{M\times M},  D\in \mathbb R^{M\times N},  V \in \mathbb R^{N\times N}\)</span></li>
+<li>The elements along the diagonal of <span class="arithmatex">\(D\)</span> are known as singular values</li>
+<li>The columns of <span class="arithmatex">\(U\)</span> and <span class="arithmatex">\(V\)</span> are <strong>left/right-singular vectors</strong>,respectively.</li>
 </ul>
-<p><img alt="" src="../image/2.1.png" /></p>
-<h2 id="2d-lines">2D Lines<a class="headerlink" href="#2d-lines" title="Permanent link">&para;</a></h2>
+<h4 id="relationship-between-evd-and-svd">Relationship between EVD and SVD<a class="headerlink" href="#relationship-between-evd-and-svd" title="Permanent link">&para;</a></h4>
 <ul>
-<li>using homogeneous coordinates <span class="arithmatex">\(\widetilde{l}=(a,b,c)^{T}\)</span></li>
-<li>normalize <span class="arithmatex">\(\tilde{l}\)</span>  </li>
-<li>line at infinity <span class="arithmatex">\(\tilde{l}_{\infty} = (0,0,1)^{T}\)</span>,which passes through all ideal points</li>
-</ul>
-<h2 id="cross-product">Cross Product<a class="headerlink" href="#cross-product" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../image/2.2.png" /></p>
-<h2 id="2d-line-arithmetic">2D Line Arithmetic<a class="headerlink" href="#2d-line-arithmetic" title="Permanent link">&para;</a></h2>
-<ul>
-<li>intersection of tow lines:<span class="arithmatex">\(\tilde{x} = \tilde{l}_1 \times \tilde{l}_2\)</span></li>
-<li>line joining two points:<span class="arithmatex">\(\tilde{l}=\tilde{x}_1 \times \tilde{x}_2\)</span></li>
-</ul>
-<h2 id="3d-points-and-planes">3D Points and Planes<a class="headerlink" href="#3d-points-and-planes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>the same as case in 2D</li>
-</ul>
-<h2 id="3d-lines">3D Lines<a class="headerlink" href="#3d-lines" title="Permanent link">&para;</a></h2>
-<ul>
-<li>less elegent</li>
-<li>linear combination of two points</li>
-</ul>
-<h2 id="2d-transformations">2D Transformations<a class="headerlink" href="#2d-transformations" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../image/2.3.png" /></p>
-<ul>
-<li>the action of a projective transformation on a co-vector can be represented by the transposed inverse of the matrix</li>
-</ul>
-<p><img alt="" src="../image/2.4.png" /></p>
-<h2 id="direct-linear-transformation">Direct Linear Transformation<a class="headerlink" href="#direct-linear-transformation" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>We want a homography estimation using a set of 2D correspondences</p>
-</blockquote>
-<ul>
-<li>Homography estimation:<strong>find the relationship between two images of the same scene, but captured from different viewpoints</strong></li>
-<li><img alt="dlt" src="../image/dlt.png" /></li>
-</ul>
-<p>Stacking all equations into a <span class="arithmatex">\(2N \times 9\)</span> dimensional matrix <span class="arithmatex">\(A\)</span> leads to the <strong>constrained least squares problem</strong>,whose solution is the singular vector corresponding to the smallest singulat value of <span class="arithmatex">\(A\)</span>(i.e.,the last column of <span class="arithmatex">\(V\)</span> when decomposing <span class="arithmatex">\(A=UDV^T\)</span>)
-<a href="https://medium.com/@insight-in-plain-sight/estimating-the-homography-matrix-with-the-direct-linear-transform-dlt-ec6bbb82ee2b">derivation</a></p>
-<h1 id="geometric-image-formation">Geometric Image Formation<a class="headerlink" href="#geometric-image-formation" title="Permanent link">&para;</a></h1>
-<h2 id="orthographic-projection">Orthographic Projection<a class="headerlink" href="#orthographic-projection" title="Permanent link">&para;</a></h2>
-<ul>
-<li>The x and y axes of the camera and image coordinate systems are shared</li>
-<li>Light rats are parallel to the z-coordinate of the camera coordinate system</li>
-<li>During projection, the z-coordinate is dropped,x and y remain the same
-<img alt="" src="../image/2.5.png" />
-<strong>scaled orthorgraphy</strong>
-<img alt="" src="../image/2.6.png" /></li>
-</ul>
-<h2 id="perspective-projection">Perspective Projection<a class="headerlink" href="#perspective-projection" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../image/2.7.png" />
-- The light ray passes through the camera center,the pixel <span class="arithmatex">\(x_s\)</span> and the point <span class="arithmatex">\(x_c\)</span>
-- Convention:the principal axis aligns with the z-axis
-- 3D points in camera coordinates are mapped to the image plane by <strong>dividing</strong> them by their z component and multiplying with thr focal length.
-- <img alt="" src="../image/2.8.png" /></p>
-<blockquote>
-<p><em>this projection is linear when using homogeneous coordinates</em></p>
-</blockquote>
-<ul>
-<li>To ensure positive pixel coordinates,a <strong>principal point offset</strong> is usually added,which moves the image coordinate system to the corner of the image plane.
-Now we can give the complete perspective projection model as follows:
-<img alt="" src="../image/2.9.png" /></li>
-<li>The left <span class="arithmatex">\(3 \times 3\)</span> submatrix is called <strong>calibration matrix</strong> <span class="arithmatex">\(K\)</span></li>
-<li>The parameters of <span class="arithmatex">\(K\)</span> are called camera intrinsics</li>
-<li>The skew <span class="arithmatex">\(s\)</span> arises due to the sensor not mouted perpendicular to the optical axis</li>
-<li>In practice,we often set <span class="arithmatex">\(f_x =f_y\)</span> and <span class="arithmatex">\(s=0\)</span></li>
-</ul>
-<h3 id="chaining-transformations">Chaining Transformations<a class="headerlink" href="#chaining-transformations" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../image/2.10.png" /></p>
-<p><em>Full Rank Representation</em>
-<img alt="" src="../image/2.11.png" />
-The homogeneous vector <span class="arithmatex">\(\tilde{x}_s\)</span> is a 4D vector and must be normalized wrt. its 3rd entry to obtain inhomogeneous image pixels:
-<span class="arithmatex">\(\overline{x}_s = \tilde{x}_s / z_s = (x_s/z_s,y_s/z_s,1,1/z_s)^{T}\)</span></p>
-<h1 id="photometric-image-formation">Photometric Image Formation<a class="headerlink" href="#photometric-image-formation" title="Permanent link">&para;</a></h1>
-<p><em>Discuss how an image is formed in terms of pixel intensities and colors</em>
-- Light is emitted by one or more light sources and reflected of refracted at surfaces of objects in the scene
-<strong>Rendering Equation</strong>
-<img alt="" src="../image/2.12.png" /></p>
-<blockquote>
-<p><span class="arithmatex">\(n^Ts\)</span>  represents the inner product factor</p>
-</blockquote>
-<ul>
+<li>The right-singular vectors are the eigenvectors of <span class="arithmatex">\(A^{T} A\)</span></li>
+<li><span class="arithmatex">\(A^{T} A =  V  D U^{T} U  DV^{T}= V  D^2 V^{T}\)</span></li>
 <li>
-<p>Typical BRDFs have a <strong>diffuse</strong> and a <strong>specular</strong> component</p>
-<ul>
-<li>diffuse component scatters light uniformly in all directions</li>
-<li>specular component depends strongly on the outgoing light direction</li>
-</ul>
-<p><img alt="" src="../image/2.13.png" /></p>
-<h2 id="why-camera-lenses">Why camera lenses?<a class="headerlink" href="#why-camera-lenses" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Large and very small pinholes result in image blur</li>
-<li>small pinholes require long shutter times,which leads to motion blur</li>
-</ul>
-<h3 id="thin-lens-model">Thin Lens Model<a class="headerlink" href="#thin-lens-model" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../image/2.14.png" />
-<span class="arithmatex">\(\frac{1}{z_s}+\frac{1}{z_c}=\frac{1}{f}\)</span></p>
+<p>The left-singular vectors are the egienvectors of  <span class="arithmatex">\(AA^{T}\)</span></p>
+</li>
+<li>
+<p>The eigenvalues of <span class="arithmatex">\(A^{T} A\)</span> and <span class="arithmatex">\(A A^{T}\)</span> are equal to the squared singular values of <span class="arithmatex">\(A\)</span></p>
 </li>
 </ul>
-<h3 id="depth-of-field">Depth of Field<a class="headerlink" href="#depth-of-field" title="Permanent link">&para;</a></h3>
-<ul>
-<li>For <span class="arithmatex">\(z_c \rightarrow \infty\)</span> ,we obtain <span class="arithmatex">\(z_s=f\)</span></li>
-<li>If the image plane is out of foucs,a 3D point projects to the <strong>circle of confusion c</strong></li>
-<li>To control the size of <span class="arithmatex">\(c\)</span>,we change the lens aperture</li>
-<li>The allowable depth variation that limits the circle of confusion is called <em>DOF</em> and is a function of both the focus distance and the lens aperture<blockquote>
-<p>distance between the nearest and farthest objects that are acceptably sharp</p>
-</blockquote>
-</li>
-<li><em>f-number</em> is defined as <span class="arithmatex">\(N = \frac{f}{d}\)</span>(<span class="arithmatex">\(d\)</span>: the aperture diameter)</li>
-</ul>
-<h1 id="questionsnot-found-in-searching-engine">Questions(Not Found in Searching Engine)<a class="headerlink" href="#questionsnot-found-in-searching-engine" title="Permanent link">&para;</a></h1>
-<p>1.normalize <span class="arithmatex">\(\tilde{l} = (n_x,n_y,-d)^{T}\)</span> why <strong>minus</strong> <span class="arithmatex">\(d\)</span>?</p>
-<p>2.DLT？
-3.Under orthography,structure and motion can be estimated simultaneously using factorization methods(e.g.,via svm)
-4.The skew <span class="arithmatex">\(s\)</span> arises due to the sensor not mouted perpendicular to the optical axis,only affects x axis?</p>
+<h1 id="caluculus">Caluculus<a class="headerlink" href="#caluculus" title="Permanent link">&para;</a></h1>
 
 
 
@@ -1231,16 +1161,16 @@ The homogeneous vector <span class="arithmatex">\(\tilde{x}_s\)</span> is a 4D v
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
-        <script src="../../../../js/scheme.js"></script>
+        <script src="../../js/scheme.js"></script>
       
-        <script src="../../../../js/katex.js"></script>
+        <script src="../../js/katex.js"></script>
       
     
   </body>
