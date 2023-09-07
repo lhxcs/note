@@ -1,8 +1,10 @@
-site_name: lhxcs笔记本
-site_url: https://note.lhxcs.cc/
+site_name: Iridescent的cs笔记本
+site_url: https://lhxcs.github.io/
 repo_name: lhxcs/note
 repo_url: https://github.com/lhxcs/note/
 edit_uri: tree/master/docs
+site_description: lhx的笔记本
+copyright: Copyright &copy; 2022-2023 <a href="https://github.com/lhxcs" target="_blank" rel="noopener">Iridescent</a>
 
 theme: 
   name: 'material'
@@ -12,13 +14,22 @@ theme:
     repo: fontawesome/brands/github
   features:
     - content.code.annotate
+    - content.code.copy
     - navigation.tracking
     - navigation.tabs
     - navigation.indexes
     - navigation.top
   font: false
   palette:
-    - scheme: default
+      - scheme: default
+    # - scheme: slate
+    #   toggle:
+    #     icon: material/brightness-4
+    #     name: Switch to light mode
+    # - scheme: default
+    #   toggle:
+    #     icon: material/brightness-7
+    #     name: Switch to dark mode
 
 markdown_extensions:
   - toc:
@@ -51,12 +62,48 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
+extra_css:
+    - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
+    - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+    - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+    - css/custom.css
+    - css/counter.css
+
+extra_javascript:
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+    - js/scheme.js
+    - js/katex.js
+
+plugins:
+  - search
+  # - git-revision-date-localized:
+  #     type: datetime
+  #     timezone: Asia/Shanghai
+  #     locale: zh
+  #     enable_creation_date: true
+  #     exclude:
+  #       - index.md
+
 nav:
-  - Home:
+  - Home: 
     - index.md
-  - Computer Vision:
-    - ML4360:
-      - ml4360/image_formation.md
-      - ml4360/Stereo_Reconstruction.md
-      - ml4360/Structure_from_Motion.md
+  - Computer Science:
+    - 编程语言:
+      - Python: cs/language/python.md
+      - C: cs/c/c.md
+    - 离散数学理论基础: cs/dm.md
+  - 数学基础:
+    - math/index.md
+    - Math for deep learning: math/mdl.md
+    - 数学分析: math/analysis.md
+    - 线性代数: math/algebra.md
+  - AI:
+    - Computer Vision:
+      - ML4360:
+        - AI/cv/ml4360/index.md
+        - Image Formation: AI/cv/ml4360/image_formation.md
+        - Structure from Motion: AI/cv/ml4360/Structure_from_Motion.md
+        - Stereo Reconstruction: AI/cv/ml4360/Stereo_Reconstruction.md
+        - Shape-from-X: AI/cv/ml4360/shape_from_x.md
+        - Coordinate-Based Network: AI/cv/ml4360/Coordinate-Based_Networks.md
 
