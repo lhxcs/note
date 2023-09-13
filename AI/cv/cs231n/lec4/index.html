@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://lhxcs.github.io/AI/cv/cs231n/lec2/">
+        <link rel="canonical" href="https://lhxcs.github.io/AI/cv/cs231n/lec4/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../lec3/">
       
       
-        <link rel="next" href="../lec3/">
+        <link rel="next" href="../../ml4360/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Lec2 Image Classification - Iridescent的cs笔记本</title>
+        <title>Lec4 Neural Networks and Backpropagation - Iridescent的cs笔记本</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture-2-image-classification-with-linear-classifiers" class="md-skip">
+        <a href="#lec-4-neural-networks-and-backpropagation" class="md-skip">
           跳转至
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lec2 Image Classification
+              Lec4 Neural Networks and Backpropagation
             
           </span>
         </div>
@@ -835,29 +835,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Lec2 Image Classification
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -866,208 +846,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#image-classification" class="md-nav__link">
-    Image Classification
-  </a>
-  
-    <nav class="md-nav" aria-label="Image Classification">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#challenges" class="md-nav__link">
-    Challenges
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-driven-approach" class="md-nav__link">
-    Data-driven approach
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-image-classification-pipeline" class="md-nav__link">
-    The image classification pipeline
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nearest-neighbour-classifier" class="md-nav__link">
-    Nearest Neighbour Classifier
-  </a>
-  
-    <nav class="md-nav" aria-label="Nearest Neighbour Classifier">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#l1-distance" class="md-nav__link">
-    L1 distance
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-choice-of-distance" class="md-nav__link">
-    The choice of distance
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k-nearest-neighbor-classifier" class="md-nav__link">
-    K-Nearest Neighbor Classifier
-  </a>
-  
-    <nav class="md-nav" aria-label="K-Nearest Neighbor Classifier">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pros-and-cons-of-nearest-neighbour-classifier" class="md-nav__link">
-    Pros and Cons of Nearest Neighbour classifier
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-hyperparameters" class="md-nav__link">
-    Setting Hyperparameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linear-classification" class="md-nav__link">
-    Linear Classification
-  </a>
-  
-    <nav class="md-nav" aria-label="Linear Classification">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameterized-mapping-from-images-to-label-scores" class="md-nav__link">
-    Parameterized mapping from images to label scores
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linear-classifier" class="md-nav__link">
-    Linear classifier
-  </a>
-  
-    <nav class="md-nav" aria-label="Linear classifier">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    几何解释
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    将线性分类器看作模板匹配
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#loss-function" class="md-nav__link">
-    Loss function
-  </a>
-  
-    <nav class="md-nav" aria-label="Loss function">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multiclass-support-vector-machine-loss" class="md-nav__link">
-    Multiclass Support Vector Machine Loss
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#softmaxmultinomial-logistic-regression" class="md-nav__link">
-    Softmax((Multinomial Logistic Regression)
-  </a>
-  
-    <nav class="md-nav" aria-label="Softmax((Multinomial Logistic Regression)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    信息理论视角
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#practical-issues" class="md-nav__link">
-    Practical issues
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1097,9 +875,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../lec4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lec4 Neural Networks and Backpropagation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1108,6 +906,175 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#neural-networks" class="md-nav__link">
+    Neural Networks
+  </a>
+  
+    <nav class="md-nav" aria-label="Neural Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    由生物系统的神经元到神经网络
+  </a>
+  
+    <nav class="md-nav" aria-label="由生物系统的神经元到神经网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基本结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    具体过程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    作为线性分类器的单个神经元
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network" class="md-nav__link">
+    Neural Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Neural Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architectures" class="md-nav__link">
+    Architectures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    神经网络的表达能力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-the-number-of-layers-and-their-sizes" class="md-nav__link">
+    Setting the number of layers and their sizes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activation-functions" class="md-nav__link">
+    Activation functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Activation functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sigmoid" class="md-nav__link">
+    Sigmoid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relurectified-linear-unit" class="md-nav__link">
+    ReLU(Rectified Linear Unit)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxout" class="md-nav__link">
+    Maxout
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backpropagation" class="md-nav__link">
+    Backpropagation(反向传播)
+  </a>
+  
+    <nav class="md-nav" aria-label="Backpropagation(反向传播)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    简单的表达式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sigmoid-example" class="md-nav__link">
+    Sigmoid example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    矩阵乘法的梯度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1331,126 +1298,106 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#image-classification" class="md-nav__link">
-    Image Classification
+  <a href="#neural-networks" class="md-nav__link">
+    Neural Networks
   </a>
   
-    <nav class="md-nav" aria-label="Image Classification">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#challenges" class="md-nav__link">
-    Challenges
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-driven-approach" class="md-nav__link">
-    Data-driven approach
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-image-classification-pipeline" class="md-nav__link">
-    The image classification pipeline
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nearest-neighbour-classifier" class="md-nav__link">
-    Nearest Neighbour Classifier
-  </a>
-  
-    <nav class="md-nav" aria-label="Nearest Neighbour Classifier">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#l1-distance" class="md-nav__link">
-    L1 distance
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-choice-of-distance" class="md-nav__link">
-    The choice of distance
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k-nearest-neighbor-classifier" class="md-nav__link">
-    K-Nearest Neighbor Classifier
-  </a>
-  
-    <nav class="md-nav" aria-label="K-Nearest Neighbor Classifier">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pros-and-cons-of-nearest-neighbour-classifier" class="md-nav__link">
-    Pros and Cons of Nearest Neighbour classifier
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-hyperparameters" class="md-nav__link">
-    Setting Hyperparameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linear-classification" class="md-nav__link">
-    Linear Classification
-  </a>
-  
-    <nav class="md-nav" aria-label="Linear Classification">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameterized-mapping-from-images-to-label-scores" class="md-nav__link">
-    Parameterized mapping from images to label scores
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linear-classifier" class="md-nav__link">
-    Linear classifier
-  </a>
-  
-    <nav class="md-nav" aria-label="Linear classifier">
+    <nav class="md-nav" aria-label="Neural Networks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    几何解释
+    由生物系统的神经元到神经网络
+  </a>
+  
+    <nav class="md-nav" aria-label="由生物系统的神经元到神经网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基本结构
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    将线性分类器看作模板匹配
+  <a href="#_3" class="md-nav__link">
+    具体过程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    作为线性分类器的单个神经元
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network" class="md-nav__link">
+    Neural Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Neural Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architectures" class="md-nav__link">
+    Architectures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    神经网络的表达能力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-the-number-of-layers-and-their-sizes" class="md-nav__link">
+    Setting the number of layers and their sizes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activation-functions" class="md-nav__link">
+    Activation functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Activation functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sigmoid" class="md-nav__link">
+    Sigmoid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relurectified-linear-unit" class="md-nav__link">
+    ReLU(Rectified Linear Unit)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxout" class="md-nav__link">
+    Maxout
   </a>
   
 </li>
@@ -1466,44 +1413,31 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loss-function" class="md-nav__link">
-    Loss function
+  <a href="#backpropagation" class="md-nav__link">
+    Backpropagation(反向传播)
   </a>
   
-    <nav class="md-nav" aria-label="Loss function">
+    <nav class="md-nav" aria-label="Backpropagation(反向传播)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#multiclass-support-vector-machine-loss" class="md-nav__link">
-    Multiclass Support Vector Machine Loss
+  <a href="#_6" class="md-nav__link">
+    简单的表达式
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#softmaxmultinomial-logistic-regression" class="md-nav__link">
-    Softmax((Multinomial Logistic Regression)
-  </a>
-  
-    <nav class="md-nav" aria-label="Softmax((Multinomial Logistic Regression)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    信息理论视角
+  <a href="#sigmoid-example" class="md-nav__link">
+    Sigmoid example
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#practical-issues" class="md-nav__link">
-    Practical issues
+  <a href="#_7" class="md-nav__link">
+    矩阵乘法的梯度
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1530,178 +1464,150 @@
   
 
 
-<h1 id="lecture-2-image-classification-with-linear-classifiers">Lecture 2: Image Classification with Linear Classifiers<a class="headerlink" href="#lecture-2-image-classification-with-linear-classifiers" title="Permanent link">&para;</a></h1>
-<h2 id="image-classification">Image Classification<a class="headerlink" href="#image-classification" title="Permanent link">&para;</a></h2>
+<h1 id="lec-4-neural-networks-and-backpropagation">Lec 4: Neural Networks and Backpropagation<a class="headerlink" href="#lec-4-neural-networks-and-backpropagation" title="Permanent link">&para;</a></h1>
+<h2 id="neural-networks">Neural Networks<a class="headerlink" href="#neural-networks" title="Permanent link">&para;</a></h2>
+<h3 id="_1">由生物系统的神经元到神经网络<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="_2">基本结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>大脑的基本计算单位是神经元，人类神经系统中的大约<span class="arithmatex">\(860\)</span>亿神经元被<span class="arithmatex">\(10^{14}-10^{15}\)</span>个突触连接起来。每个神经元从树突获得信号，沿着轴突输出信号，轴突末端会形成分枝，通过突触和其它神经元的树突相连。</p>
+<h4 id="_3">具体过程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>在神经元的计算模型中，沿着轴突传播的信号(<span class="arithmatex">\(x\)</span>)将基于突触强度(<span class="arithmatex">\(w\)</span>)，与其它神经元的树突进行乘法交互。</li>
+<li>突触的强度(<span class="arithmatex">\(w\)</span>)可学习，并且控制一个神经元对另一个神经元的影响强度与方向。</li>
+<li>树突将信号传递到细胞体，信号在细胞体中相加，如果结果高于阈值，那么神经元将会被激活，向轴突输出一个峰值信号。</li>
+<li>在计算模型中，是激活信号的频率在交流信息，因此将神经元的激活率建模为activation function <span class="arithmatex">\(f\)</span>，它表达轴突上激活信号的频率。</li>
+</ul>
+<p><img alt="" src="../image/4.5.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>该生物神经元的建模是非常粗糙的，生物神经元的树突可以进行复杂的非线性计算。突触并不就是一个简单的权重，它们是复杂的非线性动态系统，etc.该模型只是为了引入对于我们来说更为重要的神经网络，而非介绍神经科学。</p>
+</div>
+<h3 id="_4">作为线性分类器的单个神经元<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>由神经元通过激活函数的压缩，可见它有能力like or dislike 输入空间的某些线性区域（激活函数值接近1or0）。我们可以通过选择合适的损失函数，使得单个神经元变成一个线性分类器。</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>在SVM/Softmax的例子中，正则化损失从生物学角度可以看做逐渐遗忘，因为它的效果是让所有突触权重w在参数更新过程中逐渐向着0变化。</p>
+</div>
+<h3 id="neural-network">Neural Network<a class="headerlink" href="#neural-network" title="Permanent link">&para;</a></h3>
+<ul>
+<li>(Before) Linear score function: <span class="arithmatex">\(f=Wx,x\in \mathbb{R}^D,W\in \mathbb{R}^{C\times D}\)</span></li>
+<li>(Now) 2-layer Neural Network: <span class="arithmatex">\(f=W_2max(0,W_1x), x\in \mathbb{R}^D,W_1\in \mathbb{R}^{H\times D}, W_2\in \mathbb{R}^{C\times H}\)</span></li>
+</ul>
 <blockquote>
-<p>This is one of the core problems in Computer Vision that, despite its simplicity, has a large variety of practical applications. Moreover, many other seemingly distinct Computer Vision tasks (such as object detection, segmentation) can be reduced to image classification.</p>
+<p>“Neural Network” is a very broad term; these are more accurately called  “fully-connected networks” or sometimes “multi-layer perceptrons” (MLP)</p>
 </blockquote>
-<p><img alt="" src="../image/2.1.png" /></p>
-<p>The task in Image Classification is to predict a single label(or a distribution over labels as shown here to indicate our confidence) for a given image. </p>
-<p>Images are 3-dimensional arrays of integers from 0 to 255, of size Width x Height x 3. The 3 represents the three color channels Red, Green, Blue.</p>
-<h3 id="challenges">Challenges<a class="headerlink" href="#challenges" title="Permanent link">&para;</a></h3>
+<p>我们可以看到，神经网络引入了非线性函数（在该例中是max函数），那么问题来了，Why do we want non-linearity?</p>
+<p>下图的例子是个很好的解释：我们引入非线性函数对数据集进行非线性变换，使得满足其线性分类器的要求。</p>
+<p><img alt="" src="../image/4.3.png" /></p>
+<h4 id="architectures">Architectures<a class="headerlink" href="#architectures" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../image/4.6.png" /></p>
 <ul>
-<li>Viewpoint cariation. A single instance of an object can be oriented in many ways with respect to the camera.</li>
-<li>Scale variation. Visual classes often exhibit variation in their size (size in the real world, not only in terms of their extent in the image).</li>
-<li>Deformation. Many objects of interest are not rigid bodies and can be deformed in extreme ways.</li>
-<li>Occlusion. The objects of interest can be occluded. Sometimes only a small portion of an object (as little as few pixels) could be visible.</li>
-<li>Illumination conditions. </li>
-<li>Background clutter. The objects of interest may <em>blend</em> into their environment, making them hard to identify</li>
-<li>Intra-class variation. The classes of interest can often be relatively broad, such as <em>chair</em>. There are many different types of these objects, each with their own appearance.</li>
+<li>命名规则：当我们说N层神经网络的时候，我们没有把输入层算入。</li>
 </ul>
-<p><img alt="" src="../image/2.2.png" /></p>
-<p><strong>A good image classification model must be invariant to the cross product of all these variations, while simultaneously retaining sensitivity to the inter-class variations.</strong></p>
-<h3 id="data-driven-approach">Data-driven approach<a class="headerlink" href="#data-driven-approach" title="Permanent link">&para;</a></h3>
-<p>Instead of trying to specify what every one of the categories of interest look like directly in code, we’re going to provide the computer with many examples of each class and then develop <strong>learning algorithms</strong> that look at these examples and learn about the visual appearance of each class.</p>
-<h3 id="the-image-classification-pipeline">The image classification pipeline<a class="headerlink" href="#the-image-classification-pipeline" title="Permanent link">&para;</a></h3>
+<p>用来度量神经网络的尺寸的标准主要有两个：一个是神经元的个数，另一个是参数的个数。</p>
 <ul>
-<li>Input: consists of a set of <span class="arithmatex">\(N\)</span> images, each labeled with one of <span class="arithmatex">\(K\)</span> different classes.(training set)</li>
-<li>Learning: training a classifier</li>
-<li>Evaluation: by asking it to predict labels for a new set of images that it has never seen before.</li>
+<li>第一个网络有<span class="arithmatex">\(4+2=6\)</span> 个神经元，<span class="arithmatex">\(3\times 4+4\times 2=20\)</span>个权重，还有<span class="arithmatex">\(4+2=6\)</span>个bias, 共26个可学习参数。</li>
+<li>第二个网络有41个可学习参数（可自己计算验证）</li>
 </ul>
-<h2 id="nearest-neighbour-classifier">Nearest Neighbour Classifier<a class="headerlink" href="#nearest-neighbour-classifier" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>example image dataset: CIFAR-10: consists of 60,000 tiny images that are 32 pixels high and wide. Each image is labeled with one of 10 classes (for example <em>“airplane, automobile, bird, etc”</em>). These 60,000 images are partitioned into a training set of 50,000 images and a test set of 10,000 images</p>
-<p><img alt="" src="../image/2.3.png" /></p>
-</blockquote>
-<p><strong>The nearest neighbour classifier will take a test image, compare it to every single one of the training image,  and predict the label of the closest training image</strong>.</p>
-<h3 id="l1-distance">L1 distance<a class="headerlink" href="#l1-distance" title="Permanent link">&para;</a></h3>
+<h4 id="_5">神经网络的表达能力<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>我们可以把神经网络理解为一个函数族，网络的权重就是每个函数的参数，我们现在想知道的是该函数族的表达能力。(不严谨的类比，可以理解为向量空间的基，我们希望它尽可能扩张成更大的空间)</p>
+<p>可以证明，拥有至少一个隐藏层的神经网络是一个通用的近似器，即给定任意连续函数<span class="arithmatex">\(f(x)\)</span>和任意<span class="arithmatex">\(\epsilon&gt;0\)</span>, 均存在一个至少含一个隐藏层的神经网络 <span class="arithmatex">\(g(x)\)</span> （网络中有合理选择的非线性激活函数）, 对于<span class="arithmatex">\(\forall x\)</span>, 使得 <span class="arithmatex">\(\vert f(x)-g(x)\vert &lt; \epsilon\)</span>.</p>
+<p>即<strong>神经网络可以近似任何连续函数</strong>，且深层网络效果比单层网络好。</p>
+<h4 id="setting-the-number-of-layers-and-their-sizes">Setting the number of layers and their sizes<a class="headerlink" href="#setting-the-number-of-layers-and-their-sizes" title="Permanent link">&para;</a></h4>
+<p>当我们增加层的数量和尺寸时，网络的容量上升，即神经元们可以合作表达许多复杂函数，所以表达函数的空间增加。考虑一个分类问题，训练三个神经网络，每个网络都只有一个隐藏层，但每层神经元数目不同，结果如下图所示：</p>
+<p><img alt="" src="../image/4.7.png" /></p>
+<p>具有更多神经元的网络显然可以分类更复杂的数据，但是可能造成数据的过拟合（网络对数据中的噪声有很强的拟合能力，而没有重视数据间的潜在基本关系）。正则化强度控制可以较好解决该问题：</p>
+<p><img alt="" src="../image/4.8.png" /></p>
+<h3 id="activation-functions">Activation functions<a class="headerlink" href="#activation-functions" title="Permanent link">&para;</a></h3>
+<p>下图是常见的激活函数。</p>
+<p><img alt="" src="../image/4.4.png" /></p>
+<h4 id="sigmoid">Sigmoid<a class="headerlink" href="#sigmoid" title="Permanent link">&para;</a></h4>
+<p>它输入实数值并将其“挤压”到0到1范围内，由于它对于神经元的激活频率有良好的解释，在历史上非常常用。但是它有两个缺点：</p>
 <ul>
-<li>compare the images pixel by pixel and add up all the differences.</li>
-<li><span class="arithmatex">\(d_1(I_1,I_2)=\sum_p \vert I_1^p-I_2^p\vert\)</span></li>
+<li>函数饱和使梯度消失。当激活值接近0或1时，函数的梯度几乎为零，而反向传播时（下文会提到）局部梯度会与整个损失函数对于该门单元的梯度相乘，则导致结果接近0，那么就几乎没有信号通过神经元传到数据，导致网络不学习。</li>
+<li>函数输出不是以零为中心。权重更新出现Z字型下降？</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">class</span> <span class="nc">NearestNeighbor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">pass</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; X is N x D where each row is an example. Y is 1-dimension of size N &quot;&quot;&quot;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="c1"># the nearest neighbor classifier simply remembers all the training data</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">Xtr</span> <span class="o">=</span> <span class="n">X</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">ytr</span> <span class="o">=</span> <span class="n">y</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; X is N x D where each row is an example we wish to predict label for &quot;&quot;&quot;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">num_test</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="c1"># lets make sure that the output type matches the input type</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="n">Ypred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_test</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ytr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="c1"># loop over all test rows</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_test</span><span class="p">):</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>      <span class="c1"># find the nearest training image to the i&#39;th test image</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>      <span class="c1"># using the L1 distance (sum of absolute value differences)</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>      <span class="n">distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Xtr</span> <span class="o">-</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,:]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>      <span class="n">min_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span> <span class="c1"># get the index with smallest distance</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>      <span class="n">Ypred</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ytr</span><span class="p">[</span><span class="n">min_index</span><span class="p">]</span> <span class="c1"># predict the label of the nearest example</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="k">return</span> <span class="n">Ypred</span>
+<h4 id="relurectified-linear-unit">ReLU(Rectified Linear Unit)<a class="headerlink" href="#relurectified-linear-unit" title="Permanent link">&para;</a></h4>
+<ul>
+<li>优点：对于随机梯度下降的收敛有巨大的加速作用</li>
+<li>缺点： 对于小于零的数据，梯度为零，导致不可逆转的死亡，而Leaky ReLU是为解决该问题的尝试。</li>
+</ul>
+<h4 id="maxout">Maxout<a class="headerlink" href="#maxout" title="Permanent link">&para;</a></h4>
+<p>Maxout是对ReLU和Leaky ReLU的一般化归纳，这里拥有ReLU的所有优点而且不具备缺点，但是整体参数数量激增。</p>
+<h2 id="backpropagation">Backpropagation(反向传播)<a class="headerlink" href="#backpropagation" title="Permanent link">&para;</a></h2>
+<p><strong>核心问题：给定函数<span class="arithmatex">\(f(x)\)</span>, 需要计算<span class="arithmatex">\(f\)</span>关于<span class="arithmatex">\(x\)</span>的梯度，即<span class="arithmatex">\(\nabla f(x)\)</span></strong></p>
+<ul>
+<li>bad idea: derive <span class="arithmatex">\(\nabla_wL\)</span> on paper: very tedious</li>
+<li>better idea: <strong>computational graphs + backpropagation</strong></li>
+</ul>
+<h3 id="_6">简单的表达式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>我们以<span class="arithmatex">\(f(x,y,z)=(x+y)z\)</span>为例，直观理解一下反向传播的思想</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>对于该函数，显然可以进行直接微分。但直接微分在函数很复杂时需要极大的计算量，反向传播则极大简化计算过程。</p>
+</div>
+<p>首先将公式分为两部分：<span class="arithmatex">\(q=x+y, f=qz\)</span>, 可以得到 <span class="arithmatex">\(\frac{\partial f}{\partial q}=z, \frac{\partial q}{\partial x}=1\)</span>, 并且由链式法则：<span class="arithmatex">\(\frac{\partial f}{\partial x}=\frac{\partial f}{\partial q}\frac{\partial q}{\partial x}\)</span>, 可以得到结果。而整个计算的过程，首先将输入值根据公式前向传播，得到最终<span class="arithmatex">\(f\)</span>函数的值。然后由<span class="arithmatex">\(\frac{\partial f}{\partial f}=1\)</span>开始逐步返回，分别计算本地的梯度值，直至得到结果。为了更好的理解，可以参考以下的示例代码和计算流图（前向传播从输入计算到输出（绿色），反向传播从输出计算到输入（红色））。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># set some inputs</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># perform the forward pass</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">q</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="c1"># q becomes 3</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">f</span> <span class="o">=</span> <span class="n">q</span> <span class="o">*</span> <span class="n">z</span> <span class="c1"># f becomes -12</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># perform the backward pass (backpropagation) in reverse order:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># first backprop through f = q * z</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">dfdz</span> <span class="o">=</span> <span class="n">q</span> <span class="c1"># df/dz = q, so gradient on z becomes 3</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">dfdq</span> <span class="o">=</span> <span class="n">z</span> <span class="c1"># df/dq = z, so gradient on q becomes -4</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">dqdx</span> <span class="o">=</span> <span class="mf">1.0</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">dqdy</span> <span class="o">=</span> <span class="mf">1.0</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># now backprop through q = x + y</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">dfdx</span> <span class="o">=</span> <span class="n">dfdq</span> <span class="o">*</span> <span class="n">dqdx</span>  <span class="c1"># The multiplication here is the chain rule!</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">dfdy</span> <span class="o">=</span> <span class="n">dfdq</span> <span class="o">*</span> <span class="n">dqdy</span>  
 </code></pre></div>
+<p><img alt="" src="../image/4.1.png" /></p>
+<p>在整个计算线路图中，每个门单元都会得到输入并立即计算：</p>
 <ul>
-<li>However, this classifier only achieves 38.6% on CIFAR-10.</li>
+<li>该单元的局部梯度</li>
+<li>局部梯度乘以输入值，得到整个网络的输出对于该单元的梯度</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Train O(1),predict O(N)
-But we want classifiers that are fast at prediction; slow for training is ok.</p>
-</div>
-<h3 id="the-choice-of-distance">The choice of distance<a class="headerlink" href="#the-choice-of-distance" title="Permanent link">&para;</a></h3>
-<ul>
-<li>L2 distance: <span class="arithmatex">\(d_2(I_1,I_2)=\sqrt {\sum_p{(I_1^p-I_2^p)}^2}\)</span>, 35.4% accuracy</li>
-</ul>
-<p><img alt="" src="../image/2.5.png" /></p>
-<h2 id="k-nearest-neighbor-classifier">K-Nearest Neighbor Classifier<a class="headerlink" href="#k-nearest-neighbor-classifier" title="Permanent link">&para;</a></h2>
-<p>Instead of finding the single closest image in the training set, we will find the top <strong>k</strong> closest images, and have them vote on the label of the test image.</p>
-<p><img alt="" src="../image/2.4.png" /></p>
-<p>Intuitively, higher values of k have a smoothing effect that makes the classifier more resistant to outliers.</p>
-<h3 id="pros-and-cons-of-nearest-neighbour-classifier">Pros and Cons of Nearest Neighbour classifier<a class="headerlink" href="#pros-and-cons-of-nearest-neighbour-classifier" title="Permanent link">&para;</a></h3>
-<ul>
-<li>优点：训练不花费时间</li>
-<li>缺点：不适用于高维数据，基于像素距离的比较造成维数灾难</li>
-</ul>
-<h2 id="setting-hyperparameters">Setting Hyperparameters<a class="headerlink" href="#setting-hyperparameters" title="Permanent link">&para;</a></h2>
-<p><em>Which number of k works best?</em></p>
-<p><img alt="" src="../image/2.6.png" /></p>
-<p><img alt="" src="../image/2.7.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Evaluate on the test set only a single time, at the very end.</p>
-</div>
-<h2 id="linear-classification">Linear Classification<a class="headerlink" href="#linear-classification" title="Permanent link">&para;</a></h2>
-<p>由于KNN存在不足，我们需要一种更强大的方法来解决图像分类问题，并且该方法可以自然延申到神经网络上。</p>
-<p>该方法主要由两部分组成：一个是<strong>score function</strong>(评分函数)，它是原始图像数据到类别分值的映射。另一个是<strong>loss function</strong> （损失函数），它是用来量化预测得分与真实标签之间的一致性。该方法最终可转化为一个最优化问题。</p>
-<h3 id="parameterized-mapping-from-images-to-label-scores">Parameterized mapping from images to label scores<a class="headerlink" href="#parameterized-mapping-from-images-to-label-scores" title="Permanent link">&para;</a></h3>
-<p>score function 将图像的像素值映射为各个分类类别的得分，得分高代表图像属于该类别的概率大。</p>
-<p>现在我们从一个例子出发： 假设有一个包含很多图像的训练集<span class="arithmatex">\(x_i \in \mathbb{R}^D\)</span>, 每个图像都有一个对应的分类标签<span class="arithmatex">\(y_i\)</span>, 即我们有<span class="arithmatex">\(N\)</span>个图像，每个图像的维度是<span class="arithmatex">\(D\)</span>（将图像拉长，可以把图像看作高维空间的一个点，整个数据集就是一个点的集合，每个点带有一个分类标签）, 共有<span class="arithmatex">\(K\)</span>种不同的分类。定义<span class="arithmatex">\(f:\mathbb{R}^D \rightarrow \mathbb{R}^K\)</span></p>
-<p><img alt="" src="../image/2.8.png" /></p>
-<h3 id="linear-classifier">Linear classifier<a class="headerlink" href="#linear-classifier" title="Permanent link">&para;</a></h3>
-<p>我们从最简单的函数开始，一个线性映射：
+<p>这里将局部梯度与每个输入进行乘法运算是基于链式法则。该操作让一个相对独立的单元变成复杂计算线路中不可或缺的一部分。</p>
+<p>反向传播可以看做是门单元之间在通过梯度信号相互通信，只要让它们的输入沿着梯度方向变化，无论它们自己的输出值在何种程度上升或降低，都是为了让整个网络的输出值更高。</p>
+<h3 id="sigmoid-example">Sigmoid example<a class="headerlink" href="#sigmoid-example" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(f(w,x)=\frac{1}{1+e^{\neg(w_0x_0+w_1x_1+w2)}}\)</span></p>
+<p>这是使用sigmoid激活函数的二维神经元：输入是<span class="arithmatex">\([x_0,x_1]\)</span>, 可学习的权重是<span class="arithmatex">\([w_o,w_1,w_2]\)</span>。该神经元对输入数据进行内积，然后其数据被sigmoid函数压缩至<span class="arithmatex">\([0,1]\)</span>区间。</p>
+<p>注意到sigmoid函数的微分是可以简化：
 $$
-f(x_i,W,b)=Wx_i +b
+\frac{d\sigma(x)}{dx}=(1-\sigma(x))\sigma(x)
 $$
-其中<span class="arithmatex">\(x_i\)</span>的大小是<span class="arithmatex">\(D\times 1\)</span>, <span class="arithmatex">\(W\)</span>的大小是<span class="arithmatex">\(K\times D\)</span> ,<span class="arithmatex">\(b\)</span>是<span class="arithmatex">\(K\times 1\)</span></p>
-<p><span class="arithmatex">\(W\)</span> 被称为weights(权重)，<span class="arithmatex">\(b\)</span> 影响输出的数值但是并不和原始数据产生关联，可以理解为一个修正量，被称为bias vector（偏差向量）</p>
-<p>而对于<span class="arithmatex">\(W\)</span>矩阵，可以这样理解：每个类的分类器就是<span class="arithmatex">\(W\)</span>的一个行向量。以船的分类为例，可以想象船被大量蓝色包围。那么船分类器在蓝色通道上就有较多的正权重，而在绿色红色通道上负权重较多。</p>
-<p>举个简单的例子，如下图所示，假设input image只有四个像素（不考虑RGB通道），有三个分类（红绿蓝分别代码猫狗船，不是RGB的意思！）。首先将图像像素拉长为一个列向量，与<span class="arithmatex">\(W\)</span>进行矩阵乘，然后得到各个分类的分值。</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>该例仅供理解分类器的具体内容，它的矩阵W is bad.可以看出来该分类器猫的分值非常低，算法倒觉得这个图像是一只狗。</p>
-</div>
-<p><img alt="" src="../image/2.9.png" /></p>
-<h4 id="_1">几何解释<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p>另一个对linear classifier直观的理解，我们假设每个图像拉长后都是二维的（因为我们无法可视化真实图像那么高维空间的线性函数），如下图所示：</p>
-<p><img alt="" src="../image/2.10.png" /></p>
-<p>通过该图我们再次理解一下 <span class="arithmatex">\(W\)</span> 和 <span class="arithmatex">\(b\)</span> 的作用：<span class="arithmatex">\(W\)</span>的每一行都是一个分类类别的分类器。如果改变其中一行的数字，分类器在空间中对应的直线就开始旋转，而<span class="arithmatex">\(b\)</span>允许直线平移。需要注意的是，如果没有<span class="arithmatex">\(b\)</span>, 那么无论权重如何，在<span class="arithmatex">\(x_i=0\)</span>时分值始终为<span class="arithmatex">\(0\)</span>,这样所有直线都要穿过原点。这是我们在<span class="arithmatex">\(Wx\)</span>的基础上加上偏差向量的另一种解释。</p>
-<h4 id="_2">将线性分类器看作模板匹配<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>关于<span class="arithmatex">\(W\)</span> 的另一种解释是它的每一行对应一个分类的模板。每张图像的不同类别得分，是使用内积来比较图像和模板，最后得到的相似度。从这个角度来看，线性分类器就是在利用学习到的模板，针对图像做模板匹配。而联系到之前的kNN算法，我们也可以理解为linear classifier是在高效使用kNN。不同的是，我们没有使用所有训练集的图像来比较，而是使用模板图片来判断，而且没有使用<span class="arithmatex">\(L_1.L_2\)</span>距离计算，而是使用内积来计算相关性。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>内积经常在相关性的计算中被使用</p>
-</div>
-<p><img alt="" src="../image/2.11.png" /></p>
-<h2 id="loss-function">Loss function<a class="headerlink" href="#loss-function" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p><em>The loss function quantifies our unhappiness with predictions on the training set</em></p>
-</blockquote>
-<p>在上个unit举的例子中，<span class="arithmatex">\(W\)</span>并不是我们想要的权重矩阵，所以我们现在需要做的就是调整权重矩阵的参数，使得评分函数的结果与训练集中图像的真实类别一致。所以引入损失函数的概念。</p>
-<p>当评分函数输出结果与真实结果之间差异越大，损失函数输出越大，反之越小。</p>
-<h3 id="multiclass-support-vector-machine-loss">Multiclass Support Vector Machine Loss<a class="headerlink" href="#multiclass-support-vector-machine-loss" title="Permanent link">&para;</a></h3>
-<p><strong>Key idea</strong>: SVM的loss function 想要SVM在正确分类上的得分始终比不正确分类的得分高出一个边界值 <span class="arithmatex">\(\Delta\)</span></p>
-<p>首先将score简写为<span class="arithmatex">\(s\)</span>, 即<span class="arithmatex">\(s_j=f(x_i,W)_j\)</span>. 则针对第<span class="arithmatex">\(i\)</span>个数据的svm损失函数定义如下：
-$$
-L_i = \sum_{j \neq y_i}max(0,s_j-s_{y_i}+\Delta)
-$$
-下图是一个具体的例子，这里的边界值设置为1</p>
-<p><img alt="" src="../image/2.12.png" /></p>
-<blockquote>
-<p>关于0的阈值：<span class="arithmatex">\(max(0, )\)</span>函数被称作折叶损失函数（hinge loss)</p>
-</blockquote>
-<h3 id="softmaxmultinomial-logistic-regression">Softmax((Multinomial Logistic Regression)<a class="headerlink" href="#softmaxmultinomial-logistic-regression" title="Permanent link">&para;</a></h3>
-<p>与SVM不同，Softmax的输出为归一化的概率分布，更加直观。</p>
-<p><span class="arithmatex">\(s=f(x_i,W), P(Y=k|X=x_i)=\frac{e^{s_k}}{\sum_j{e^{s_j}}}\)</span></p>
-<p>使用<span class="arithmatex">\(f_j\)</span>表示评分向量<span class="arithmatex">\(f\)</span>中的第<span class="arithmatex">\(j\)</span>个元素，损失函数定义为：
-$$
-L_i=-log(\frac{e^{f_j}}{\sum_j{e^{f_j}}})
-$$</p>
-<h4 id="_3">信息理论视角<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>真实分布 <span class="arithmatex">\(p\)</span> 和估计分布 <span class="arithmatex">\(q\)</span> 之间的<strong>交叉熵</strong>： 
-$$
-H(p,q)=-\sum_x p(x)log(q(x))
-$$
-因此，softmax分类器所作的就是最小化在估计分布 <span class="arithmatex">\(\frac{e^{f_{y_i}}}{\sum_j e^{f_j}}\)</span> 和真实分布之间的交叉熵。真实分布就是所有概率密度都分布在正确的类别上（比如<span class="arithmatex">\(p=[0,…,1,…,0]\)</span>中<span class="arithmatex">\(y_i\)</span>的概率是<span class="arithmatex">\(1\)</span>, 代表真实类别，其他全为<span class="arithmatex">\(0\)</span>)</p>
-<h4 id="practical-issues">Practical issues<a class="headerlink" href="#practical-issues" title="Permanent link">&para;</a></h4>
-<p>代码实现softmax函数计算时，因为存在指数函数，除以大数值可能造成数值计算的不稳定，所以我们需要使用归一化技巧
-$$
-\frac{e^{f_{y_i}}}{\sum_j{e^{f_j}}}=\frac{Ce^{f_{y_i}}}{C\sum_j{e^{f_j}}}=\frac{e^{f_{y_i}+logC}}{\sum_j{e^{f_j}+logC}}
-$$
-其中<span class="arithmatex">\(C\)</span>的值可以任意选择，通常将<span class="arithmatex">\(C\)</span>设定为<span class="arithmatex">\(logC=-max_jf_j\)</span>， 即将<span class="arithmatex">\(f\)</span>中的数值平移使得最大值为<span class="arithmatex">\(0\)</span>, 以下是一个例子</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">,</span> <span class="mi">789</span><span class="p">])</span> <span class="c1"># example with 3 classes and each having large scores</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="c1"># Bad: Numeric problem, potential blowup</span>
+因此可以将中间的流程装进一个独立的门单元，大大简化计算：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># assume some random weights and data</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># instead: first shift the values of f so that the highest number is 0:</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">f</span> <span class="o">-=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># f becomes [-666, -333, 0]</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="c1"># safe to do, gives the correct answer</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># forward pass</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">dot</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">f</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">dot</span><span class="p">))</span> <span class="c1"># sigmoid function</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># backward pass through the neuron (backpropagation)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">ddot</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">f</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span> <span class="c1"># gradient on dot variable, using the sigmoid gradient derivation</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">dx</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">ddot</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">ddot</span><span class="p">]</span> <span class="c1"># backprop into x</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">dw</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">ddot</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">ddot</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">ddot</span><span class="p">]</span> <span class="c1"># backprop into w</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># we&#39;re done! we have the gradients on the inputs to the circuit</span>
 </code></pre></div>
+<p><img alt="" src="../image/4.2.png" /></p>
+<h3 id="_7">矩阵乘法的梯度<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># forward pass</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">D</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># now suppose we had the gradient on D from above in the circuit</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">dD</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># same shape as D</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">dW</span> <span class="o">=</span> <span class="n">dD</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="c1">#.T gives the transpose of the matrix</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">dX</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">dD</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>quite tricky,在操作时要注意转置操作。可以使用分析维度的方法。</p>
+</div>
 
 
 
