@@ -99,6 +99,12 @@ nav:
     - 线性代数: math/algebra.md
   - AI:
     - Computer Vision:
+      - CS231n:
+        - AI/cv/cs231n/index.md
+        - Lec2 Image Classification: AI/cv/cs231n/lec2.md
+        - Lec3 Regularization and Optimization: AI/cv/cs231n/lec3.md
+        - Lec4 Neural Networks and Backpropagation: AI/cv/cs231n/lec4.md
+        - Lec5 Image Classification with CNNs: AI/cv/cs231n/lec5.md
       - ML4360:
         - AI/cv/ml4360/index.md
         - Image Formation: AI/cv/ml4360/image_formation.md
