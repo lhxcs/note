@@ -1,3 +1,5 @@
+# 离散数学理论基础
+
 !!! abstract
 
     浙江大学 ”离散数学理论基础“ 课程复习笔记
@@ -10,8 +12,5 @@
 
 
 
-<div class="card file-block" markdown="1">
-<div class="file-body">
-</div>
-<a class="down-button" target="_blank" href="/assets/file/离散数学理论基础.pdf" markdown="1">:fontawesome-solid-download: 离散数学理论基础笔记</a>
-</div>
+[离散数学期末复习笔记](离散数学理论基础.pdf)
+

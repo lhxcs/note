@@ -19,6 +19,7 @@ theme:
     - navigation.tabs
     - navigation.indexes
     - navigation.top
+    - navigation.footer
   font: false
   palette:
       - scheme: default
@@ -76,6 +77,7 @@ extra_javascript:
 
 plugins:
   - search
+  - statistics
   # - git-revision-date-localized:
   #     type: datetime
   #     timezone: Asia/Shanghai
@@ -90,8 +92,17 @@ nav:
   - Computer Science:
     - 编程语言:
       - Python: cs/language/python.md
-      - C: cs/c/c.md
+      - C: cs//language/c/c.md
     - 离散数学理论基础: cs/dm.md
+    - 数据结构基础:
+      - cs/ds/index.md
+      - Algorithm Analysis: cs/ds/lec1.md
+    - 计算机逻辑设计基础:
+      - cs/CLDF/index.md
+      - Lec1 Digital Systems and Information: cs/CLDF/lec1.md
+    - 优化基本理论与方法:
+      - cs/opt/index.md
+      - Lec1 Introduction: cs/opt/lec1.md
   - 数学基础:
     - math/index.md
     - Math for deep learning: math/mdl.md
@@ -99,12 +110,15 @@ nav:
     - 线性代数: math/algebra.md
   - AI:
     - Computer Vision:
-      - CS231n:
+      - Stanford:CS231n:
         - AI/cv/cs231n/index.md
         - Lec2 Image Classification: AI/cv/cs231n/lec2.md
         - Lec3 Regularization and Optimization: AI/cv/cs231n/lec3.md
         - Lec4 Neural Networks and Backpropagation: AI/cv/cs231n/lec4.md
         - Lec5 Image Classification with CNNs: AI/cv/cs231n/lec5.md
+        - Lec6 Training Neural Networks: AI/cv/cs231n/lec6.md
+      - ZJU:计算机视觉导论:
+        - AI/cv/icv/index.md
       - ML4360:
         - AI/cv/ml4360/index.md
         - Image Formation: AI/cv/ml4360/image_formation.md
