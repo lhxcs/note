@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://lhxcs.github.io/AI/cv/icv/lec1/</loc>
+         <lastmod>2023-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://lhxcs.github.io/AI/cv/ml4360/</loc>
          <lastmod>2023-09-24</lastmod>
          <changefreq>daily</changefreq>
@@ -97,6 +102,11 @@
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/lec1/</loc>
+         <lastmod>2023-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/cs/language/</loc>
          <lastmod>2023-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
