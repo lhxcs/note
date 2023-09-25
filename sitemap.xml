@@ -2,152 +2,162 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://lhxcs.github.io/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec2/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec3/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec4/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec5/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec6/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec1/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/AI/cv/icv/lec2/</loc>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/ml4360/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/ml4360/Coordinate-Based_Networks/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/ml4360/Stereo_Reconstruction/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/ml4360/Structure_from_Motion/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/ml4360/image_formation/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/ml4360/shape_from_x/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/AI/cv/ml4360/lab/lab1/</loc>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/dm/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/CLDF/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/CLDF/lec1/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/lec1/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/language/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/language/python/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/language/c/c/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/opt/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/opt/lec1/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/algebra/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/analysis/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/mdl/</loc>
-         <lastmod>2023-09-24</lastmod>
+         <lastmod>2023-09-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
