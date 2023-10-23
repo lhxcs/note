@@ -8,6 +8,7 @@ copyright: Copyright &copy; 2022-2023 <a href="https://github.com/lhxcs" target=
 
 theme: 
   name: 'material'
+  custom_dir: overrides
   language: 'zh'
   icon: 
     logo: material/notebook-outline
@@ -78,6 +79,7 @@ extra_javascript:
 plugins:
   - search
   - statistics
+  - changelog
   # - git-revision-date-localized:
   #     type: datetime
   #     timezone: Asia/Shanghai
@@ -89,8 +91,11 @@ plugins:
 nav:
   - Home: 
     - index.md
+    - 更新记录: changelog.md
   - Computer Science:
+    - cs/index.md
     - 编程语言:
+      - cs/language/index.md
       - Python: cs/language/python.md
       - C: cs//language/c/c.md
     - 离散数学理论基础: cs/dm.md
@@ -100,14 +105,10 @@ nav:
     - 计算机逻辑设计基础:
       - cs/CLDF/index.md
       - Lec1 Digital Systems and Information: cs/CLDF/lec1.md
+      - Lec2 Combinational Logic Circuits: cs/CLDF/lec2.md
     - 优化基本理论与方法:
       - cs/opt/index.md
       - Lec1 Introduction: cs/opt/lec1.md
-  - 数学基础:
-    - math/index.md
-    - Math for deep learning: math/mdl.md
-    - 数学分析: math/analysis.md
-    - 线性代数: math/algebra.md
   - AI:
     - Computer Vision:
       - Stanford:CS231n:
@@ -119,6 +120,12 @@ nav:
         - Lec6 Training Neural Networks: AI/cv/cs231n/lec6.md
       - ZJU:计算机视觉导论:
         - AI/cv/icv/index.md
+        - Lec1 Introduction: AI/cv/icv/lec1.md
+        - Lec2 Image Formation: AI/cv/icv/lec2.md
+        - Lec3 Image Processing: AI/cv/icv/lec3.md
+        - Lec4 Model Fitting and Optimization: AI/cv/icv/lec4.md
+        - Lab:
+          - lab 1 matplotlib,opencv and open3d: AI/cv/icv/lab1.md
       - ML4360:
         - AI/cv/ml4360/index.md
         - Image Formation: AI/cv/ml4360/image_formation.md
@@ -126,4 +133,15 @@ nav:
         - Stereo Reconstruction: AI/cv/ml4360/Stereo_Reconstruction.md
         - Shape-from-X: AI/cv/ml4360/shape_from_x.md
         - Coordinate-Based Network: AI/cv/ml4360/Coordinate-Based_Networks.md
+        - Lab:
+          - lab1 image formation: AI/cv/ml4360/lab/lab1.md
+  - 数学基础:
+    - math/index.md
+    - Math for deep learning: math/mdl.md
+    - 数学分析: math/analysis.md
+    - 线性代数: math/algebra.md
+    - 概率论: 
+      - Conditional Probability, Independence, and Combinations of Events: math/probability/note14.md
+      - Random Variables--Distribution and Expectation: math/probability/note15.md
+      - Variance and covariance: math/probability/note16.md
 

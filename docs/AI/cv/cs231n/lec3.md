@@ -1,3 +1,4 @@
+--- comments: true ---
 # Lecture 3: Regularization and Optimization
 
 ## Regularization

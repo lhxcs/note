@@ -71,3 +71,76 @@ $log^kN=O(N)$ for any constant $k$. This tells us that **logarithms grow very sl
 
     When comparing the complexities of two programs asymptotically, make sure that N is sufficiently large.
 
+
+
+## Compare the Algorithms
+
+**Given(possibly negative) integers $A_1,A_2,……,A_N$ , find the maximum value of $\sum_{k=i}^jA_k$ (最大子数组)**
+
+### Algorithm 1: $O(N^3)$
+
+```c
+int MaxSubsequenceSum( const int A[], int N){
+    int ThisSum, MaxSum, i,j,k;
+    MaxSum = 0;
+    for(int i=0;i<N;i++){
+        for(j=i;j<N;j++){
+            ThisSum = 0;
+            for(k=i;k<=j;k++){
+                ThisSum += A[k];
+                if(ThisSum > MaxSum){
+                    MaxSum = ThisSum;
+                }
+            }
+        }
+    }
+    return MaxSum;
+}
+```
+
+### Algorithm2: $O(N^2)$
+
+```c
+int MaxSubsequenceSum(const int A[], int N) {
+    int ThisSum, MaxSum, i ,j;
+    MaxSum = 0;
+    for(int i=0;i<N;i++){
+        ThisSum = 0;
+        for(j=i;j<N;j++){
+            ThisSum+ = A[j];
+            if(ThisSum > MaxSum)
+                MaxSum = ThisSum;
+        }
+    }
+    return MaxSum;
+} 
+
+```
+
+### Algorithm3: Divide and Conquer
+
+
+$$
+\begin{align}
+T(N)&= 2T(N/2)+cN \\ &=2[2T(N/2^2)+cN/2]+cN\\&=2^kO(1)+ckN \quad where  N/2^k=1 \\ &=O(NlogN)
+\end{align}
+$$
+
+
+### Algorithm4: On-line Algorithm  $T(N)=O(N)$
+
+```c
+int MaxSubsequenceSum( const int A[], int N ){
+    int ThisSum, MaxSum,j;
+    ThisSum = MaxSum = 0;
+    for(j=0;j<N;j++){
+        ThisSum += A[j];
+        if(ThisSum > MaxSum)
+            MaxSum = ThisSum;
+        else if(ThisSum<0)
+            ThisSum = 0;
+    }
+    return MaxSum;
+} 
+```
+

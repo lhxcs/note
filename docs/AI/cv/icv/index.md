@@ -1,3 +1,5 @@
+--- comments: true ---
+
 # 计算机视觉导论
 
 !!! abstract
