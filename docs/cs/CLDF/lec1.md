@@ -1,3 +1,6 @@
+---
+comments: True
+---
 # Digital Systems and Information
 
 ## Digital System

@@ -73,7 +73,7 @@ extra_css:
 
 extra_javascript:
     - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
-    - js/scheme.js
+    # - js/scheme.js
     - js/katex.js
 
 plugins:
@@ -102,10 +102,12 @@ nav:
     - 数据结构基础:
       - cs/ds/index.md
       - Algorithm Analysis: cs/ds/lec1.md
+      - Tree: cs/ds/tree.md
     - 计算机逻辑设计基础:
       - cs/CLDF/index.md
-      - Lec1 Digital Systems and Information: cs/CLDF/lec1.md
-      - Lec2 Combinational Logic Circuits: cs/CLDF/lec2.md
+      - Chapter1 Digital Systems and Information: cs/CLDF/lec1.md
+      - Chapter2 Combinational Logic Circuits: cs/CLDF/lec2.md
+      - Chapter3 Combinational Logic Design: cs/CLDF/lec3.md
     - 优化基本理论与方法:
       - cs/opt/index.md
       - Lec1 Introduction: cs/opt/lec1.md
@@ -124,8 +126,7 @@ nav:
         - Lec2 Image Formation: AI/cv/icv/lec2.md
         - Lec3 Image Processing: AI/cv/icv/lec3.md
         - Lec4 Model Fitting and Optimization: AI/cv/icv/lec4.md
-        - Lab:
-          - lab 1 matplotlib,opencv and open3d: AI/cv/icv/lab1.md
+        - Lec5 Image Matching and Motion Estimation: AI/cv/icv/lec5.md
       - ML4360:
         - AI/cv/ml4360/index.md
         - Image Formation: AI/cv/ml4360/image_formation.md

@@ -1,14 +1,131 @@
 # 树
 
-## 二叉树
+!!! abstract
+
+    该页面是我复习二叉树基础操作与典型题目时自己直接在markdown里手敲的代码(所以极有可能bug一堆/(ㄒoㄒ)/~~)，我给不太熟悉的操作加上了思路和注释。
+    
+    reference: 
+    
+    https://github.com/shishujuan/data-structure-algorithms ,我逛Github发现的一个仓库。
+    
+    力扣：https://leetcode.cn/problemset/all/ 力扣的题质量是真高，但是不得不说C语言的接口用起来好烦人
+    
+    (╯▔皿▔)╯
+
+
+
+## 二叉树基础
 
 ```C
 //Definition for a binary tree node.
  	struct TreeNode {
-      int val;
+      int value;
      struct TreeNode *left;
      struct TreeNode *right;
  };
+```
+
+### 创建节点
+
+```C
+TreeNode *newnode(int value){
+    TreeNode *node=(TreeNode*)malloc(sizeof(struct TreeNode));
+    node->value=value;
+    node->left=NULL;
+    node->right=NULL;
+    return node;
+}
+```
+
+
+
+### 插入结点
+
+```c
+TreeNode *insert_recursive(TreeNode *root,int value){
+    if(root==NULL) return newnode(value);
+    if(root->val>value){
+        root->left=insert_recursive(root->left,value);
+    }else{
+        root->right=insert_recursive(root->right,value);
+    }
+    return root;
+}
+
+TreeNode *insert_iterative(TreeNode *root,int value){
+    if(root==NULL) return newnode(value);
+    TreeNode *node=newnode(value);
+    TreeNode *cur=root,*parent=NULL;
+    while(cur){
+        parent=cur;
+        if(cur->val>val){
+            cur=cur->left;
+        }else{
+            cur=cur->right;
+        }
+    }
+    if(parent->value>value){
+        parent->left=node;
+    }else{
+        parent->right=node;
+    }
+    return root;
+}
+```
+
+
+
+### 删除结点
+
+```c
+TreeNode *delete(TreeNode *root,int value){
+    TreeNode *parent=NULL,*current=root;
+    TreeNode *node=search_i(root,parent,value);
+    if(node==NULL){
+        printf("Value not found\n");
+        return root;
+    }
+    if(!node->left&&!node->right){//删除叶子
+        if(node!=root){
+            if(parent->left==node) parent->left=NULL;
+            else parent->right=NULL;
+        }else{
+            root=NULL;
+        }
+        free(node);
+    }else if(node->left&&node->right){//删除的结点有两个子节点
+        TreeNode *predecessor=max(node->left);
+        delete(root,predecessor->value);
+        node->value=predecessor->value;
+    }else{//删除的结点有一个子节点
+        TreeNode *child=(node->left)?node->left:node->right;
+        if(node!=root){
+            if(node==parent->left){
+                parent->left=child;
+            }else{
+                parent->right=child;
+            }
+        }else{
+            root=child;
+        }
+        free(node);
+    }
+    return root;
+}
+
+TreeNode *search(TreeNode *root,TreeNode *parent,int value){
+    if(root==NULL) return NULL;
+    TreeNode *cur=root;
+    while(cur&&cur->val!=value){
+        parent=cur;
+        if(cur->val>val){
+            cur=cur->left;
+        }else{
+            cur=cur->right;
+        }
+    }
+    return cur;
+}//保存了待搜索的值的父节点，便于delete
 ```
 
 
@@ -158,6 +275,86 @@ int** levelOrder(struct TreeNode* root, int* returnSize, int** returnColumnSizes
              (*returnColumnSizes)[i]=columnSizes[i];
         return ans;
 
+}
+```
+
+
+
+## 构建类问题
+
+### 根据先序，中序遍历构建二叉树
+
+```c
+btnode *buildtree(int preorder[],int inorder[],int n){
+    if(n==0) return NULL;
+    btnode *root=(struct btnode*)malloc(sizeof(struct btnode));
+    root->value=preorder[0];
+    int i=0;
+    while(inorder[i]!=root->value){
+        i++;
+    }
+    if(i==0){
+        root->left=NULL;
+        root->right=buildtree(&preorder[1],&inorder[1],n-1);
+    }
+    else if(i==n-1){
+        root->right=NULL;
+        root->left=buildtree(&preorder[1],inorder,n-1);
+    }
+    else if(i!=0&&i!=n-1){
+        root->left=buildtree(&preorder[1],inorder,i);
+        root->right=buildtree(&preorder[1],&inorder[i+1],n-i-1);
+    }
+    return root;
+}
+```
+
+### 根据中序，后序遍历构建二叉树
+
+```c
+Tree buildtree(int post[],int in[],int n){
+    Tree root=(Tree)malloc(sizeof(Tree));
+    root->key=post[n-1];
+    if(n==1){
+        root->left=NULL;
+        root->right=NULL;
+        return root;
+    }
+    int i=0;
+    while(in[i]!=post[n-1]){
+        i++;
+    }
+    if(i==0){
+        root->left=NULL;
+        root->right=buildtree(post,&in[1],n-1);
+    }
+    else if(i==n-1){
+        root->right=NULL;
+        root->left=buildtree(post,in,n-1);
+    }
+    else if(i!=0&&i!=n-1){
+        root->left=buildtree(post,in,i);
+        root->right=buildtree(&post[i],&in[i+1],n-i-1);
+    }
+    return root;
+}
+```
+
+## 查找类问题
+
+### 二叉搜索树最低公共祖先
+
+```c
+TreeNode* LCA(TreeNode *root,TreeNode *p,TreeNode *q){
+    if(!root||!p||!q) return NULL;
+    int max=p->value>=q->value?p->value:q->value;
+    int min=p->value<q->value?p->value:q->value;
+    
+    if(max<root->value){
+        return LCA(root->left,p,q);
+    }else if(min>root->value){
+        return LCA(root->right,p,q);
+    }else return root;
 }
 ```
 
