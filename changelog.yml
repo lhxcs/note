@@ -3,3 +3,11 @@
     - newpage:
         text: CS > 计算机逻辑设计基础 > lec2
         href: /cs/CLDF/
+  - "2023-9-18":
+    - newpage:
+        text: AI > 计算机视觉导论(课程笔记)
+        href: /AI/cv/icv/
+  - "2023-9-3":
+    - newpage:
+        text: AI > CS231n (笔记)
+        href: /AI/cv/cs231n/
