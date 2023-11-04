@@ -16,7 +16,7 @@
         <link rel="prev" href="../lec4/">
       
       
-        <link rel="next" href="../../ml4360/">
+        <link rel="next" href="../lec6/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -1225,6 +1225,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -1463,8 +1465,49 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#matching" class="md-nav__link">
+    Matching
+  </a>
+  
+    <nav class="md-nav" aria-label="Matching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ratio-test" class="md-nav__link">
+    Ratio test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutual-nearest-neighbour" class="md-nav__link">
+    Mutual nearest neighbour
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-learning-for-feature-matching" class="md-nav__link">
+    Deep learning for feature matching
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motion-estimation" class="md-nav__link">
+    Motion Estimation
+  </a>
   
 </li>
       
@@ -1472,6 +1515,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec6 Image Stitching
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2066,8 +2129,49 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#matching" class="md-nav__link">
+    Matching
+  </a>
+  
+    <nav class="md-nav" aria-label="Matching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ratio-test" class="md-nav__link">
+    Ratio test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutual-nearest-neighbour" class="md-nav__link">
+    Mutual nearest neighbour
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-learning-for-feature-matching" class="md-nav__link">
+    Deep learning for feature matching
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motion-estimation" class="md-nav__link">
+    Motion Estimation
+  </a>
   
 </li>
       
@@ -2091,7 +2195,7 @@
 
 <h1 id="image-matching-and-motion-estimation">Image Matching and Motion Estimation<a class="headerlink" href="#image-matching-and-motion-estimation" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1793 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2824 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 9 分钟</p>
 </div>
 <h2 id="image-matching">Image matching<a class="headerlink" href="#image-matching" title="Permanent link">&para;</a></h2>
 <p><strong>Finding point-to-point correspondences between two images</strong></p>
@@ -2240,6 +2344,108 @@ $$
 <li>Find dominate orientation</li>
 <li>For each (x,y,orientation), create descriptor</li>
 </ul>
+<h3 id="matching">Matching<a class="headerlink" href="#matching" title="Permanent link">&para;</a></h3>
+<p>现在我们找到了特征点，并且有了特征点的描述方法(描述子),现在我们要做的就是将对应的特征点匹配起来,简单的思路就是计算两个描述子向量之间的距离,并与最小的匹配.</p>
+<p>但是当两张图有很相似的区域时，这种方法会造成有歧义的匹配，如下图所示</p>
+<p><img alt="" src="../image/5.23.png" /></p>
+<p>我们有两种解决方法:</p>
+<h4 id="ratio-test">Ratio test<a class="headerlink" href="#ratio-test" title="Permanent link">&para;</a></h4>
+<p>我们定义 ratio score:
+$$
+\frac{\Vert f_1-f_2\Vert}{\Vert f_1-f_2^{'}\Vert}
+$$</p>
+<p>其中<span class="arithmatex">\(f_2\)</span>是<span class="arithmatex">\(f_1\)</span>的bset match, <span class="arithmatex">\(f_2^{'}\)</span>是second best match</p>
+<p>容易得知,当匹配正确时,ratio score会比较小, 反之,ambigous matches have large ratioi scores.</p>
+<h4 id="mutual-nearest-neighbour">Mutual nearest neighbour<a class="headerlink" href="#mutual-nearest-neighbour" title="Permanent link">&para;</a></h4>
+<p><strong>find mutual nearest neighbours</strong>
+如果匹配正确的话,我们对<span class="arithmatex">\(f_2\)</span>寻找最佳匹配，那么应该也是<span class="arithmatex">\(f_1\)</span>.</p>
+<ul>
+<li><span class="arithmatex">\(f_1\)</span> is the nearest neighbour of <span class="arithmatex">\(f_2\)</span> in <span class="arithmatex">\(I_1\)</span></li>
+<li><span class="arithmatex">\(f_2\)</span> is the nearest neighbour of <span class="arithmatex">\(f_1\)</span> in <span class="arithmatex">\(I_2\)</span></li>
+</ul>
+<h4 id="deep-learning-for-feature-matching">Deep learning for feature matching<a class="headerlink" href="#deep-learning-for-feature-matching" title="Permanent link">&para;</a></h4>
+<p>表现得比传统方法好很多</p>
+<p><img alt="" src="../image/5.24.png" /></p>
+<h2 id="motion-estimation">Motion Estimation<a class="headerlink" href="#motion-estimation" title="Permanent link">&para;</a></h2>
+<p><strong>The cause of motion</strong>
+- Static camera, moving scene
+- Moving cameera, static scene
+- Moving camera, moving scene
+- Static camera, moving scene, moving light</p>
+<p><strong>Motion estimation problems</strong>
+- Feature tracking
+    - Extract featur points and track them over multiple frames.(即给出两帧画面，估计特征点的运动方向)
+    - Output: displacement of sparse points
+- Optical flow
+    - Recover image motion at each pixel
+    - Output: dense displacement field</p>
+<p>二者的主要区别在于feature tracking输出是离散的,仅限于某些特征点;而optical flow输出是连续的,估计的是整张图片</p>
+<p>但二者使用的方法都是一样的： <strong>Lucas-Kanade method</strong></p>
+<p><img alt="" src="../image/5.25.png" /></p>
+<p>LK算法的三个主要假设:</p>
+<ul>
+<li>small motion: points do not move very far</li>
+<li>brightness constancy: same point looks the same in every frame</li>
+<li>spatial coherence: points move like their neighbours</li>
+</ul>
+<p>基于上述三个假设，我们可以得到以下的方程：</p>
+<ul>
+<li>Brightness Constancy Equation:</li>
+</ul>
+<div class="arithmatex">\[
+I(x,y,t)=I(x+u,y+v,t+1)
+\]</div>
+<ul>
+<li>Taylor expansion assuming small motion:</li>
+</ul>
+<div class="arithmatex">\[
+I(x+u,y+v,t+1) \approx I(x,y,t)+I_xu+I_yv+I_t\\
+I(x+u,y+v,t+1)-I(x,y,t)=I_xu+I_yv+I_t\\
+I_x\cdot u+I_y\cdot v+I_t \approx 0
+\]</div>
+<p>所以得到
+$$
+\nabla I\cdot \begin{bmatrix}u&amp;v\end{bmatrix}^T+I_t=0
+$$</p>
+<p>我们有两个未知数，但是只有一个方程，这时候需要用到另一个假设： spatial coherence constraint:
+- 在当前像素邻域的像素运动方向相同
+- 所以如果我们使用<span class="arithmatex">\(5\times 5\)</span>的窗口，那么可以得到25个方程!</p>
+<div class="arithmatex">\[
+\begin{bmatrix}I_x(p_1)&amp;I_y(p_1)\\\vdots&amp;\vdots\\ I_x(p_{25})&amp;I_y(p_{25})\end{bmatrix}=-\begin{bmatrix}I_t(p_1)\\ \vdots\\ I_t(p_{25})\end{bmatrix}
+\]</div>
+<p>这时候我们就可以使用最小二乘法求解 <span class="arithmatex">\(\mathop{min}_d \Vert Ad-b\Vert^2\)</span>,得到<span class="arithmatex">\((A^TA)d=A^Tb\)</span>,即
+$$
+\begin{bmatrix}\sum I_xI_x&amp;\sum I_xI_y\
+\sum I_xI_y&amp;\sum I_yI_y \end{bmatrix}\begin{bmatrix}u\
+v\end{bmatrix}=-\begin{bmatrix}\sum I_xI_t\
+\sum I_yI_t\end{bmatrix}
+$$</p>
+<p>当<span class="arithmatex">\(A^TA\)</span>可逆且两个特征值不能太小的时候,该方程有解,这个条件和之前介绍的Harris corner detector 的条件是一样的!</p>
+<div class="admonition example">
+<p class="admonition-title">不能预测运动的情况</p>
+<ul>
+<li>
+<p>Low Texture Region: gradients have small magnitude</p>
+</li>
+<li>
+<p>Edge: Large <span class="arithmatex">\(\lambda_1\)</span>, small <span class="arithmatex">\(\lambda_2\)</span>,只能估计一个方向的运动。(analogy:aperture problem)</p>
+</li>
+</ul>
+</div>
+<p>但是如果实际情况不符合上述三个假设时,LK算法就会出现问题</p>
+<p>对于不满足small motion的情况(比如说特征点实际上移动了八个像素)，我们有方法可以解决</p>
+<p>一个直观的想法就是将图片缩小到原来的八分之一,在缩小后的图片中处理之后再放大回去.但是该方法的缺点就是在缩小图片的过程中会丢失信息，这样图像移动距离的精度就无法保证。</p>
+<p>一个想法就是使用像素金字塔。其中金字塔一是时间为<span class="arithmatex">\(t\)</span>时的图像,金字塔二是时间为<span class="arithmatex">\(t+1\)</span>时的图像。在金字塔上逐层估计,并逐步细化。例如先估计运动距离小于一个像素的最上层图像，根据此估计在金字塔一中的第二层恢复出运动，再与金字塔二进行比较，此时特征点移动的距离经过较为准确的估计后也小于一个像素，以此类推。</p>
+<p><img alt="" src="../image/5.26.png" /></p>
+<p><strong>Applications</strong></p>
+<ul>
+<li>
+<p>Video stablization</p>
+</li>
+<li>
+<p>Video denoising</p>
+</li>
+</ul>
 
 
 
@@ -2284,13 +2490,13 @@ $$
         
         
           
-          <a href="../../ml4360/" class="md-footer__link md-footer__link--next" aria-label="下一页: ML4360" rel="next">
+          <a href="../lec6/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lec6 Image Stitching" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                ML4360
+                Lec6 Image Stitching
               </div>
             </div>
             <div class="md-footer__button md-icon">
