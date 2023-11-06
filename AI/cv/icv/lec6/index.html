@@ -16,7 +16,7 @@
         <link rel="prev" href="../lec5/">
       
       
-        <link rel="next" href="../../ml4360/">
+        <link rel="next" href="../lec7/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -981,8 +981,6 @@
       
         
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -1021,6 +1019,8 @@
       
         
           
+        
+      
         
       
         
@@ -1193,6 +1193,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs231n/lec8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec8 Deep Learning Frameworks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1213,6 +1233,8 @@
       
         
           
+        
+      
         
       
         
@@ -1462,6 +1484,46 @@
     Image Stitching
   </a>
   
+    <nav class="md-nav" aria-label="Image Stitching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ransac-for-translation" class="md-nav__link">
+    RANSAC for Translation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#panoramas" class="md-nav__link">
+    Panoramas
+  </a>
+  
+    <nav class="md-nav" aria-label="Panoramas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cylindrical-projection" class="md-nav__link">
+    Cylindrical Projection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assembling-the-panorama" class="md-nav__link">
+    Assembling the panorama
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1473,237 +1535,21 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../ml4360/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    ML4360
-  </span>
-  
-
-            </a>
-            
-              <label class="md-nav__link " for="__nav_3_1_3">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            ML4360
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
               
                 
   
   
   
     <li class="md-nav__item">
-      <a href="../../ml4360/image_formation/" class="md-nav__link">
+      <a href="../lec7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Image Formation
+    Lec7 Structure from Motion
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ml4360/Structure_from_Motion/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Structure from Motion
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ml4360/Stereo_Reconstruction/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Stereo Reconstruction
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ml4360/shape_from_x/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Shape-from-X
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ml4360/Coordinate-Based_Networks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Coordinate-Based Network
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_7" >
-        
-          <label class="md-nav__link" for="__nav_3_1_3_7" id="__nav_3_1_3_7_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Lab
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_1_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            Lab
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ml4360/lab/lab1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    lab1 image formation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -2039,6 +1885,46 @@
     Image Stitching
   </a>
   
+    <nav class="md-nav" aria-label="Image Stitching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ransac-for-translation" class="md-nav__link">
+    RANSAC for Translation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#panoramas" class="md-nav__link">
+    Panoramas
+  </a>
+  
+    <nav class="md-nav" aria-label="Panoramas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cylindrical-projection" class="md-nav__link">
+    Cylindrical Projection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assembling-the-panorama" class="md-nav__link">
+    Assembling the panorama
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2061,7 +1947,7 @@
 
 <h1 id="image-stitching">Image Stitching<a class="headerlink" href="#image-stitching" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 529 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 2 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 817 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
 </div>
 <h2 id="image-warping">Image Warping<a class="headerlink" href="#image-warping" title="Permanent link">&para;</a></h2>
 <p>与lec3介绍的image filtering相比较，filtering改变的是图像的像素值(intensity),而warping改变的是图像的形状(shape)</p>
@@ -2108,6 +1994,40 @@ $$
 min\Vert Ah-0\Vert ^2
 $$
 可以得到<span class="arithmatex">\(h\)</span>就是<span class="arithmatex">\(A^TA\)</span>对应最小特征值的特征向量，<a href="https://medium.com/@insight-in-plain-sight/estimating-the-homography-matrix-with-the-direct-linear-transform-dlt-ec6bbb82ee2b">推导过程</a></p>
+<h3 id="ransac-for-translation">RANSAC for Translation<a class="headerlink" href="#ransac-for-translation" title="Permanent link">&para;</a></h3>
+<p><strong>Recap the Idea</strong>:</p>
+<ul>
+<li>All the inliers will agree with each other on the translation vector;</li>
+<li>The outliers will disagree with each other( RANSAC only ha guarantees if there are &lt;50% outliers)</li>
+</ul>
+<blockquote>
+<p>All good matches are alike; every bad match is bad in its own way.</p>
+<p>——Tolstoy via Alyosha Efros</p>
+</blockquote>
+<p><img alt="" src="../image/6.10.png" /></p>
+<p>每次随机选一组对应点，计算票数，最后要将票数最高的<span class="arithmatex">\(H\)</span>对应的所有点拿出来做一次最小二乘。</p>
+<p><strong>Summary for image stitching</strong></p>
+<ul>
+<li>Input images</li>
+<li>Feature matching</li>
+<li>Compute transformation matrix with RANSAC</li>
+<li>Fix image 1 and warp image 2.</li>
+</ul>
+<p><img alt="" src="../image/6.11.png" /></p>
+<h3 id="panoramas">Panoramas<a class="headerlink" href="#panoramas" title="Permanent link">&para;</a></h3>
+<p>对于全景，我们处理的是多张图片的拼接。</p>
+<p>最朴素的方法就是取最中间的图片作为参考，其它所有的图片与中间那张对齐</p>
+<p>但这种方法会使得边缘图像的形变很明显。</p>
+<p><img alt="" src="../image/6.12.png" /></p>
+<h4 id="cylindrical-projection">Cylindrical Projection<a class="headerlink" href="#cylindrical-projection" title="Permanent link">&para;</a></h4>
+<p>所以我们使用柱形投影 (cylindrical projection)的方法</p>
+<p><img alt="" src="../image/6.13.png" /></p>
+<p><img alt="" src="../image/6.14.png" /></p>
+<p>柱形投影使得变化变简单了: 相机的旋转在圆柱上是平移</p>
+<h4 id="assembling-the-panorama">Assembling the panorama<a class="headerlink" href="#assembling-the-panorama" title="Permanent link">&para;</a></h4>
+<p>在柱形投影的基础上还是会出现问题，就是误差的积累，导致漂移。</p>
+<p><img alt="" src="../image/6.15.png" /></p>
+<p>我们希望整体误差的和为0，一个解决办法就是将最后一张图和第一张图之间也进行个约束。</p>
 
 
 
@@ -2152,13 +2072,13 @@ $$
         
         
           
-          <a href="../../ml4360/" class="md-footer__link md-footer__link--next" aria-label="下一页: ML4360" rel="next">
+          <a href="../lec7/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lec7 Structure from Motion" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                ML4360
+                Lec7 Structure from Motion
               </div>
             </div>
             <div class="md-footer__button md-icon">

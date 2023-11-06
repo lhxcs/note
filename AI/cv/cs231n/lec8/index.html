@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://lhxcs.github.io/AI/cv/ml4360/lab/lab1/">
+        <link rel="canonical" href="https://lhxcs.github.io/AI/cv/cs231n/lec8/">
       
       
-        <link rel="prev" href="../../Coordinate-Based_Networks/">
+        <link rel="prev" href="../lec7/">
       
       
-        <link rel="next" href="../../../../../math/">
+        <link rel="next" href="../../icv/">
       
       
-      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
     
     
       
-        <title>lab1 image formation - Iridescent的cs笔记本</title>
+        <title>Lec8 Deep Learning Frameworks - Iridescent的cs笔记本</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0e669242.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../css/timeline.css">
+      <link rel="stylesheet" href="../../../../css/timeline.css">
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
     
@@ -52,11 +52,11 @@
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-      <link rel="stylesheet" href="../../../../../css/custom.css">
+      <link rel="stylesheet" href="../../../../css/custom.css">
     
-      <link rel="stylesheet" href="../../../../../css/counter.css">
+      <link rel="stylesheet" href="../../../../css/counter.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab1-image-formation" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../../.." title="Iridescent的cs笔记本" class="md-header__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
+    <a href="../../../.." title="Iridescent的cs笔记本" class="md-header__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              lab1 image formation
+              Lec8 Deep Learning Frameworks
             
           </span>
         </div>
@@ -211,7 +211,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../.." class="md-tabs__link">
+        <a href="../../../.." class="md-tabs__link">
           
   
     
@@ -231,7 +231,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../cs/" class="md-tabs__link">
+        <a href="../../../../cs/" class="md-tabs__link">
           
   
     
@@ -269,7 +269,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../cs231n/" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -295,7 +295,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../math/" class="md-tabs__link">
+        <a href="../../../../math/" class="md-tabs__link">
           
   
     
@@ -330,7 +330,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="Iridescent的cs笔记本" class="md-nav__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
+    <a href="../../../.." title="Iridescent的cs笔记本" class="md-nav__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -380,7 +380,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../.." class="md-nav__link ">
+            <a href="../../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -411,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../changelog/" class="md-nav__link">
+      <a href="../../../../changelog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -467,7 +467,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../cs/" class="md-nav__link ">
+            <a href="../../../../cs/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -521,7 +521,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../cs/language/" class="md-nav__link ">
+            <a href="../../../../cs/language/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -552,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../cs/language/python/" class="md-nav__link">
+      <a href="../../../../cs/language/python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -572,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../cs/language/c/c/" class="md-nav__link">
+      <a href="../../../../cs/language/c/c/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -600,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../cs/dm/" class="md-nav__link">
+      <a href="../../../../cs/dm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -643,7 +643,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../cs/ds/" class="md-nav__link ">
+            <a href="../../../../cs/ds/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -674,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../cs/ds/lec1/" class="md-nav__link">
+      <a href="../../../../cs/ds/lec1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -694,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../cs/ds/tree/" class="md-nav__link">
+      <a href="../../../../cs/ds/tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -747,7 +747,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../cs/CLDF/" class="md-nav__link ">
+            <a href="../../../../cs/CLDF/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -778,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../cs/CLDF/lec1/" class="md-nav__link">
+      <a href="../../../../cs/CLDF/lec1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -798,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../cs/CLDF/lec2/" class="md-nav__link">
+      <a href="../../../../cs/CLDF/lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -818,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../cs/CLDF/lec3/" class="md-nav__link">
+      <a href="../../../../cs/CLDF/lec3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -867,7 +867,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../cs/opt/" class="md-nav__link ">
+            <a href="../../../../cs/opt/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -898,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../cs/opt/lec1/" class="md-nav__link">
+      <a href="../../../../cs/opt/lec1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -981,8 +981,6 @@
       
         
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -1015,6 +1013,8 @@
                 
   
   
+    
+  
   
     
     
@@ -1035,20 +1035,22 @@
       
         
       
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../cs231n/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1064,7 +1066,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1_1">
             <span class="md-nav__icon md-icon"></span>
             Stanford:CS231n
@@ -1079,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cs231n/lec2/" class="md-nav__link">
+      <a href="../lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1099,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cs231n/lec3/" class="md-nav__link">
+      <a href="../lec3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1119,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cs231n/lec4/" class="md-nav__link">
+      <a href="../lec4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1139,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cs231n/lec5/" class="md-nav__link">
+      <a href="../lec5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1159,7 +1161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cs231n/lec6/" class="md-nav__link">
+      <a href="../lec6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1179,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cs231n/lec7/" class="md-nav__link">
+      <a href="../lec7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1188,6 +1190,100 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lec8 Deep Learning Frameworks
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lec8 Deep Learning Frameworks
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    深度学习硬件
+  </a>
+  
+    <nav class="md-nav" aria-label="深度学习硬件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpugputpu" class="md-nav__link">
+    CPU/GPU/TPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    GPU的优势和应用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    深度学习软件
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1225,6 +1321,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1238,7 +1336,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../icv/" class="md-nav__link ">
+            <a href="../../icv/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1269,7 +1367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../icv/lec1/" class="md-nav__link">
+      <a href="../../icv/lec1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1289,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../icv/lec2/" class="md-nav__link">
+      <a href="../../icv/lec2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1309,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../icv/lec3/" class="md-nav__link">
+      <a href="../../icv/lec3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1329,7 +1427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../icv/lec4/" class="md-nav__link">
+      <a href="../../icv/lec4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1349,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../icv/lec5/" class="md-nav__link">
+      <a href="../../icv/lec5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1369,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../icv/lec6/" class="md-nav__link">
+      <a href="../../icv/lec6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1383,363 +1481,21 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    ML4360
-  </span>
-  
-
-            </a>
-            
-              <label class="md-nav__link " for="__nav_3_1_3">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_1_3">
-            <span class="md-nav__icon md-icon"></span>
-            ML4360
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
               
                 
   
   
   
     <li class="md-nav__item">
-      <a href="../../image_formation/" class="md-nav__link">
+      <a href="../../icv/lec7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Image Formation
+    Lec7 Structure from Motion
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Structure_from_Motion/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Structure from Motion
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Stereo_Reconstruction/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Stereo Reconstruction
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../shape_from_x/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Shape-from-X
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Coordinate-Based_Networks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Coordinate-Based Network
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_7" checked>
-        
-          <label class="md-nav__link" for="__nav_3_1_3_7" id="__nav_3_1_3_7_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Lab
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_1_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            Lab
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    lab1 image formation
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    lab1 image formation
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#perspective-projection" class="md-nav__link">
-    Perspective Projection
-  </a>
-  
-    <nav class="md-nav" aria-label="Perspective Projection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a" class="md-nav__link">
-    a
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b" class="md-nav__link">
-    b
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    c
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#d" class="md-nav__link">
-    d
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#orthographic-projection" class="md-nav__link">
-    Orthographic Projection
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#panorama-stitching-using-dlt" class="md-nav__link">
-    Panorama Stitching using DLT
-  </a>
-  
-    <nav class="md-nav" aria-label="Panorama Stitching using DLT">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a_1" class="md-nav__link">
-    a
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b_1" class="md-nav__link">
-    b
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c_1" class="md-nav__link">
-    c
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1801,7 +1557,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../math/" class="md-nav__link ">
+            <a href="../../../../math/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1832,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../math/mdl/" class="md-nav__link">
+      <a href="../../../../math/mdl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1852,7 +1608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../math/analysis/" class="md-nav__link">
+      <a href="../../../../math/analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1872,7 +1628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../math/algebra/" class="md-nav__link">
+      <a href="../../../../math/algebra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1934,7 +1690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../math/probability/note14/" class="md-nav__link">
+      <a href="../../../../math/probability/note14/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1954,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../math/probability/note15/" class="md-nav__link">
+      <a href="../../../../math/probability/note15/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1974,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../math/probability/note16/" class="md-nav__link">
+      <a href="../../../../math/probability/note16/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2030,37 +1786,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#perspective-projection" class="md-nav__link">
-    Perspective Projection
+  <a href="#_2" class="md-nav__link">
+    深度学习硬件
   </a>
   
-    <nav class="md-nav" aria-label="Perspective Projection">
+    <nav class="md-nav" aria-label="深度学习硬件">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a" class="md-nav__link">
-    a
+  <a href="#cpugputpu" class="md-nav__link">
+    CPU/GPU/TPU
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#b" class="md-nav__link">
-    b
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    c
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#d" class="md-nav__link">
-    d
+  <a href="#gpu" class="md-nav__link">
+    GPU的优势和应用
   </a>
   
 </li>
@@ -2071,43 +1813,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#orthographic-projection" class="md-nav__link">
-    Orthographic Projection
+  <a href="#_3" class="md-nav__link">
+    深度学习软件
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#panorama-stitching-using-dlt" class="md-nav__link">
-    Panorama Stitching using DLT
-  </a>
-  
-    <nav class="md-nav" aria-label="Panorama Stitching using DLT">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a_1" class="md-nav__link">
-    a
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b_1" class="md-nav__link">
-    b
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c_1" class="md-nav__link">
-    c
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2129,32 +1837,77 @@
   
 
 
-<h1 id="lab1-image-formation">Lab1 Image Formation<a class="headerlink" href="#lab1-image-formation" title="Permanent link">&para;</a></h1>
+<h1 id="_1">常见深度学习框架<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 347 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 742 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 30 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
 </div>
-<div class="admonition abstract">
-<p class="admonition-title">Abstract</p>
-<p>In this exercise, you will gain hands-on experience regarding the image formation process and geometric transformations.</p>
-</div>
-<h2 id="perspective-projection">Perspective Projection<a class="headerlink" href="#perspective-projection" title="Permanent link">&para;</a></h2>
-<h3 id="a">a<a class="headerlink" href="#a" title="Permanent link">&para;</a></h3>
-<p>Implement the function <code>get camera intrinsics</code> which takes as input the focal lengths <code>fx, fy</code> and the principal point <span class="arithmatex">\((c_x, c_y)^T\)</span>  and returns a 3 <em>×</em> 3 camera intrinsics matrix <strong>K</strong>.</p>
-<h3 id="b">b<a class="headerlink" href="#b" title="Permanent link">&para;</a></h3>
-<p>Implement the function <code>get perspective projection</code> which takes as input a 3D point in camera space <span class="arithmatex">\(x_c\)</span> and the camera matrix <strong>K</strong> and it returns a two-dimensional point in screen space, hence the pixel coordinates <span class="arithmatex">\(x_s\)</span> for the 3D point <span class="arithmatex">\(x_c\)</span>.</p>
-<h3 id="c">c<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
-<p>Implement the function <code>get face color</code> which maps a normal vector <strong>n</strong> and a point light direction vector <strong>r</strong> to an RGB color value. We assume the light to be a point light source, i.e., the light source is infinitely small. You should follow the rendering equation discussed in the lecture where you can assume that the surface does not emit light, the BRDF term is always 1, and the incoming light <span class="arithmatex">\(L\)</span> in is 1 for the point light source direction.</p>
-<h3 id="d">d<a class="headerlink" href="#d" title="Permanent link">&para;</a></h3>
-<p>Create a visualization showing the Dolly Zoom Effect. For this, linearly change the focal lengths between [10<em>,</em> 150] while you also translate the cube along the z-axis between [0<em>.</em>9<em>,</em> 5]</p>
-<h2 id="orthographic-projection">Orthographic Projection<a class="headerlink" href="#orthographic-projection" title="Permanent link">&para;</a></h2>
-<p>Implement the function <code>get orthographic projection</code> which maps a 3D point in camera space <span class="arithmatex">\(x_c\)</span> to 2D pixel coordinates <span class="arithmatex">\(x_s\)</span> using a orthographic projection.</p>
-<h2 id="panorama-stitching-using-dlt">Panorama Stitching using DLT<a class="headerlink" href="#panorama-stitching-using-dlt" title="Permanent link">&para;</a></h2>
-<h3 id="a_1">a<a class="headerlink" href="#a_1" title="Permanent link">&para;</a></h3>
-<p>Implement the function <code>get_Ai</code> which takes as input the two homogeneous points <span class="arithmatex">\(\tilde{x}_i\)</span> and <span class="arithmatex">\(\tilde{x}_i^{'}\)</span> and returns the 2 <em>×</em> 9 matrix <span class="arithmatex">\(A_i\)</span> discussed in the lecture. (Note: It’s 2 <em>×</em> 9 and not 3 <em>×</em> 9 as you can drop the last row (see lecture).)</p>
-<h3 id="b_1">b<a class="headerlink" href="#b_1" title="Permanent link">&para;</a></h3>
-<p>Implement the function <code>get A</code> which uses the <code>get Ai</code>for all <em>N</em> correspondence pairs and concatenates them to return the 2<em>N</em> <em>×</em> 9 matrix <strong>A</strong>.</p>
-<h3 id="c_1">c<a class="headerlink" href="#c_1" title="Permanent link">&para;</a></h3>
-<p>Implement the function <code>get homography</code> which maps the <em>N</em> point correspondences to the homography <strong>H</strong> using the Direct Linear Transform (DLT) algorithm.</p>
+<h2 id="_2">深度学习硬件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="cpugputpu">CPU/GPU/TPU<a class="headerlink" href="#cpugputpu" title="Permanent link">&para;</a></h3>
+<ul>
+<li>CPU(Central Processing Unit)一般由多个核心，每个核心都很快，可以独立工作，可同时进行多个进程，内存与系统共享，完成序列任务时很有用。</li>
+<li>GPU(Graphics Processing Unit)有上千个内核数，但每个核心运行速度很慢，不能独立工作，适合大量并行完成类似的工作。GPU一般自带内存，也有自己的缓存系统。</li>
+<li>TPU(Tensor Processing Unit)是专门的深度学习硬件，运行速度非常快。</li>
+</ul>
+<h3 id="gpu">GPU的优势和应用<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
+<p>GPU在大矩阵的乘法运算中有明显优势。在矩阵乘法中，结果的每一个矩阵都是第一个矩阵每一行和第二个矩阵每一列的点积，所以并行的同时进行运算速度很快。卷积神经网络中卷积核和感受野的点积也是并行运算。</p>
+<p>CPU 虽然也有多个核心，但是在大矩阵运算时只能串行运算，速度很慢。</p>
+<p><strong>Programming GPUs</strong></p>
+<ul>
+<li>CUDA: 英伟达(NVIDIA）并行运算框架，可以写出类似C语言的代码直接在GPU上运行。NVIDIA已经有很多高度优化的API，比如cuBLAS包含很多矩阵预算，cuDNN包含CNN前向传播，反向传播，批量归一化等操作。</li>
+<li>OpenCL：可以在CPU,AMD上通用，但是速度很慢</li>
+<li>HIP：可以将CUDA代码自动转换成可以在AMD上运行的语言</li>
+</ul>
+<p>目前来说CUDA是最好的选择</p>
+<p>实际应用 GPU 还有一个问题是训练的模型一般存放在 GPU，而用于训练的数据存放在硬盘里，由于 GPU 运行快，而机械硬盘读取慢，就会拖累整个模型的训练速度。</p>
+<p>解决方法：</p>
+<ul>
+<li>如果训练数据数量较小，可以把所有数据存放到GPU的RAM中</li>
+<li>用固态硬盘代替机械硬盘</li>
+<li>使用多个CPU线程预读取数据，放到缓存供GPU使用</li>
+</ul>
+<h2 id="_3">深度学习软件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>首先回顾计算图的概念，一个线性分类器可以用计算图表示，网络越复杂，计算图也越复杂，而使用深度学习框架的原因如下：</p>
+<ul>
+<li>构建大的计算图很容易，可以快速开发和测试新想法</li>
+<li>这些框架可以自动计算梯度，我们只需写出前向传播的代码</li>
+<li>可以在GPU上高效运行</li>
+</ul>
+<p><strong>Example</strong>
+<img alt="" src="../image/8.1.png" /></p>
+<p>对于以上的计算图，之前的想法可能是使用Numpy写出前向传播，然后计算梯度:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 保证每次的随机数一致</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">N</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">z</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">grad_c</span> <span class="o">=</span> <span class="mf">1.0</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">grad_b</span> <span class="o">=</span> <span class="n">grad_c</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">))</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">grad_a</span> <span class="o">=</span> <span class="n">grad_b</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">grad_z</span> <span class="o">=</span> <span class="n">grad_b</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">grad_x</span> <span class="o">=</span> <span class="n">grad_a</span> <span class="o">*</span> <span class="n">y</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">grad_y</span> <span class="o">=</span> <span class="n">grad_a</span> <span class="o">*</span> <span class="n">x</span>
+</code></pre></div>
+<p>这种做法 API 干净，易于编写代码，但问题是没办法在 GPU 上运行，并且需要自己计算梯度。所以现在大部分深度学习框架的主要目标是自己写好前向传播代码，类似 Numpy，但能在 GPU 上运行且可以自动计算梯度。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;cuda:0&#39;</span>  <span class="c1"># 在GPU上运行，即构建GPU版本的矩阵</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># 前向传播与Numpy类似</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">N</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># requires_grad要求自动计算梯度，默认为True</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">z</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">c</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>  <span class="c1"># 反向传播可以自动计算梯度</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -2182,7 +1935,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../Coordinate-Based_Networks/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Coordinate-Based Network" rel="prev">
+          <a href="../lec7/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Lec7 Training Neural Networks(II)" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2192,20 +1945,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                Coordinate-Based Network
+                Lec7 Training Neural Networks(II)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../../../math/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数学基础" rel="next">
+          <a href="../../icv/" class="md-footer__link md-footer__link--next" aria-label="下一页: 计算机视觉导论" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                数学基础
+                计算机视觉导论
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2242,14 +1995,14 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer"], "search": "../../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.78eede0e.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
-        <script src="../../../../../js/katex.js"></script>
+        <script src="../../../../js/katex.js"></script>
       
     
   </body>
