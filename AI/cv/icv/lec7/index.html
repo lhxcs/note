@@ -16,7 +16,7 @@
         <link rel="prev" href="../lec6/">
       
       
-        <link rel="next" href="../../../../math/">
+        <link rel="next" href="../lec8/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -301,6 +301,26 @@
     
   
   数学基础
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../English/reading/reading/" class="md-tabs__link">
+          
+  
+    
+  
+  English
 
         </a>
       </li>
@@ -1315,6 +1335,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -1570,6 +1592,19 @@
     Camera Calibration
   </a>
   
+    <nav class="md-nav" aria-label="Camera Calibration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-localization-problem" class="md-nav__link">
+    Visual Localization Problem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1607,6 +1642,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    Triangulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-frame-structure-from-motion" class="md-nav__link">
+    Multi-frame Structure from Motion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colmap" class="md-nav__link">
+    COLMAP
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1616,6 +1672,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec8 Depth Estimation and 3D Reconstruction
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1879,6 +1955,71 @@
   
 
     
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            English
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../English/reading/reading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1951,6 +2092,19 @@
     Camera Calibration
   </a>
   
+    <nav class="md-nav" aria-label="Camera Calibration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-localization-problem" class="md-nav__link">
+    Visual Localization Problem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1988,6 +2142,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    Triangulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-frame-structure-from-motion" class="md-nav__link">
+    Multi-frame Structure from Motion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colmap" class="md-nav__link">
+    COLMAP
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2013,7 +2188,7 @@
 
 <h1 id="lec7-structure-from-motion">Lec7: Structure from Motion<a class="headerlink" href="#lec7-structure-from-motion" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1280 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 4 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2207 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 7 分钟</p>
 </div>
 <p>Structure from Motion, 中文名为运动恢复结构。这是一种三维重建的算法，通过两个或多个场景(图片)来恢复相机位姿并重建三维坐标点。</p>
 <p><strong>Recover camera poses and 3D structure of a scene</strong></p>
@@ -2039,7 +2214,7 @@
 </ul>
 <p>"外" "内" 的概念也很好理解，对应于发生于相机外部和内部的变换。</p>
 <h3 id="coordinate-transformation">Coordinate Transformation<a class="headerlink" href="#coordinate-transformation" title="Permanent link">&para;</a></h3>
-<p>定义外参<span class="arithmatex">\((R,c_w)\)</span> 分别代表从世界坐标向相机坐标的旋转矩阵和在世界坐标系下相机的中心坐标。如下图所示</p>
+<p>定义外参<span class="arithmatex">\((R,c_w)\)</span> 分别代表从世界坐标向相机坐标的旋转矩阵和在世界坐标系下相机中心的坐标。如下图所示</p>
 <p><img alt="" src="../image/7.1.png" /></p>
 <p>因此变换后的坐标:
 $$
@@ -2080,6 +2255,31 @@ $$
 <p><img alt="" src="../image/7.11.png" /></p>
 <p>而对于外参矩阵中的平移项，可以通过QR分解得到的内参矩阵得到</p>
 <p><img alt="" src="../image/7.12.png" /></p>
+<h3 id="visual-localization-problem">Visual Localization Problem<a class="headerlink" href="#visual-localization-problem" title="Permanent link">&para;</a></h3>
+<p>视觉定位，通过照片计算出拍摄者的位置(即相机的外参)。这里我们假定场景的地图和相机的内参都已知。</p>
+<p><strong>基本步骤</strong></p>
+<ul>
+<li>找出3D点与2D点的对应关系，本质上是图像的特征匹配</li>
+<li>求解相机的位姿，称作PnP问题(Perspective-n-Point，多点透视成像，是相机标定的子问题)</li>
+</ul>
+<p>对于PnP问题，我们由6个未知的参数，3个旋转，3个平移，因此该问题也称作6自由度位姿估计问题。由于一个点对对应两个方程，因此我们至少需要3个点对来求解PnP问题，除此之外，还需要一个额外的点来保证答案的唯一性(否则会有四个解)。</p>
+<p><strong>P3P</strong></p>
+<p>P3P就是使用最少的点对来求解相机位姿，使用几何上的方法。</p>
+<div class="admonition example">
+<p class="admonition-title">求解P3P</p>
+<p><img alt="" src="../image/7.17.png" /></p>
+<p><img alt="" src="../image/7.18.png" /></p>
+<p><img alt="" src="../image/7.19.png" /></p>
+<p><img alt="" src="../image/7.20.png" /></p>
+</div>
+<p><strong>PnP</strong>
+当<span class="arithmatex">\(n&gt;3\)</span>时，我们就可以将PnP转化为一个优化问题。</p>
+<p>即最小化<strong>重投影误差</strong>(reprojection error)
+给定相机的外参，把三维点投影到图像上，如果外参是对的，则投影点和特征点是一样的。</p>
+<p>$$
+\mathop{min}\limits_{R,t}\sum_i\Vert p_i-K(RP_i+t)\Vert^2
+$$
+我们使用P3P问题的解来初始化，并用高斯牛顿法进行优化</p>
 <h2 id="structrue-from-motion">Structrue from motion<a class="headerlink" href="#structrue-from-motion" title="Permanent link">&para;</a></h2>
 <p>再回顾一下SfM的任务： 从多视角场景(图片)恢复相机位姿，并重建三位点坐标。解决SfM问题，一般通过如下的假设与步骤：</p>
 <ul>
@@ -2090,12 +2290,14 @@ $$
 </ul>
 <h3 id="epipolar-geometry">Epipolar Geometry<a class="headerlink" href="#epipolar-geometry" title="Permanent link">&para;</a></h3>
 <p>我们首先想要得到不同视角两张图片特征点之间(2D projections of a 3D point in 2 views)对应的几何关系。</p>
-<p>Epipolar geometry tells us how to solve <span class="arithmatex">\(t\)</span> and <span class="arithmatex">\(R\)</span> given a few pairs of 2D correspondences</p>
+<p>Epipolar geometry tells us how to solve <span class="arithmatex">\(t\)</span> and <span class="arithmatex">\(R\)</span> given a few pairs of 2D correspondences.</p>
 <p><img alt="" src="../image/7.13.png" /></p>
 <h4 id="terminology">一些terminology<a class="headerlink" href="#terminology" title="Permanent link">&para;</a></h4>
 <ul>
-<li>极点：两个相机中心连线与像平面的交点，可以理解为在一个相机视角下另一个相机在该相机平面的投影点，如图中的<span class="arithmatex">\(e_l,e_r\)</span>。</li>
-<li>极平面: 由实际点<span class="arithmatex">\(P\)</span>, 两个相机中心形成的平面</li>
+<li>基线：两个相机中心的连线，<span class="arithmatex">\(OO^{'}\)</span></li>
+<li>对极点：两个相机中心连线与像平面的交点，可以理解为在一个相机视角下另一个相机在该相机平面的投影点，如图中的<span class="arithmatex">\(e_l,e_r\)</span>。</li>
+<li>对极平面: 由实际点<span class="arithmatex">\(P\)</span>, 两个相机中心形成的平面。对于某个场景中的点，其对极面是唯一的。</li>
+<li>对极线：对极面与成像平面的交线。</li>
 </ul>
 <h3 id="epipolar-constraint">Epipolar Constraint<a class="headerlink" href="#epipolar-constraint" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../image/7.14.png" /></p>
@@ -2103,8 +2305,53 @@ $$
 <p>我们把这个式子写成矩阵形式，并引入叉乘矩阵：</p>
 <p><img alt="" src="../image/7.15.png" /></p>
 <p><img alt="" src="../image/7.16.png" /></p>
-<p>由于<span class="arithmatex">\(T_{\times}\)</span>是一个反对称矩阵，<span class="arithmatex">\(R\)</span>是正交矩阵，所以我们可以通过奇异值分解<span class="arithmatex">\(<span class="arithmatex">\(E=T_{\times}R\)</span>\)</span> 计算出<span class="arithmatex">\(t,R\)</span>： .</p>
-<p>但是<span class="arithmatex">\((x_l,y_l,z_l)\)</span> 是相对相机坐标系的坐标。</p>
+<p>由于<span class="arithmatex">\(T_{\times}\)</span>是一个反对称矩阵，<span class="arithmatex">\(R\)</span>是正交矩阵，所以我们可以通过奇异值分解<span class="arithmatex">\(E=T_{\times}R\)</span> 计算出<span class="arithmatex">\(t,R\)</span>.</p>
+<p>但是<span class="arithmatex">\((x_l,y_l,z_l)\)</span> 是场景点相对相机坐标系的三维坐标，这是我们不知道的，我们只知道像素平面上的二维坐标。因此我们要把<span class="arithmatex">\(x_l,x_r\)</span>通过内参矩阵转化为像素坐标。</p>
+<p><img alt="" src="../image/7.21.png" /></p>
+<p><img alt="" src="../image/7.22.png" /></p>
+<p><img alt="" src="../image/7.23.png" /></p>
+<p>我们称中间的那个矩阵为基础矩阵<span class="arithmatex">\(F\)</span>(Fundamental Matrix)</p>
+<p><img alt="" src="../image/7.24.png" /></p>
+<p>因此，由于<span class="arithmatex">\(u_l,u_r\)</span>已知，我们可以求解基本矩阵，又由于相机内参已知，因此可以通过<span class="arithmatex">\(F\)</span>求解出<span class="arithmatex">\(E\)</span>,再使用SVD就可以得到<span class="arithmatex">\(R,t\)</span></p>
+<p>由于基础矩阵也是homogenous的，因此我们在求解时可以加上约束<span class="arithmatex">\(\Vert f\Vert^2=1\)</span></p>
+<p>现在我们就可以得到相机位姿估计的Pipeline</p>
+<div class="admonition example">
+<p class="admonition-title">Relative Camera Pose Esitimation</p>
+<p>对每个点对，写出对极约束，并改写矩阵得到线性方程组，使用最小二乘求解。得到基础矩阵后求解<span class="arithmatex">\(E=J_L^{T}FK_r\)</span>,最后进行SVD分解。</p>
+<p><img alt="" src="../image/7.25.png" /></p>
+<p><img alt="" src="../image/7.26.png" /></p>
+</div>
+<h3 id="triangulation">Triangulation<a class="headerlink" href="#triangulation" title="Permanent link">&para;</a></h3>
+<p>现在我们有了对应的二维特征点，相机参数以及两个相机坐标系的相对位置关系，下一步就是计算出场景点的实际三维坐标。</p>
+<details class="example">
+<summary>具体步骤</summary>
+<p><img alt="" src="../image/7.27.png" /></p>
+<p><img alt="" src="../image/7.28.png" /></p>
+<p><img alt="" src="../image/7.29.png" /></p>
+<p><img alt="" src="../image/7.30.png" /></p>
+</details>
+<p>但是需要注意到，假设数据都是准确的，那么<span class="arithmatex">\(O_lX_l,O_r,X_r\)</span>应该会相交于场景点<span class="arithmatex">\(X\)</span>。大但是多数情况下会有误差，也就是说两条线不一定严格相交，因此我们使用优化的方法，即四个方程三个未知数，通过最小二乘得到最优解。</p>
+<p>另一个选择是通过优化重投影误差进行求解。</p>
+<p>Minmize <strong>reprojection error</strong>:</p>
+<div class="arithmatex">\[
+cost(P)=\Vert u_l-\hat{u}_l\Vert^2+\Vert u_r-\hat{u}_r\Vert^2
+\]</div>
+<p><img alt="" src="../image/7.31.png" /></p>
+<h3 id="multi-frame-structure-from-motion">Multi-frame Structure from Motion<a class="headerlink" href="#multi-frame-structure-from-motion" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../image/7.32.png" /></p>
+<p><strong>Sequential SFM</strong>
+步骤：</p>
+<ul>
+<li>从其中两张开始，使用前述方法重建</li>
+<li>不断取出新的图像，根据已知条件计算相机位姿，可以得到新的三位点，并优化现有的点</li>
+<li>使用Bundle Adjustment 进行优化(消除累积误差)</li>
+</ul>
+<p><strong>Bundle Adjustment</strong></p>
+<p>在所有相机坐标系下优化所有点的重投影误差</p>
+<p><img alt="" src="../image/7.33.png" /></p>
+<h3 id="colmap">COLMAP<a class="headerlink" href="#colmap" title="Permanent link">&para;</a></h3>
+<p>一个三维重建工具
+COLMAP is a general-purpose Structure-from-Motion (SfM) and Multi-View Stereo (MVS) pipeline with a graphical and command line interface. It offers a wide range of features for reconstruction of ordered and unordered image collections.</p>
 
 
 
@@ -2149,13 +2396,13 @@ $$
         
         
           
-          <a href="../../../../math/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数学基础" rel="next">
+          <a href="../lec8/" class="md-footer__link md-footer__link--next" aria-label="下一页: Lec8 Depth Estimation and 3D Reconstruction" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                数学基础
+                Lec8 Depth Estimation and 3D Reconstruction
               </div>
             </div>
             <div class="md-footer__button md-icon">
