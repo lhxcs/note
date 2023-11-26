@@ -223,3 +223,130 @@ Extraodinarily robust matching technique
 - Find dominate orientation
 - For each (x,y,orientation), create descriptor
 
+### Matching
+
+现在我们找到了特征点，并且有了特征点的描述方法(描述子),现在我们要做的就是将对应的特征点匹配起来,简单的思路就是计算两个描述子向量之间的距离,并与最小的匹配.
+
+但是当两张图有很相似的区域时，这种方法会造成有歧义的匹配，如下图所示
+
+![](image/5.23.png)
+
+我们有两种解决方法:
+
+#### Ratio test
+
+我们定义 ratio score:
+$$
+\frac{\Vert f_1-f_2\Vert}{\Vert f_1-f_2^{'}\Vert}
+$$
+
+其中$f_2$是$f_1$的bset match, $f_2^{'}$是second best match
+
+容易得知,当匹配正确时,ratio score会比较小, 反之,ambigous matches have large ratioi scores.
+
+#### Mutual nearest neighbour
+
+**find mutual nearest neighbours**
+如果匹配正确的话,我们对$f_2$寻找最佳匹配，那么应该也是$f_1$.
+
+- $f_1$ is the nearest neighbour of $f_2$ in $I_1$
+- $f_2$ is the nearest neighbour of $f_1$ in $I_2$
+
+#### Deep learning for feature matching
+
+表现得比传统方法好很多
+
+![](image/5.24.png)
+
+
+## Motion Estimation
+
+**The cause of motion**
+- Static camera, moving scene
+- Moving cameera, static scene
+- Moving camera, moving scene
+- Static camera, moving scene, moving light
+
+**Motion estimation problems**
+- Feature tracking
+    - Extract featur points and track them over multiple frames.(即给出两帧画面，估计特征点的运动方向)
+    - Output: displacement of sparse points
+- Optical flow
+    - Recover image motion at each pixel
+    - Output: dense displacement field
+
+二者的主要区别在于feature tracking输出是离散的,仅限于某些特征点;而optical flow输出是连续的,估计的是整张图片
+
+但二者使用的方法都是一样的： **Lucas-Kanade method**
+
+![](image/5.25.png)
+
+LK算法的三个主要假设:
+
+- small motion: points do not move very far
+- brightness constancy: same point looks the same in every frame
+- spatial coherence: points move like their neighbours
+
+基于上述三个假设，我们可以得到以下的方程：
+
+- Brightness Constancy Equation:
+
+$$
+I(x,y,t)=I(x+u,y+v,t+1)
+$$
+
+- Taylor expansion assuming small motion:
+
+$$
+I(x+u,y+v,t+1) \approx I(x,y,t)+I_xu+I_yv+I_t\\
+I(x+u,y+v,t+1)-I(x,y,t)=I_xu+I_yv+I_t\\
+I_x\cdot u+I_y\cdot v+I_t \approx 0
+$$
+
+所以得到
+$$
+\nabla I\cdot \begin{bmatrix}u&v\end{bmatrix}^T+I_t=0
+$$
+
+我们有两个未知数，但是只有一个方程，这时候需要用到另一个假设： spatial coherence constraint:
+- 在当前像素邻域的像素运动方向相同
+- 所以如果我们使用$5\times 5$的窗口，那么可以得到25个方程!
+
+$$
+\begin{bmatrix}I_x(p_1)&I_y(p_1)\\\vdots&\vdots\\ I_x(p_{25})&I_y(p_{25})\end{bmatrix}=-\begin{bmatrix}I_t(p_1)\\ \vdots\\ I_t(p_{25})\end{bmatrix}
+$$
+
+
+这时候我们就可以使用最小二乘法求解 $\mathop{min}_d \Vert Ad-b\Vert^2$,得到$(A^TA)d=A^Tb$,即
+$$
+\begin{bmatrix}\sum I_xI_x&\sum I_xI_y\\
+\sum I_xI_y&\sum I_yI_y \end{bmatrix}\begin{bmatrix}u\\
+v\end{bmatrix}=-\begin{bmatrix}\sum I_xI_t\\
+\sum I_yI_t\end{bmatrix}
+$$
+
+当$A^TA$可逆且两个特征值不能太小的时候,该方程有解,这个条件和之前介绍的Harris corner detector 的条件是一样的!
+
+!!! Example "不能预测运动的情况"
+
+    - Low Texture Region: gradients have small magnitude
+
+    - Edge: Large $\lambda_1$, small $\lambda_2$,只能估计一个方向的运动。(analogy:aperture problem)
+
+
+但是如果实际情况不符合上述三个假设时,LK算法就会出现问题
+
+对于不满足small motion的情况(比如说特征点实际上移动了八个像素)，我们有方法可以解决
+
+一个直观的想法就是将图片缩小到原来的八分之一,在缩小后的图片中处理之后再放大回去.但是该方法的缺点就是在缩小图片的过程中会丢失信息，这样图像移动距离的精度就无法保证。
+
+一个想法就是使用像素金字塔。其中金字塔一是时间为$t$时的图像,金字塔二是时间为$t+1$时的图像。在金字塔上逐层估计,并逐步细化。例如先估计运动距离小于一个像素的最上层图像，根据此估计在金字塔一中的第二层恢复出运动，再与金字塔二进行比较，此时特征点移动的距离经过较为准确的估计后也小于一个像素，以此类推。
+
+![](image/5.26.png)
+
+
+**Applications**
+
+- Video stablization
+
+- Video denoising

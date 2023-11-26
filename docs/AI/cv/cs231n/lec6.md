@@ -1,4 +1,39 @@
-# Lec6: Training Neural Networks
+# Lec6: Training Neural Networks(I)
+
+## Activation Functions
+
+![](C:\Users\petrichor0\Desktop\lhxcs\docs\AI\cv\cs231n\image\4.4.png)
+
+### Sigmoid
+
+它输入实数值并将其“挤压”到0到1范围内，由于它对于神经元的激活频率有良好的解释，**从不完全激活到假定最大频率处的完全饱和激活**。在历史上非常常用。但是它有两个缺点：
+
+- 函数饱和使梯度消失。当激活值接近0或1时，函数的梯度几乎为零，而反向传播时（下文会提到）局部梯度会与整个损失函数对于该门单元的梯度相乘，则导致结果接近0，那么就几乎没有信号通过神经元传到数据，导致网络不学习。
+- 函数输出不是以零为中心。如果输入神经元的数据总是正数，那么$w$的梯度在反向传播的过程中要么全是正数，要么全是负数，导致权重更新出现Z字型下降。
+
+![](C:\Users\petrichor0\Desktop\lhxcs\docs\AI\cv\cs231n\image\6.4.png)
+
+### tanh
+
+将实数值压缩到$[-1,1]$之间，与sigmoid一样，tanh也存在饱和问题，但是它的输出是零中心的。
+
+### ReLU(Rectified Linear Unit)
+
+$f(x)=max(0,x)$
+
+- 优点：对于随机梯度下降的收敛有巨大的加速作用，比sigmoid和tanh快6倍之多
+- 缺点： 对于小于零的数据，梯度为零，导致不可逆转的死亡，导致数据多样化的丢失。而Leaky ReLU是为解决该问题的尝试，但效果不是很稳定。通过合理设置学习率，这种情况发生的概率会降低。
+
+### Maxout
+
+Maxout是对ReLU和Leaky ReLU的一般化归纳，这里拥有ReLU的所有优点而且不具备缺点，但是整体参数数量激增。
+
+**实际应用tips**:
+
+- 使用ReLU函数。注意设置好学习率，并且可以监控网络中死亡的神经元比例.
+- 如果不学习问题困扰，可以试试Leaky ReLU或者Maxout，不要用Sigmoid.
+
+
 
 ## Data Preprocessing
 
@@ -52,7 +87,11 @@
 
     该方法的证明将在我学完概率论之后补上
 
-#### Batch Normalization
+
+
+## Batch Normalization
+
+我们希望每一层网络的输入输出都近似符合标准高斯分布。
 
 一个很直观的想法：$\hat{x}^{(k)}=\frac{x^{k}-E[x^{(k)}]}{\sqrt{Var[x^{(k)}]}}$
 

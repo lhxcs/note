@@ -101,13 +101,16 @@ nav:
     - 离散数学理论基础: cs/dm.md
     - 数据结构基础:
       - cs/ds/index.md
-      - Algorithm Analysis: cs/ds/lec1.md
-      - Tree: cs/ds/tree.md
+      - Algorithm Analysis: cs/ds/ch1.md
+      - 树: cs/ds/ch4.md
+      - 理论题: cs/ds/pta.md
+      - code: cs/ds/tree.md
     - 计算机逻辑设计基础:
       - cs/CLDF/index.md
       - Chapter1 Digital Systems and Information: cs/CLDF/lec1.md
       - Chapter2 Combinational Logic Circuits: cs/CLDF/lec2.md
       - Chapter3 Combinational Logic Design: cs/CLDF/lec3.md
+      - Chapter4 Sequential Circuits: cs/CLDF/lec4.md
     - 优化基本理论与方法:
       - cs/opt/index.md
       - Lec1 Introduction: cs/opt/lec1.md
@@ -119,7 +122,9 @@ nav:
         - Lec3 Regularization and Optimization: AI/cv/cs231n/lec3.md
         - Lec4 Neural Networks and Backpropagation: AI/cv/cs231n/lec4.md
         - Lec5 Image Classification with CNNs: AI/cv/cs231n/lec5.md
-        - Lec6 Training Neural Networks: AI/cv/cs231n/lec6.md
+        - Lec6 Training Neural Networks(I): AI/cv/cs231n/lec6.md
+        - Lec7 Training Neural Networks(II): AI/cv/cs231n/lec7.md
+        - Lec8 Deep Learning Frameworks: AI/cv/cs231n/lec8.md
       - ZJU:计算机视觉导论:
         - AI/cv/icv/index.md
         - Lec1 Introduction: AI/cv/icv/lec1.md
@@ -127,15 +132,9 @@ nav:
         - Lec3 Image Processing: AI/cv/icv/lec3.md
         - Lec4 Model Fitting and Optimization: AI/cv/icv/lec4.md
         - Lec5 Image Matching and Motion Estimation: AI/cv/icv/lec5.md
-      - ML4360:
-        - AI/cv/ml4360/index.md
-        - Image Formation: AI/cv/ml4360/image_formation.md
-        - Structure from Motion: AI/cv/ml4360/Structure_from_Motion.md
-        - Stereo Reconstruction: AI/cv/ml4360/Stereo_Reconstruction.md
-        - Shape-from-X: AI/cv/ml4360/shape_from_x.md
-        - Coordinate-Based Network: AI/cv/ml4360/Coordinate-Based_Networks.md
-        - Lab:
-          - lab1 image formation: AI/cv/ml4360/lab/lab1.md
+        - Lec6 Image Stitching: AI/cv/icv/lec6.md
+        - Lec7 Structure from Motion: AI/cv/icv/lec7.md
+        - Lec8 Depth Estimation and 3D Reconstruction: AI/cv/icv/lec8.md
   - 数学基础:
     - math/index.md
     - Math for deep learning: math/mdl.md
@@ -145,4 +144,5 @@ nav:
       - Conditional Probability, Independence, and Combinations of Events: math/probability/note14.md
       - Random Variables--Distribution and Expectation: math/probability/note15.md
       - Variance and covariance: math/probability/note16.md
-
+  - English:
+    - Reading: English/reading/reading.md 

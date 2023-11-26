@@ -1,20 +1,90 @@
-# 树
+# 一些算法及代码实现
 
 !!! abstract
 
-    该页面是我复习二叉树基础操作与典型题目时自己直接在markdown里手敲的代码(所以极有可能bug一堆/(ㄒoㄒ)/~~)，我给不太熟悉的操作加上了思路和注释。
-    
-    reference: 
-    
-    https://github.com/shishujuan/data-structure-algorithms ,我逛Github发现的一个仓库。
-    
-    力扣：https://leetcode.cn/problemset/all/ 力扣的题质量是真高，但是不得不说C语言的接口用起来好烦人
-    
-    (╯▔皿▔)╯
+    记录我学习到的算法
 
 
 
-## 二叉树基础
+## 图论
+
+### 图的存储——链式前向星
+
+链式前向星就是静态建立的邻接表，存储的是以$(1,n)$为起点的边的集合。定义如下：
+
+```c
+struct edge{
+    int next;//表示与这个边起点相同的上一条边的编号
+    int to;//该条边指向的点
+    int w;//权值
+}edge[MAX];//边集
+int head[MAX];//表示以i为起点的最后一条边的编号
+int cnt=0;//cnt 作为结构体下标
+```
+
+加边函数如下：
+
+```c
+void addedge(int u,int v,int w){
+    edge[++cnt].next=head[u];//以u为起点上一条边的编号，即与该边起点相同的上一条边的编号
+    edge[cnt].to=v;//该边的终点
+    edge[cnt].w=w;
+    head[u]=cnt;//更新以u为起点上一条边的编号
+}
+```
+
+遍历函数：
+
+```c
+for(int i=1;i<=n;i++){
+    printf("%d\n",i);
+    for(int j=head[i];j;j=edge[j].next){
+        printf("%d %d %d\n",i,edge[j].to,edge[j].w);
+    }
+}
+//第一层循环找到图中的所有点，第二次循环遍历以i为起点的所有边。head[i]是以i为起点最后一条边的编号，通过edge[j].next找上一条边的编号，直至第一条边,head初始化为0，故终止条件为j=0
+```
+
+
+
+### 求最小环
+
+#### 使用并查集
+
+```c
+int Find(int x){//查找操作，并记录当前结点到祖先的距离
+    if(x!=a[x]){
+        int last=a[x];
+        a[x]=Find(a[x]);
+        dist[x]+=dist[last];
+    }
+    return a[x];
+}
+for(int i=1;i<=n;i++){
+        a[i]=i;//初始化祖先结点为自身
+    }
+for(int i=1;i<=n;i++){
+        scanf("%d",&t);
+        int root1=Find(i);
+        int root2=Find(t);//寻找祖先结点
+        if(root1!=root2){//两祖先结点不相等，说明无环，则将它们连通，更新距离。
+            a[root1]=root2;
+            dist[i]=dist[t]+1;
+        }else{//祖先结点相同，且vertex相连，找到环，记录环的长度
+            min=min<(dist[i]+dist[t]+1)?min:dist[i]+dist[t]+1;
+        }
+}
+```
+
+
+
+
+
+
+
+## 树
+
+### 二叉树基础
 
 ```C
 //Definition for a binary tree node.
@@ -25,7 +95,7 @@
  };
 ```
 
-### 创建节点
+#### 创建节点
 
 ```C
 TreeNode *newnode(int value){
@@ -37,9 +107,7 @@ TreeNode *newnode(int value){
 }
 ```
 
-
-
-### 插入结点
+#### 插入结点
 
 ```c
 TreeNode *insert_recursive(TreeNode *root,int value){
@@ -73,9 +141,7 @@ TreeNode *insert_iterative(TreeNode *root,int value){
 }
 ```
 
-
-
-### 删除结点
+#### 删除结点
 
 ```c
 TreeNode *delete(TreeNode *root,int value){
@@ -127,8 +193,6 @@ TreeNode *search(TreeNode *root,TreeNode *parent,int value){
     return cur;
 }//保存了待搜索的值的父节点，便于delete
 ```
-
-
 
 ### 树的遍历
 
@@ -278,11 +342,9 @@ int** levelOrder(struct TreeNode* root, int* returnSize, int** returnColumnSizes
 }
 ```
 
+### 构建类问题
 
-
-## 构建类问题
-
-### 根据先序，中序遍历构建二叉树
+#### 根据先序，中序遍历构建二叉树
 
 ```c
 btnode *buildtree(int preorder[],int inorder[],int n){
@@ -309,7 +371,7 @@ btnode *buildtree(int preorder[],int inorder[],int n){
 }
 ```
 
-### 根据中序，后序遍历构建二叉树
+#### 根据中序，后序遍历构建二叉树
 
 ```c
 Tree buildtree(int post[],int in[],int n){
@@ -337,24 +399,6 @@ Tree buildtree(int post[],int in[],int n){
         root->right=buildtree(&post[i],&in[i+1],n-i-1);
     }
     return root;
-}
-```
-
-## 查找类问题
-
-### 二叉搜索树最低公共祖先
-
-```c
-TreeNode* LCA(TreeNode *root,TreeNode *p,TreeNode *q){
-    if(!root||!p||!q) return NULL;
-    int max=p->value>=q->value?p->value:q->value;
-    int min=p->value<q->value?p->value:q->value;
-    
-    if(max<root->value){
-        return LCA(root->left,p,q);
-    }else if(min>root->value){
-        return LCA(root->right,p,q);
-    }else return root;
 }
 ```
 
