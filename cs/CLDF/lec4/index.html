@@ -1058,6 +1058,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sequential-circuit-design" class="md-nav__link">
+    Sequential Circuit Design
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequential Circuit Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specification" class="md-nav__link">
+    Specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formulation" class="md-nav__link">
+    Formulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2136,6 +2163,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sequential-circuit-design" class="md-nav__link">
+    Sequential Circuit Design
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequential Circuit Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specification" class="md-nav__link">
+    Specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formulation" class="md-nav__link">
+    Formulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2156,7 +2210,7 @@
 
 <h1 id="sequential-circuits">Sequential Circuits<a class="headerlink" href="#sequential-circuits" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2063 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 7 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2425 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 8 分钟</p>
 </div>
 <h2 id="storage-elements-and-sequential-circuit-analysis">Storage Elements and Sequential Circuit Analysis<a class="headerlink" href="#storage-elements-and-sequential-circuit-analysis" title="Permanent link">&para;</a></h2>
 <h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
@@ -2309,7 +2363,32 @@ extra time in the clock period in addition to the sum of the delays and setup ti
 松弛时间必定非负。</p>
 <p>因此我们可以得到两个上升沿的最小时间：</p>
 <p><img alt="" src="../image/4.28.png" /></p>
-<p>可以看到，由于主从触发器的<span class="arithmatex">\(t_s\)</span>占了半个时钟信号，大约50%占空比，因此留给触发器和组合电路的传输时间就很少，在触发器和组合电路相同的情况下具有更长的周期，工作频率更小。这也是我们更常用边沿触发器的原因。</p>
+<p>可以看到，由于主从触发器的<span class="arithmatex">\(t_s\)</span>占了半个时钟信号，大约50%占空比，因此留给触发器和组合电路的传输时间就很少，在触发器和组合电路相同的情况下具有更长的周期，工作频率更小。这也是我们更常用边沿触发器的原因。
+<img alt="" src="../image/4.29.png" /></p>
+<h2 id="sequential-circuit-design">Sequential Circuit Design<a class="headerlink" href="#sequential-circuit-design" title="Permanent link">&para;</a></h2>
+<p>现在我们需要知道怎么样来设计时序的电路。</p>
+<p>在分析时序电路的行为时，我们依次得到状态方程，状态表，状态图。而设计时我们则反过来，先用状态图表达应用需求，再得到状态表等。大致遵循如下流程：</p>
+<p><img alt="" src="../image/4.30.png" /></p>
+<h3 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">&para;</a></h3>
+<p>说明电路要做什么。包括文字描述，数学公式，硬件描述等</p>
+<h3 id="formulation">Formulation<a class="headerlink" href="#formulation" title="Permanent link">&para;</a></h3>
+<p><strong>状态的抽象</strong>： 把电路的行为抽象为几个状态，以及状态之间的转移。</p>
+<div class="admonition example">
+<p class="admonition-title">Sequence Recognizer Procedure</p>
+<p>序列识别器：识别出给定的二进制序列。</p>
+<p>初态：什么都没识别到。每识别到一个位更新一个状态，全部识别完毕后得到最终状态。</p>
+<p>假设我们现在的电路需要识别1101二进制序列。如果识别到1101，则电路输出1。特别的，对于1101101，头和尾都是有效序列(<strong>1101</strong>101,110<strong>1101</strong>),两种情况都要考虑到。</p>
+<p>对于Mealy型电路，我们得到的状态图和状态表如下：</p>
+<p><img alt="" src="../image/4.31.png" /></p>
+<ul>
+<li>A表明没有任何有效序列</li>
+<li>B表示收到1</li>
+<li>C：两个1</li>
+<li>D：110，当D再收到一个1时，输出1，同时由于最后一位1可以当作下一个1101序列的第一个1，因此回到B状态。</li>
+</ul>
+<p>对于Moore型电路，我们需要再增加一个状态E代表成功识别，即输出1.</p>
+<p><img alt="" src="../image/4.32.png" /></p>
+</div>
 
 
 
