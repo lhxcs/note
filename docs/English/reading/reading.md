@@ -37,3 +37,14 @@ The veteran actor can determine quickly how to **ride the crest of audience laug
 - sonota 奏鸣曲，suite 组曲, concerto 协奏曲
 - tempo and texture 节奏和质感
 - genre 类型
+
+
+
+## 天文学
+
+- ultraviolet 紫外线
+- ion 离子
+- luminosity of the coma 彗发的亮度
+- solar wind sweeps through 太阳风扫过
+- strew 撒满 some of this debris may get strewn across Earth's orbit.
+- deplete 枯竭，空乏

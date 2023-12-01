@@ -47,6 +47,88 @@ for(int i=1;i<=n;i++){
 
 
 
+### 网络流问题
+
+#### Edmonds-Karp 增广路算法
+
+- 不断用BFS寻找增广路并更新最大流量值，直到网络上不存在增广路为止。
+- **反向边**： 一条边可以被包含于多条增广路径，所以需要让这条边有多次被选择的机会。在实现上使用邻接表成对存储，这样在更新边权时，利用奇数异或1相当于减1，偶数异或1相当于加1的性质，可以直接使用*异或1*的方式找到对应的正向边或反向边。
+
+```c
+#include<stdio.h>
+#include<string.h>
+#define MAX 520005;
+struct node{
+    int to,net;
+    long long val;
+}e[MAX];
+int n,m,s,t,u,v;
+long long w,ans,dis[MAX];
+int tot=1;
+int head[MAX],vis[MAX],pre[MAX];
+void add(int u,int v,long long w){
+    e[++tot].to=v;
+    e[tot].val=w;
+    e[tot].net=head[u];
+    head[u]=tot;
+    e[++tot].to=u;
+    e[tot].val=0;
+    e[tot].net=head[v];
+    head[v]=tot;
+}/*链式前向星存储*/
+
+/*找增广路径*/
+int bfs(){
+    memset(vis,0,sizeof(vis));
+    int q[MAX];
+    int front=0;
+    int rear=0;
+    q[rear++]=s;
+    vis[s]=1;
+    dis[s]=0x3f3f3f3f;
+    while(front!=rear){
+        int x=q[front++];
+        for(int i=head[x];i;i=e[i].net){
+            if(e[i].val==0) continue;
+            int v=e[i].to;
+            if(vis[v]==1) continue;
+            dis[v]=dis[x]<e[i].val?dis[x]:e[i].val;
+            pre[v]=i;
+            q[rear++]=v;
+            vis[v]=1;
+            if(v==t) return 1;
+        }
+    }
+    return 0;
+
+}
+
+void update(){
+    int x=t;
+    while(x!=s){
+        int v=pre[x];
+        e[v].val-=dis[t];
+        e[v^1].val+=dis[t];
+        x=e[v^1].to;
+    }
+    ans+=dis[t];
+}
+
+int main(){
+    scanf("%d%d%d%d",&n,&m,&s,&t);/*点的个数，有向边的个数，源点，汇点*/
+    for(int i=1;i<=m;i++){
+        scanf("%d%d%lld",&u,&v,&w);
+        add(u,v,w);
+    }
+    while(bfs()){
+        update();
+    }
+    printf("%lld",ans);
+}
+```
+
+
+
 ### 求最小环
 
 #### 使用并查集

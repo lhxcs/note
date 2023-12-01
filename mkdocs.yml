@@ -145,4 +145,6 @@ nav:
       - Random Variables--Distribution and Expectation: math/probability/note15.md
       - Variance and covariance: math/probability/note16.md
   - English:
-    - Reading: English/reading/reading.md 
+    - Reading:
+      - TOFEL Reading: English/reading/reading.md 
+      - Foreign Magazines: English/reading/note.md
