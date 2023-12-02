@@ -52,3 +52,16 @@ We know there is a ton of pressure on guys, but disordered behaviors that fall s
 - catchy 悦耳的，琅琅上口的 a catchy song
 - sensationalism 哗众取宠，耸人听闻 The newspaper has been accused of sensationalism in its coverage of the murders.
 - stigma 污名，耻辱，羞辱 There was a social stigma attached to single parenthood.
+
+
+
+## 2023.12.1
+
+- memory lane 感怀往事
+
+Toy entrepreneurs are in heated chases for the licensing right to decades-old toys, looking to **cash in** on the enduring appeal of nostalgia.
+
+-  cash in: 获利
+
+
+
