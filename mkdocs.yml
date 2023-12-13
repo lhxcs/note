@@ -80,13 +80,13 @@ plugins:
   - search
   - statistics
   - changelog
-  # - git-revision-date-localized:
-  #     type: datetime
-  #     timezone: Asia/Shanghai
-  #     locale: zh
-  #     enable_creation_date: true
-  #     exclude:
-  #       - index.md
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      exclude:
+        - index.md
 
 nav:
   - Home: 
@@ -103,6 +103,7 @@ nav:
       - cs/ds/index.md
       - Algorithm Analysis: cs/ds/ch1.md
       - 树: cs/ds/ch4.md
+      - 堆: cs/ds/ch5.md
       - 理论题: cs/ds/pta.md
       - code: cs/ds/tree.md
     - 计算机逻辑设计基础:
@@ -111,6 +112,7 @@ nav:
       - Chapter2 Combinational Logic Circuits: cs/CLDF/lec2.md
       - Chapter3 Combinational Logic Design: cs/CLDF/lec3.md
       - Chapter4 Sequential Circuits: cs/CLDF/lec4.md
+      - Chapter6 Registers and Register Transfers: cs/CLDF/lec6.md
     - 优化基本理论与方法:
       - cs/opt/index.md
       - Lec1 Introduction: cs/opt/lec1.md
@@ -135,6 +137,9 @@ nav:
         - Lec6 Image Stitching: AI/cv/icv/lec6.md
         - Lec7 Structure from Motion: AI/cv/icv/lec7.md
         - Lec8 Depth Estimation and 3D Reconstruction: AI/cv/icv/lec8.md
+        - Lec10 Image Segmentation: AI/cv/icv/lec10.md
+        - Project Related: AI/cv/icv/neus.md
+        - COLMAP: AI/cv/icv/COLMAP.md
   - 数学基础:
     - math/index.md
     - Math for deep learning: math/mdl.md
@@ -148,3 +153,5 @@ nav:
     - Reading:
       - TOFEL Reading: English/reading/reading.md 
       - Foreign Magazines: English/reading/note.md
+    - Writing:
+      - TOFEL Writing: English/writing/Writing.md

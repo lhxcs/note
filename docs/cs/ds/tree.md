@@ -47,6 +47,52 @@ for(int i=1;i<=n;i++){
 
 
 
+### 拓扑排序
+
+拓扑排序是用于处理有向无环图DAG的问题。
+
+- 初始化队列，将入度为0的节点放入队列(DAG一定有入度为0的节点)
+- 取出队首，遍历其出边，将能够到达的点入度减一，同时维护答案数组(动态规划的思想)
+- 若此时一个点入度为1，则入队
+- 重复2直至队列为空。
+
+在实际应用中，我们完成各项工作有一定依赖条件，在进行工作X之前需要完成其它的工作。因此完成工作X所需的时间和所有X所依赖的工作完成时间的最大值有关：$f_i=max\left\{pre_i\right\}+a_i$
+
+
+
+```c
+void topology_sort()
+{
+    int queue[MAX];
+    int front=0;
+    int rear=0;
+    for(int i=1;i<=n;i++){
+        if(in[i]==0){
+            queue[rear++]=i;
+            dp[i]=time[i];//每项工作的时间
+        }
+    }
+    while(front!=rear){
+        int d = queue[front++];
+        for(int i=head[d];i;i=edge[i].next){//链式前向星存储
+            int v=edge[i].to;
+            in[v]--;
+            if(in[v]==0){
+                queue[rear++]=v;
+            }
+            if(dp[v]<dp[d]+time[v]){
+                dp[v]=dp[d]+time[v];//动态规划
+            }
+        }
+    }
+    for(int i=1;i<=n;i++){
+        ans=ans>dp[i]?ans:dp[i];
+    }
+}
+```
+
+
+
 ### 网络流问题
 
 #### Edmonds-Karp 增广路算法
