@@ -47,40 +47,40 @@ Whenever possible, we try to decompose a complex design into common, *reusable* 
 
     1. Specification:
     - Transforms BCD code  for the decimal digits to Excess-3 code for the decimal digits.
-  
+      
     - BCD code words for digits 0 through 9: 4-bit patterns 0000 to 1001, respectively
-
+    
     - Don't Cares BCD 1010 to 1111
-  
+      
     - Excess-3 code words for digits 0 through 9: 4-bit patterns consisting of 3 (binary 0011) added to each BCD code word
-  
+      
     - Implementation: 
-  
+      
         - multiple-level circuit
-
+    
         - NAND gates(including inverters)
-
+    
     2. Formulation
-
+    
     - Conversion of 4-bit codes can be most easily formulated by a truth table
-
+    
     ![](image/3.4.png)
-
+    
     3.Optimization
-
+    
     W,X,Y,Z四个输出需要四个逻辑函数进行化简，所以有四个卡诺图，对应的输入为ABCD
     ![](image/3.5.png)
     ![](image/3.6.png)
     
     为什么要算上$\overline{T_1}$的成本呢？我们说$G$不计算非门成本是因为ABCD是外部输入的，它们的非有可能是前级电路提供的，但是$T_1$是我们内部产生的非门，必须要计算在$G$中
-
+    
     4.Technology Mapping
     - Mapping with a library containing inverters and 2-input NAND, 2-input NOR, and 2-2 AOI gates
-
+    
     ![](image/3.7.png)
     
     即全部用与非，或非门来实现
-
+    
     5.Verification
 
 
@@ -160,9 +160,9 @@ Corresponding to each of the functions is a combinational circuit implementation
 !!! Example
 
     ![](image/3.11.png)
-
+    
     每一位输出引脚对应一个最小项输出
-
+    
     假设我们使用最直接的方法，$n-2^n$译码器，每个输出都连一个$n$输入与门,总共成本为$n2^n$。成本太高了，因此我们要考虑如何降低成本
 
 #### Decoder Expansion
@@ -171,11 +171,11 @@ Corresponding to each of the functions is a combinational circuit implementation
 ??? Example "3-to-8 line decoder"
     
     ![](image/3.12.png)
-
+    
     分为一个2-4译码器与一个1-2译码器，最后用8个2输入与门，两两一与即得到结果。
-
+    
     成本: $2^n$个两输入与门,而中间的成本相比与门要小得多.
-
+    
     但是性能有所降低.
 
 #### Decoder with Enable
@@ -202,9 +202,9 @@ Implement $m$ functions of $n$ variables with:
     ![](image/3.15.png)
 
     注意七段数码管字母的排列顺序
-
+    
     标准的七段数码管如下图所示，其中h控制小数点，另外两个Com.决定该数码管是共阴控制还是共阳控制，共阳控制时输入为0才能亮
-
+    
     ![](image/3.16.png)
 
 
@@ -216,13 +216,13 @@ Implement $m$ functions of $n$ variables with:
 ??? Example "decimal-to-BCD encoder"
 
     - Inputs:  10 bits corresponding to decimal digits 0 through 9, $(D_0,\cdots,D_9)$
-
+    
     - Outputs: 4 bits with BCD codes
-
+    
     - Function: If input bit $D_i$ is a 1, the the ouput $(A_3,A_2,A_1,A_0)$ is the BCD code for $i$
-
+    
     ![](image/3.17.png)
-
+    
     但是当输入信号有多个1时，可能会产生无效编码
 
 #### Priority Encoder
@@ -246,7 +246,7 @@ Logic circuits that perform selcting are called **multiplexers**
 !!! Example "2-to-1-Line Multiplexer"
 
     ![](image/3.19.png)
-
+    
     整体结构即为一个1-2译码器加上一个与或结构
 
 In general, for an $2^n$-to-1-line multiplexer:
@@ -262,7 +262,7 @@ In practice, we select "vectors of bits" instead of "bits"
 !!! Example
 
     ![](image/3.21.png)
-
+    
     每一位要选择的信号都是vector,包含四个信号,译码器可以共用
 
 #### Other Selection Implementation
@@ -272,16 +272,16 @@ In practice, we select "vectors of bits" instead of "bits"
 !!! Example
 
     ![](image/3.22.png)
-
+    
     由于译码器只有一个输出是1，所以任何时候都只有一个三态门能被使能
-
+    
     成本降低(省掉了或门)
 
 
 !!! Example "分层选择"
 
     ![](image/3.23.png)
-
+    
     $S_0$进行第一层选择，$S_1$进行第二层
 
 
@@ -294,11 +294,11 @@ In practice, we select "vectors of bits" instead of "bits"
 !!! Example "Gray to Binary Code"
 
     - connecting A, B, and C to the multiplexer select inputs
-
+    
     - placing y and z on the two multiplexer outputs
-
+    
     - connecting their respective truth table values to the inputs
-
+    
     ![](image/3.24.png)
 
 
@@ -311,9 +311,9 @@ For each pair and output, define a rudimentary function of the final variable $(
 !!! Example 
 
     ![](image/3.25.png)
-
+    
     ![](image/3.26.png)
-
+    
     即我们使用小一半的选择器来实现.
 
 
@@ -329,13 +329,13 @@ For each pair and output, define a rudimentary function of the final variable $(
 !!! Example "Half adder"
 
     ![](image/3.27.png)
-
+    
     Logic Simplification:
-
+    
     $S=X\oplus Y,C=XY$
-
+    
     ![](image/3.28.png)
-
+    
     异或可以分解成四个与非，要敏感
 
 
@@ -344,14 +344,14 @@ For each pair and output, define a rudimentary function of the final variable $(
 
 ![](image/3.29.png)
 
-$S=X\oplus Y\oplus Z$
+$S=X\oplus Y\oplus Z$(这是我们在上一章介绍的奇函数)
 
 The Carry bit C is 1 if both X and Y are 1 (the sum is 2), or if the sum is 1 and a carry-in (Z) occurs.   Thus C can be re-written as:
 
 $C=XY+(X\oplus Y)Z$
 
-- The term $X\cdot Y$ is *carry generate*
-- The term $X\oplus Y$ is *carry propagate*
+- The term $X\cdot Y$ is *carry generate*(进位产生信号)
+- The term $X\oplus Y$ is *carry propagate*(进位传播信号)
 
 #### Implementation
 
@@ -367,7 +367,7 @@ $C=XY+(X\oplus Y)Z$
 
 #### Carry Lookahead
 
-电路慢的原因就在于进位传递的过程,因此思考能不能使当前的进位$C_n$不依赖于$C_{n-1}$,而是直接依赖于$A_i,B_i,C_0$. ($A_i,B_i$总是存在的)
+电路慢的原因就在于进位传递的过程, 因此思考能不能使当前的进位$C_n$不依赖于$C_{n-1}$,而是直接依赖于$A_i,B_i,C_0$. ($A_i,B_i$总是存在的)。
 
 In the ripple carry adder:
 - $G_i,P_i,S_i$ are local to each cell of the adder
@@ -404,7 +404,7 @@ $P_i=A\oplus B_i,\,G_i=A_iB_i,\,S_i=P_i\oplus C_i,\,C_{i+1}=G_i+P_iC_i$
 !!! Group Carry Lookahead
 
     ![](image/3.37.png)
-
+    
     最上面那个长条是部分全加器,第二行的四个CLA从右到左分别构成0-3,4-7,8-11,12-15的全加器,最下面一个CLA块产生$C_4,C_8,C_{12},C_{16}$，即每四位之间，每四位一组之间。
 
 !!! Question
@@ -435,7 +435,7 @@ $$
 !!! Example
 
     ![](image/3.39.png)
-
+    
     ![](image/3.40.png)
 
 
@@ -456,7 +456,7 @@ where s=0 for positive numbers,s=1 for negative numbers
 !!! Example
 
     ![](image/3.41.png)
-
+    
     可以看到三种表示方法中+0和-0的区别
 
 #### Signed-Magnitude Arithmetic

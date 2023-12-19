@@ -117,6 +117,8 @@ nav:
       - cs/opt/index.md
       - Lec1 Introduction: cs/opt/lec1.md
   - AI:
+    - 人工智能引论:
+      - Chapter2 知识表达与推理: AI/iai/ch2.md
     - Computer Vision:
       - Stanford:CS231n:
         - AI/cv/cs231n/index.md
@@ -140,7 +142,7 @@ nav:
         - Lec10 Image Segmentation: AI/cv/icv/lec10.md
         - Project Related: AI/cv/icv/neus.md
         - COLMAP: AI/cv/icv/COLMAP.md
-  - 数学基础:
+  - 数理基础:
     - math/index.md
     - Math for deep learning: math/mdl.md
     - 数学分析: math/analysis.md
@@ -149,9 +151,14 @@ nav:
       - Conditional Probability, Independence, and Combinations of Events: math/probability/note14.md
       - Random Variables--Distribution and Expectation: math/probability/note15.md
       - Variance and covariance: math/probability/note16.md
+    - 量子力学: math/quantum.md
   - English:
     - Reading:
       - TOFEL Reading: English/reading/reading.md 
       - Foreign Magazines: English/reading/note.md
     - Writing:
       - TOFEL Writing: English/writing/Writing.md
+
+  - 论文阅读:
+    - 3D Reconstruction:
+      - Neuralangelo: paper_reading/Neuralangelo.md
