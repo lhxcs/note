@@ -205,7 +205,7 @@ void kruskal(){
 }
 ```
 
-### Prim算法
+#### Prim算法
 
 **主要思想**：
 
@@ -259,6 +259,31 @@ for(int i=1;i<=n;i++){
         }
 }
 ```
+
+
+
+## 排序
+
+## 插入排序
+
+```c
+void insertion_sort(int a[],int len){
+    int i,j,key;
+    for(i=1;i<len;i++){
+        key=a[i];
+        j=i-1;
+        while(j>=0&&a[j]>key){
+            a[j+1]=a[j];
+            j--;
+        }
+        a[j+1]=key;
+    }
+}
+```
+
+
+
+
 
 
 

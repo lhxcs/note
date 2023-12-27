@@ -104,6 +104,8 @@ nav:
       - Algorithm Analysis: cs/ds/ch1.md
       - 树: cs/ds/ch4.md
       - 堆: cs/ds/ch5.md
+      - 图: cs/ds/graph.md
+      - 哈希: cs/ds/hashing.md
       - 理论题: cs/ds/pta.md
       - code: cs/ds/tree.md
     - 计算机逻辑设计基础:
@@ -112,6 +114,7 @@ nav:
       - Chapter2 Combinational Logic Circuits: cs/CLDF/lec2.md
       - Chapter3 Combinational Logic Design: cs/CLDF/lec3.md
       - Chapter4 Sequential Circuits: cs/CLDF/lec4.md
+      - Chapter5 Digital Hardware Implementation: cs/CLDF/lec5.md
       - Chapter6 Registers and Register Transfers: cs/CLDF/lec6.md
     - 优化基本理论与方法:
       - cs/opt/index.md
