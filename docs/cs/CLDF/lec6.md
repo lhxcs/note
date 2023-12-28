@@ -42,8 +42,11 @@ D触发器在每个时钟周期都会根据输入更新数据，因此不符合�
 寄存器接收新数据本质山就是寄存器传输，把某个寄存器的值经过计算后传输给另一个寄存器。
 
 几个基本的部分：
-- 多个寄存器(元寄存器，目的寄存器)
-- 传输方向+计算(operations：load,count,shift,add,or,etc.称作microoperations), 通常用组合逻辑电路实现
+
+- 多个寄存器(源寄存器，目的寄存器)
+
+- 传输方向+计算(operations：load,count,shift,add,or,etc.称作microoperations), 通常用组合逻辑电路实现。
+
 - 控制条件：什么时候要做啥运算，传给谁。
 
 #### Register Notation
@@ -57,6 +60,7 @@ D触发器在每个时钟周期都会根据输入更新数据，因此不符合�
 ![](image/6.4.png)
 
 需要注意的点：
+
 - 对于$R_2$寄存器，输入端是一直有信号的(数据是一直准备好的)，但是没有$Load$信号是不会接受的。Load信号控制的是是否接受，而不是是否传递。
 
 - 并不是Load一变为1，R2就开始接收新数据的。R2内部本质是个触发器，接受新数据也要等到时钟的上升沿。
@@ -258,3 +262,23 @@ D触发器在每个时钟周期都会根据输入更新数据，因此不符合�
 
 ![](image/6.33.png)
 
+
+!!! Example "习题"
+
+    - Using two binary counters of the type shown in Figure 6-14 and logic gates, construct a binary counter that counts from decimal 11 through decimal 233. Also, add an additional input and logic to the counter to initialize it synchronously to 11 when the signal INIT is 1.
+
+    首先需要清楚binary counter的结构。之后使用同步清零方法即可实现。示例电路如下：
+
+    ![](image/6.34.png)
+
+
+    - Two register transfer statements are given(otherwise, $R_1$ is unchanged):
+
+    $C_1:R_1\leftarrow R_1+R_2$
+    $\overline{C_1}{C_2}:R_1\leftarrow R_1+1$
+
+    Using a 4-bit counter with parallel load as in Figure 6-14 and a 4-bit adder as in Figure 4-5, draw the logic diagram that implements these register transfers.
+
+    Repeat part (a) using a 4-bit adder as in Figure 3-43 plus external gates as needed. Compare with the implementation in part (a).
+
+    ![](image/6.35.png)
