@@ -116,6 +116,7 @@ nav:
       - Chapter4 Sequential Circuits: cs/CLDF/lec4.md
       - Chapter5 Digital Hardware Implementation: cs/CLDF/lec5.md
       - Chapter6 Registers and Register Transfers: cs/CLDF/lec6.md
+      - Chapter7 Memory Basics: cs/CLDF/lec7.md
     - 优化基本理论与方法:
       - cs/opt/index.md
       - Lec1 Introduction: cs/opt/lec1.md
