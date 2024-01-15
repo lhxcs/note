@@ -181,6 +181,15 @@ $\begin{bmatrix} 1&0&0&0 \\ 0&1&0&0\\ 0&0&0&1\end{bmatrix}\begin{bmatrix}x\\y\\z
 - RGB
 - HSV
 
+人眼对三种颜色RGB的敏感程度是不一样的，在单色中，人眼对红色最不敏感，蓝色最敏感，所以RGB颜色空间均匀性较差。
+
+因此在图像处理中我们还使用了HSV颜色空间，比RGB更接近人们对彩色的感知。
+
+- Hue(色调，色相) 表示色彩信息
+- Saturation(饱和度、色彩纯净度) 饱和度越高，颜色越深。饱和度0代表纯白色。
+- Value(明度) 颜色的敏感程度，明度为0表示纯黑色
+
+
 ![](image/2.16.png)
 
 
@@ -189,8 +198,7 @@ $\begin{bmatrix} 1&0&0&0 \\ 0&1&0&0\\ 0&0&0&1\end{bmatrix}\begin{bmatrix}x\\y\\z
 
 ![](image/2.18.png)
 
-Why more green?——Human eyes are more sensitive to green.
-
+对于彩色图像，需要采集多种基本的颜色，最简单的方法是用滤镜的方法，红色滤镜透过红色波长的光etc. 如果要采集RGB三种颜色，则需要三种滤镜，价格昂贵。而拜尔滤镜(Bayre Filter)在一块滤镜上设置不同颜色，由于人眼对绿色比较敏感，因此绿色较多，如上图所示。
 
 
 ### Model the light reflected by an object : Shading
