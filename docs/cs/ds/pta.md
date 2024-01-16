@@ -85,13 +85,24 @@ In-order traversal.
 - Given a binary search tree with 20 integer keys which include 10, 11, and 12, if 10 and 12 are on the same level, then 11 must be their common ancestor.注意与上题的区别，common ancestor 不一定是parent。
 
 - For a binary search tree, in which order of traversal that we can obtain a non-decreasing sequence?  inorder traversal.
+
 - There are more NULL pointers than the actual pointers in the linked representation of any binary tree.(?)
+
 - An inorder threaded binary tree cannot make the postorder traversal more efficient.
+
 - convert a general tree $T$ into a binary tree $BT$, there are $n_0$ leaf nodes in $T$ and $m_0$ leaf nodes in $BT$. Then $n_0\ge m_0$。
+
 - If the inorder and the postorder traversal sequences of a binary tree have exactly the same order, then none of the nodes in the tree has a right subtree.
+
 - 二叉树是度为2的树。错误！度为0/1/2。
+
 - 先序中序后序遍历是对根节点而言的，叶子结点的顺序不变。
+
 - 一颗树转化为二叉树，先序等于先序，原树的后序等于BT的中序
+
+- 前序遍历的时间复杂度 $O(N)$,空间复杂度 $O(H)$。
+
+  
 
 
 
@@ -110,6 +121,12 @@ $\lfloor n/2\rfloor$是最后一个结点的父亲，不可能为最小值，因
 ![](image/p3.png)
 
 注意到这是完全二叉搜索树，最大值可能在上一层最右边的结点,该节点只有左儿子。
+
+- The best "worst-case time complexity" for any algorithm that sorts by comparisons only must be $O(N\log N)$。 最好的方法是堆排序。
+
+- 建堆的比较次数$2N-2\log N$。最多是$2N-2$。
+
+  
 
 ## 图
 
@@ -141,6 +158,16 @@ $\lfloor n/2\rfloor$是最后一个结点的父亲，不可能为最小值，因
 - Graph G is an undirected completed graph of 20 nodes. Is there an Euler circuit in G? If not, in order to have an Euler circuit, what is the minimum number of edges which should be removed from G?
 
 20个结点的无向完全图每个结点的degree是19，而Euler Circuit存在的条件是每个顶点的度数都是even的。删除一条边会有两个结点减少一个度，因此至少要删除十条边。
+
+- 如果无向图必须进行两次BFS才能访问其所有顶点，则$G$一定有两个连通分量。
+- If DFS from any vertex can visit every other vertices, then the topological order must not exist。 一定有环存在。
+- If a graph has a topological sequence, then its adjacency matrix must be triangular (F) 无向图是对称的，不一定是三角。
+- 每两点间相对位置确定，则DAG唯一
+- Prim算法适合稠密图，Kruskal算法适合稀疏图
+- 若图G为连通图且不存在拓扑排序序列，则图G必有环
+- 在有n个顶点的有向图中，若要使任意两点间可以互相到达，则至少需要 n 条弧。
+- 图的广度优先遍历类似于二叉树的层序遍历，DFS类似于先序遍历
+- 最小生成树是包含所有顶点的**极小**连通子图。
 
 
 
