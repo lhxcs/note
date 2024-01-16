@@ -2910,7 +2910,7 @@
 
 <h1 id="lec2-image-formation">Lec2 Image Formation<a class="headerlink" href="#lec2-image-formation" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1046 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1278 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
 <h2 id="camera-and-lens">Camera and lens<a class="headerlink" href="#camera-and-lens" title="Permanent link">&para;</a></h2>
 <p>首先让我们来设计一个相机。</p>
@@ -3020,10 +3020,17 @@ f&amp;0&amp;0&amp;0 \\
 <li>RGB</li>
 <li>HSV</li>
 </ul>
+<p>人眼对三种颜色RGB的敏感程度是不一样的，在单色中，人眼对红色最不敏感，蓝色最敏感，所以RGB颜色空间均匀性较差。</p>
+<p>因此在图像处理中我们还使用了HSV颜色空间，比RGB更接近人们对彩色的感知。</p>
+<ul>
+<li>Hue(色调，色相) 表示色彩信息</li>
+<li>Saturation(饱和度、色彩纯净度) 饱和度越高，颜色越深。饱和度0代表纯白色。</li>
+<li>Value(明度) 颜色的敏感程度，明度为0表示纯黑色</li>
+</ul>
 <p><img alt="" src="../image/2.16.png" /></p>
 <h3 id="bayre-filter">Bayre filter<a class="headerlink" href="#bayre-filter" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../image/2.18.png" /></p>
-<p>Why more green?——Human eyes are more sensitive to green.</p>
+<p>对于彩色图像，需要采集多种基本的颜色，最简单的方法是用滤镜的方法，红色滤镜透过红色波长的光etc. 如果要采集RGB三种颜色，则需要三种滤镜，价格昂贵。而拜尔滤镜(Bayre Filter)在一块滤镜上设置不同颜色，由于人眼对绿色比较敏感，因此绿色较多，如上图所示。</p>
 <h3 id="model-the-light-reflected-by-an-object-shading">Model the light reflected by an object : Shading<a class="headerlink" href="#model-the-light-reflected-by-an-object-shading" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Compute light reflected toward camera at a specific point</li>
@@ -3041,7 +3048,7 @@ $$</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年10月23日 09:55:35</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月15日 14:42:46</span>
       
         <br>
         创建日期:
