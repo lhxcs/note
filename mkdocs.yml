@@ -108,21 +108,19 @@ nav:
       - 哈希: cs/ds/hashing.md
       - 理论题: cs/ds/pta.md
       - code: cs/ds/tree.md
+  - Computer System:
+    - system/index.md
     - 计算机逻辑设计基础:
-      - cs/CLDF/index.md
-      - Chapter1 Digital Systems and Information: cs/CLDF/lec1.md
-      - Chapter2 Combinational Logic Circuits: cs/CLDF/lec2.md
-      - Chapter3 Combinational Logic Design: cs/CLDF/lec3.md
-      - Chapter4 Sequential Circuits: cs/CLDF/lec4.md
-      - Chapter5 Digital Hardware Implementation: cs/CLDF/lec5.md
-      - Chapter6 Registers and Register Transfers: cs/CLDF/lec6.md
-      - Chapter7 Memory Basics: cs/CLDF/lec7.md
-    - 优化基本理论与方法:
-      - cs/opt/index.md
-      - Lec1 Introduction: cs/opt/lec1.md
+      - system/CLDF/index.md
+      - Chapter1 Digital Systems and Information: system/CLDF/lec1.md
+      - Chapter2 Combinational Logic Circuits: system/CLDF/lec2.md
+      - Chapter3 Combinational Logic Design: system/CLDF/lec3.md
+      - Chapter4 Sequential Circuits: system/CLDF/lec4.md
+      - Chapter5 Digital Hardware Implementation: system/CLDF/lec5.md
+      - Chapter6 Registers and Register Transfers: system/CLDF/lec6.md
+      - Chapter7 Memory Basics: system/CLDF/lec7.md
+
   - AI:
-    - 人工智能引论:
-      - Chapter2 知识表达与推理: AI/iai/ch2.md
     - Computer Vision:
       - Stanford:CS231n:
         - AI/cv/cs231n/index.md
@@ -147,6 +145,9 @@ nav:
         - Lec12 Computational Photography: AI/cv/icv/lec12.md
         - Project Related: AI/cv/icv/neus.md
         - COLMAP: AI/cv/icv/COLMAP.md
+  - 常用工具:
+    - tools/index.md
+    - GNU Make: tools/Makefile.md
   - 数理基础:
     - math/index.md
     - Math for deep learning: math/mdl.md
