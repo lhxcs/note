@@ -39,7 +39,7 @@
 !!! Example "Result"
 
     ![](image/8.6.png)
-     
+
 
 **视差(disparity)**
 两张图同一个点水平坐标的差别：
@@ -105,7 +105,7 @@ $$
 !!! Example "基线的选择"
 
     ![](image/8.14.png)
-
+    
     如果基线过小，则点的深度误差会比较大。
     如果基线过大，则一方面重合的区域比较小，另一方面两张图片的内容差别比较大(就相当于从两个相差较远的视角看一张图，光线像素等内容就会不一样)，横向误差增大，比较难搜索到匹配的点。
 
@@ -120,9 +120,9 @@ $$
 !!! Question "结构光"
 
     对于没有纹理的区域(比如说镜面，金属表面)，立体匹配歧义性太强，无法进行深度估计。解决该问题的方法就是结构光:
-
+    
     相机的光影会给无纹理的区域打上光斑，属于主动方式的深度估计。
-
+    
     ![](image/8.15.png)
 
 
@@ -136,9 +136,9 @@ $$
 !!! note "Advantages of MVS"
     
     - Can match windows using more than 1 neighbor, giving a stronger constraint
-
+    
     - If you have lots of potential neighbors, can choose the best subset of neighbors to match per reference image
-
+    
     - Can reconstruct a depth map for each reference frame, and the merge into a complete 3D model
 
 **basic idea**
@@ -185,9 +185,9 @@ cost volumn记下了每个像素每一个深度对应的误差，最后我们提
 !!! note "3D reconsturction Pipeline"
 
     - Compute depth map per image
-
+    
     - Fuse the depth maps into a 3D surface
-
+    
     - Texture mapping
 
 ### 3D representations
@@ -254,9 +254,9 @@ cost volumn记下了每个像素每一个深度对应的误差，最后我们提
 !!! note "Poisson Reconstruction"
 
     - Represent the oriented points by a vector field $V$
-
+    
     - Find the function $X$ (体素场) whose gradient best approximates $V$ (梯度向量场) by minimizing: $\Vert \nabla_{X}-V\Vert^2$
-
+    
     - Solved by Poisson equation
 
 

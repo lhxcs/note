@@ -20,6 +20,7 @@ comments: True
     - [数据结构基础](cs/ds/index.md)
 - [Computer System](system/index.md)
     - [计算机逻辑设计基础](system/CLDF/index.md)
+    - [数据库系统](system/db/index.md)
 - [常用工具](tools/index.md)
 - [AI](AI/cv/cs231n/index.md)
     - [Stanford:cs231n](AI/cv/cs231n/index.md)

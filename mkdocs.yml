@@ -106,6 +106,7 @@ nav:
       - 堆: cs/ds/ch5.md
       - 图: cs/ds/graph.md
       - 哈希: cs/ds/hashing.md
+      - 排序: cs/ds/sorting.md
       - 理论题: cs/ds/pta.md
       - code: cs/ds/tree.md
   - Computer System:
@@ -119,6 +120,9 @@ nav:
       - Chapter5 Digital Hardware Implementation: system/CLDF/lec5.md
       - Chapter6 Registers and Register Transfers: system/CLDF/lec6.md
       - Chapter7 Memory Basics: system/CLDF/lec7.md
+    - 数据库系统:
+      - system/db/index.md
+      - Chapter1 Introduction: system/db/lec1.md
 
   - AI:
     - Computer Vision:
