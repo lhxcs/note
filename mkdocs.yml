@@ -109,6 +109,9 @@ nav:
       - 排序: cs/ds/sorting.md
       - 理论题: cs/ds/pta.md
       - code: cs/ds/tree.md
+    - 面向对象程序设计:
+      - cs/oop/index.md
+      - CS106L: cs/oop/CS106L.md
   - Computer System:
     - system/index.md
     - 计算机逻辑设计基础:
