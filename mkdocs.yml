@@ -108,7 +108,6 @@ nav:
       - 哈希: cs/ds/hashing.md
       - 排序: cs/ds/sorting.md
       - 理论题: cs/ds/pta.md
-      - code: cs/ds/tree.md
     - 面向对象程序设计:
       - cs/oop/index.md
       - CS106L: cs/oop/CS106L.md
@@ -165,13 +164,9 @@ nav:
       - Random Variables--Distribution and Expectation: math/probability/note15.md
       - Variance and covariance: math/probability/note16.md
     - 量子力学: math/quantum.md
-  - English:
-    - Reading:
-      - TOFEL Reading: English/reading/reading.md 
-      - Foreign Magazines: English/reading/note.md
-    - Writing:
-      - TOFEL Writing: English/writing/Writing.md
-
-  - 论文阅读:
-    - 3D Reconstruction:
-      - Neuralangelo: paper_reading/Neuralangelo.md
+  # - English:
+  #   - Reading:
+  #     - TOFEL Reading: English/reading/reading.md 
+  #     - Foreign Magazines: English/reading/note.md
+  #   - Writing:
+  #     - TOFEL Writing: English/writing/Writing.md

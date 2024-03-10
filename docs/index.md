@@ -19,6 +19,7 @@ comments: True
     - [离散数学理论基础](cs/dm.md)
     - [数据结构基础](cs/ds/index.md)
     - [面向对象程序设计](cs/oop/index.md)
+    - [算法](cs/ads/index.md)
 - [Computer System](system/index.md)
     - [计算机逻辑设计基础](system/CLDF/index.md)
     - [数据库系统](system/db/index.md)
