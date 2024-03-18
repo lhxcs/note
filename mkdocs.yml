@@ -108,6 +108,9 @@ nav:
       - 哈希: cs/ds/hashing.md
       - 排序: cs/ds/sorting.md
       - 理论题: cs/ds/pta.md
+    - 算法:
+      - cs/ads/index.md
+      - 摊还分析: cs/ads/amortized.md
     - 面向对象程序设计:
       - cs/oop/index.md
       - CS106L: cs/oop/CS106L.md
@@ -125,6 +128,9 @@ nav:
     - 数据库系统:
       - system/db/index.md
       - Chapter1 Introduction: system/db/lec1.md
+    - 计算机组成与设计:
+      - system/co/index.md
+      - 计算机的算术运算: system/co/lec1.md
 
   - AI:
     - Computer Vision:
