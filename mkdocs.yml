@@ -111,6 +111,7 @@ nav:
     - 算法:
       - cs/ads/index.md
       - 摊还分析: cs/ads/amortized.md
+      - 斐波那契堆: cs/ads/Fb_heap.md
     - 面向对象程序设计:
       - cs/oop/index.md
       - CS106L: cs/oop/CS106L.md
@@ -131,6 +132,10 @@ nav:
       - Relational Model: system/db/lec2.md
     - 计算机组成与设计:
       - system/co/index.md
+      - CS61C:
+        - system/co/cs61c/index.md
+        - 浮点数的表示: system/co/cs61c/fp.md
+        - C内存管理: system/co/cs61c/memory.md
       - 计算机的算术运算: system/co/lec1.md
 
   - AI:
