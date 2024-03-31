@@ -22,6 +22,7 @@ comments: True
     - [算法](cs/ads/index.md)
 - [Computer System](system/index.md)
     - [计算机逻辑设计基础](system/CLDF/index.md)
+    - [计算机组成与设计](system/co/index.md)
     - [数据库系统](system/db/index.md)
 - [常用工具](tools/index.md)
 - [AI](AI/cv/cs231n/index.md)
@@ -29,7 +30,3 @@ comments: True
     - [ZJU:icv](AI/cv/icv/index.md)
 - [数学基础](math/index.md)
 
-
-!!! warning "施工中"
-
-    绝大部分note都未完成

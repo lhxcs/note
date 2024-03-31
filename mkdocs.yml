@@ -4,7 +4,7 @@ repo_name: lhxcs/note
 repo_url: https://github.com/lhxcs/note/
 edit_uri: tree/master/docs
 site_description: lhx的笔记本
-copyright: Copyright &copy; 2022-2023 <a href="https://github.com/lhxcs" target="_blank" rel="noopener">Iridescent</a>
+copyright: Copyright &copy; 2023-2024 <a href="https://github.com/lhxcs" target="_blank" rel="noopener">Iridescent</a>
 
 theme: 
   name: 'material'
@@ -136,6 +136,7 @@ nav:
         - system/co/cs61c/index.md
         - 浮点数的表示: system/co/cs61c/fp.md
         - C内存管理: system/co/cs61c/memory.md
+        - RISCV汇编: system/co/cs61c/riscv.md
       - 计算机的算术运算: system/co/lec1.md
 
   - AI:
