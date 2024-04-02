@@ -129,6 +129,8 @@
 
 - Jump(`j`): `j label`
 - Jump and Link(`jal`): `jal dst label`
+    - Address of following instruction put in `dst`
+    - Jumps to target address
 - Jump and Link Register(`jalr`): `jalr dst src imm`
 - Jump Register(`jr`): `jr src`
 - `ra`: return address register, used to save where a function is called from so we can get back.
@@ -138,3 +140,61 @@
 ??? Example "Function Call Example"
 
     ![](image/18.png)
+
+### Function Calling Conventions
+
+![](image/19.png)
+
+- Caller: the calling function
+- Callee: the function being called
+
+#### Saved Registers(Callee Saved)
+
+- These registers are expected to be the same before and after a function call
+    - If callee uses them, it must restore values before returning
+    - This means save the old values, ues the registers, then reload the old values back into the registers
+- `s0-s11`(saved registers)
+- `sp`(stack pointer): If not in same place, the caller won't be able to properly access its own stack variables
+
+#### Volatile Registers(Caller Saved)
+
+- These registers can be freeely changed by the callee
+    - If caller needs them, it must save those values before making a procedure call
+- `t0-t6`(temporary registers)
+- `a0-a7`(return address and arguments)
+- `ra`(return address)
+
+We use stack to save registers:
+
+![](image/20.png)
+
+
+**Basic Sturcture of a Function**
+
+![](image/21.png)
+
+!!! Example 
+
+    ![](image/22.png)
+
+    ![](image/23.png)
+
+
+## RISC-V Instruction Formats
+
+### Stored-Program Concept
+
+Instructions can be represeted as bit patterns
+
+- Entire programs stored in memory just like data
+- Reprogramming just takes rewriting memory rather than rewiring computer
+
+- Since instructions and data are both in memory, addresses can point to either
+- The Program Counter(PC) just holds a memory address that points to code
+
+- Whether a number is code or a value is all in how you interpret it
+
+- Define 6 types of instruction formats
+
+### R-Format
+
