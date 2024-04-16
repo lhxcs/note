@@ -137,7 +137,8 @@ nav:
         - 浮点数的表示: system/co/cs61c/fp.md
         - C内存管理: system/co/cs61c/memory.md
         - RISCV汇编: system/co/cs61c/riscv.md
-      - 计算机的算术运算: system/co/lec1.md
+      - 指令(RISC-V): system/co/ch2.md
+      - 计算机的算术运算: system/co/ch3.md
 
   - AI:
     - Computer Vision:
