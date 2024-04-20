@@ -41,7 +41,7 @@ Jumping to a label withou making a function call is done with the instructions `
 - All `s` registers will have the same value exiting the function that they did entering.
 - The function will return to the value stored in `ra`, assuming no abnormal execution.
 
-**To achieve this we add a section before our function called the prologue and a section afer called the epilogue**:
+**To achieve this we add a section before our function called the prologue and a section after called the epilogue**:
 
 ```
 def prologue():

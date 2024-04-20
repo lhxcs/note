@@ -139,6 +139,7 @@ nav:
         - RISCV汇编: system/co/cs61c/riscv.md
       - 指令(RISC-V): system/co/ch2.md
       - 计算机的算术运算: system/co/ch3.md
+      - 处理器: system/co/ch4.md
 
   - AI:
     - Computer Vision:

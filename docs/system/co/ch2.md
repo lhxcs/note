@@ -1,5 +1,21 @@
 # Instructions: Language of the Computer
 
+## Summary of RISC-V architecture
+
+### RISC-V opoerands
+
+![](image/2.16.png)
+
+### RISC-V assembly language
+
+![](image/2.17.png)
+
+![](image/2.18.png)
+
+### RISC-V Instruction Format
+
+![](image/2.19.png)
+
 ## Supporting Prcedures in Computer Hardware
 
 Six step:
