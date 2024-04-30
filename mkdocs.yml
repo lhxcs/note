@@ -112,6 +112,7 @@ nav:
       - cs/ads/index.md
       - 摊还分析: cs/ads/amortized.md
       - 斐波那契堆: cs/ads/Fb_heap.md
+      - 动态规划: cs/ads/dp.md
     - 面向对象程序设计:
       - cs/oop/index.md
       - CS106L: cs/oop/CS106L.md
@@ -137,6 +138,7 @@ nav:
         - 浮点数的表示: system/co/cs61c/fp.md
         - C内存管理: system/co/cs61c/memory.md
         - RISCV汇编: system/co/cs61c/riscv.md
+        - RISC-V Conventions: system/co/cs61c/risc-v_convention.md
       - 指令(RISC-V): system/co/ch2.md
       - 计算机的算术运算: system/co/ch3.md
       - 处理器: system/co/ch4.md
