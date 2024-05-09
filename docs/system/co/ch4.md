@@ -180,12 +180,13 @@ ALU operation is decied by 2-bit ALUOp derived from opcode, and funct7 & funct3 
 ### RISC-V Pipeline
 
 **Five stages, one step per stage**
+
 1. IF: Instruction fetch from memory
 2. ID: Instruction decode & register read
 3. EX: Execute operation or calculate address
 4. MEM: Access memory operand
 5. WB: Write result back to register
-
+7
 ![](image/4.27.png)
 
 ![](image/4.28.png)
@@ -200,6 +201,8 @@ ALU operation is decied by 2-bit ALUOp derived from opcode, and funct7 & funct3 
 ### Pipelining and ISA Design
 
 **RISC-V ISA designed for pipelining**
+
+RISC-V 的架构很适合流水线加速：
 
 - All instructions are 32 bits, easier to fetch and decode in one cycle.
 - Few and regular instruction formats
@@ -233,13 +236,18 @@ In RISC-V pipeline with a single memory
 
 ![](image/4.29.png)
 
+解决方案是在两条指令中插 bubble，这时 WB 和 ID 在同一个地方，我们只需在前半个时钟写入(时钟下降沿写)，后半个时钟读即可。
+
 **Forwarding**
+
+但是这种情况经常发生，如果一直插 bubble 的话，流水线加速的意义就不是很明显了。
+注意到上图中，add 的结果在 EX 步骤就得到了，实际上是不需要经过 MEM 的，这时我们采用 Forwarding 的方法，如下图所示：
 
 ![](image/4.30.png)
 
-![](image/4.31.png)
+但如果前面是个 load 指令，需要在 MEM 访问完之后才得到数据，因此必须插一个 bubble，如下图所示：
 
-碰到 `load` 指令时，需要插一个 `bubble`。
+![](image/4.31.png)
 
 或者我们可以 reschedule code to avoid stalls：
 
@@ -254,6 +262,148 @@ In RISC-V pipeline with a single memory
 - In RISC-V pipeline
     - Need to compare registers and compute target early in the pipeline
     - Add hardware to do it in ID stage
+
+![](image/4.33.png)
+
+![](image/4.34.png)
+
+**Pipeline Summary**
+
+- Pipelining improves performance by increasing instruction throughput.
+- Subject to hazards.
+- Instruction set design affects complexity of pipeline implementation.
+
+### RISC-V Pipelined Datapath
+
+**Pipeline registers**
+
+![](image/4.35.png)
+
+流水线填满的时候，每个 stage 执行的都是不同的指令，因此我们需要流水线寄存器存储指令。
+
+!!! Example 
+
+    ![](image/4.36.png)
+
+    对于 load 指令的 WB 阶段，我们不能直接写回 register，因为此时的控制信号与写回地址是处在 IF/ID 寄存器中的指令。因此我们需要保存该指令的相关信号，如图中蓝线所示。
+
+
+**Multi-Cycle Pipeline Diagram**
+
+![](image/4.37.png)
+
+**Single-Cycle Pipeline Diagram**
+
+![](image/4.38.png)
+
+#### Pipelined Control
+
+![](image/4.39.png)
+
+![](image/4.40.png)
+
+### Data Hazards
+
+![](image/4.41.png)
+
+首先需要注意的是，并不是只有相邻指令才需要 forwarding 的，需要画出 multi diagram 判断，如上图所示。
+
+#### Detecting the Need to Forward
+
+我们在每一级的寄存器中都会有编号：
+`ID/EX.RegisterRs1`: register number for rs1 sitting in ID/EX pipeline register.
+
+- ALU operand register numbers in EX stage are given by `ID/EX.RegisterRs1, ID/EX.RegisterRs2`.
+- Data hazards when:
+    - EX/MEM.RegisterRd = ID/EX.RegisterRs1
+    - EX/MEM.RegisterRd = ID/EX.RegisterRs2
+    - MEM/WB.RegisterRd = ID/EX.RegisterRs1
+    - MEM/WB.RegisterRd = ID/EX.RegisterRs2
+
+但是只有需要写回寄存器的指令需要 forwarding：
+
+- EX/MEM.RegWrite, MEM/WB.RegWrite
+- EX/MEM.RegisterRd 和 MEM/WB.RegisterRd 不是 `x0`。
+
+**Forwarding Paths**
+
+![](image/4.42.png)
+
+![](image/4.43.png)
+
+**Double Data Hazard**
+
+![](image/4.44.png)
+
+!!! Question "Revised Forwarding Condition"
+
+    不是很理解
+
+#### Load-Use Hazard Detection
+
+![](image/4.45.png)
+
+**How to Stall the Pipeline**
+
+![](image/4.46.png)
+
+**Stalls and Performance**
+
+- Stall reduce performance, but are required to get correct results.
+- Compiler can arange code to avoid hazards and stalls.
+
+### Branch Hazards
+
+![](image/4.47.png)
+
+一个很直观的想法就是把中间三条指令 flush 掉，但是这样我们就要等比较长的时间，因此我们考虑 reducing branch delay:
+
+Move hardware to determine outcome to ID stage
+
+- Target address adder
+- Register comparator
+
+!!! Example "Branch Taken"
+
+    ![](image/4.48.png)
+
+    在 ID 阶段判断是否跳转，如果跳转，则将当前处在 IF 阶段的指令 flush, 产生一个 bubble, bubble 过后直接执行跳转指令。
+
+    ![](image/4.49.png)
+
+但是对于拆得更深的流水线(这里我们举的例子都是五级流水线，即将一条指令的 datapath 拆成五个阶段)，使用上述的方法会增加代价。
+
+**Dynamic Branch Prediction**
+
+- Branch prediction buffer(branch history tabel)
+- Indexed by recent branch instruction addresses
+- Stores outcome(taken/not taken)
+- To execute a branch
+    - Check table, expect the same outcome
+    - Start fetching from fall-through or target
+    - If wrong, flush pipeline and flip prediction
+
+即建立一个索引表，存的是上次分支指令时是否命中，当前指令根据表中信息决定是否跳转，若不命中则更新表。
+
+但是对于双层循环会存在问题：
+
+![](image/4.50.png)
+
+**2-Bit Predictor**
+
+**Only change prediction on two successive mispredictions**
+
+![](image/4.51.png)
+
+Even with predictor, still need to calculate the target address, resulting in 1-cycle penalty for a taken branch.
+
+Branch targte buffer:
+
+- Cache of target addresses
+- Indexed by PC when instruction fetched
+
+只存最新用的。
+
 
 
 ## CPU within Exception

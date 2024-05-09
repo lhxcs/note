@@ -113,6 +113,7 @@ nav:
       - 摊还分析: cs/ads/amortized.md
       - 斐波那契堆: cs/ads/Fb_heap.md
       - 动态规划: cs/ads/dp.md
+      - NP完全性: cs/ads/NP.md
     - 面向对象程序设计:
       - cs/oop/index.md
       - CS106L: cs/oop/CS106L.md
