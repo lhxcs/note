@@ -308,6 +308,8 @@ In RISC-V pipeline with a single memory
 
 首先需要注意的是，并不是只有相邻指令才需要 forwarding 的，需要画出 multi diagram 判断，如上图所示。
 
+并且第一条指令与第二、三条是有数据竞争的，与后面两条指令并不冲突。
+
 #### Detecting the Need to Forward
 
 我们在每一级的寄存器中都会有编号：
@@ -411,8 +413,8 @@ Branch targte buffer:
 ### Exception(Interruption)
 
 - The cause of changing CPU's work flow:
-    - Control instructions in program(bne/beq, j/jal, etc.), which is foreseeable in programming flow.
-    - Something happen suddenly(Exception and Inerruption), which is unpredictable
+    - Control instructions in program(bne/beq, j/jal, etc.), which is **foreseeable** in programming flow.
+    - Something happen suddenly(Exception and Inerruption), which is **unpredictable**
 - Unexpected events:
     - Exception: from within processor(overflow, undefined instruction, etc.)
     - Interruption: from outside processor(input/output)
@@ -421,5 +423,92 @@ Branch targte buffer:
 
 - What must the processor do?
     - When exception happens, the processor must do something.
-    - The predefined process routines are saved in memory when computer starts.
+    - The predefined process routines are saved in memory when computer starts. (提前写好了程序)
 - Problem:
+    - How can CPU go to relative routine when an exception occurs
+    - CPU should know: the cause of exception and which instruction generate the exception
+
+### RISC-V Privileged
+
+![](image/4.52.png)
+
+### RISC-V interrupt structure
+
+- 所有的硬件实现必须提供 M-mode
+    - as this is the only mode that has unfettered access to the whole machine.
+    - The simplest RISC-V implementations may provide only M-mode.
+- Machine mode most important task
+    - to intercept and handle interrupts/exceptions
+    - There are 4096 Control and Status Registers(CSRs)
+
+#### CSRs
+
+![](image/4.53.png)
+
+CSR 寄存器是专门用来处理中断/异常的寄存器，要用特权指令来访问。
+这些指令可以分为两类：原子操作(read-modify-write, 一步完成)的指令和其它特权指令。
+
+**CSR Instruction**
+
+CSR 指令是专门用来更新 csr 寄存器的。
+
+![](image/4.54.png)
+
+- CSRRW: 将 csr 的值读到 rd 寄存器，同时把 rs 的值更新到 csr 中。
+- CSRRS: 将 csr 的值读到 rd 寄存器，同时 csr = csr | rs1 (set, 将对应的位变成 1 )。
+- CSRRC: 将 csr 的值读到 rd 寄存器，同时 csr = csr ^ rs1 (clear)
+
+**Interrupts Instruction**
+
+![](image/4.55.png)
+
+- MRET: 从什么模式进到机器模式，就回到什么模式。其中 MEPC 是跳转过去的指令地址。
+- ecall：MEPC = ecall 指令本身的 PC 值。跳转到某个模式。
+- ebreak: MEPC = ebreak 指令本身的 PC 值。
+
+需要注意的是，我们一般是把下一条指令(PC+4)放到返回值的，但是这里我们将 ecall 本身的 PC 值赋给 MEPC。其实跳转过去的模式下的指令会将 MEPC 修改成希望返回的值。
+
+**Exception & Interrupt related registers**
+
+![](image/4.56.png)
+
+
+1. mstatus
+
+- Machine STATUS register
+    - Global interrupt enable bits: `MIE`,`SIE`,`UIE`(provided for each priviledge mode) 不同模式下中断的管理情况(是否允许中断发生)
+    - `xPIE` holds ths value of the interrupt enable bit active prior to the trap. (进来之前的中断使能信号)
+    - `xPP` holds the previous privilege mode. (进来之前的模式)
+
+![](image/4.57.png)
+
+2. mie/mip
+
+更细的管理，局部使能。
+
+![](image/4.58.png)
+
+3. mtvec
+
+产生中断后，CPU 需要知道去哪里执行中断程序。
+
+![](image/4.59.png)
+
+对于查询模式，PC 直接跳到 BASE， 然后根据 `mcause` 的值来执行对应的处理。
+对于向量模式(只对中断有效)，则直接跳转。
+
+4. mepc
+
+![](image/4.60.png)
+
+5. mcause
+
+![](image/4.61.png)
+
+![](image/4.62.png)
+
+**RISC-V Interrupt priority**
+
+![](image/4.63.png)
+
+
