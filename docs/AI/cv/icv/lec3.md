@@ -1,5 +1,9 @@
 # Lec 3 : Image Processing
 
+!!! note
+
+    该部分笔记不是很完整。
+
 ## Image processing basics
 
 ### 一些基本的处理
@@ -57,7 +61,25 @@ $$
 
 ## Image sampling
 
-### Image resizing
+采样就是给定一个连续的函数，在不同的点求它的值，也可以认为，采样是把一个连续的函数离散化的过程。
+
+Image resizing: change image size/resolution.
+
+Reducing image size -> down-sampling
+
+但是我们在采样时有可能发生**反走样/锯齿**现象：
+
+![](image/3.10.png)
+
+原因可能是：
+
+- 像素本身有一定大小
+- 采样的速度跟不上信号变化的速度（高频信号采样不足）
+
+### Fourier Transform
+
+傅里叶变换可以将信号分解为频率，并且能将满足一定条件的某个函数表示成三角函数（正弦和/或余弦函数）或者它们的积分的线性组合。
+
 
 
 

@@ -128,10 +128,10 @@ nav:
       - Chapter5 Digital Hardware Implementation: system/CLDF/lec5.md
       - Chapter6 Registers and Register Transfers: system/CLDF/lec6.md
       - Chapter7 Memory Basics: system/CLDF/lec7.md
-    - 数据库系统:
-      - system/db/index.md
-      - Chapter1 Introduction: system/db/lec1.md
-      - Relational Model: system/db/lec2.md
+    # - 数据库系统:
+    #   - system/db/index.md
+    #   - Chapter1 Introduction: system/db/lec1.md
+    #   - Relational Model: system/db/lec2.md
     - 计算机组成与设计:
       - system/co/index.md
       - CS61C:
@@ -166,13 +166,12 @@ nav:
         - Lec6 Image Stitching: AI/cv/icv/lec6.md
         - Lec7 Structure from Motion: AI/cv/icv/lec7.md
         - Lec8 Depth Estimation and 3D Reconstruction: AI/cv/icv/lec8.md
-        - Lec10 Image Segmentation: AI/cv/icv/lec10.md
+        - Lec10 Recognition: AI/cv/icv/lec10.md
         - Lec12 Computational Photography: AI/cv/icv/lec12.md
-        - Project Related: AI/cv/icv/neus.md
         - COLMAP: AI/cv/icv/COLMAP.md
-  - 常用工具:
-    - tools/index.md
-    - GNU Make: tools/Makefile.md
+  # - 常用工具:
+  #   - tools/index.md
+  #   - GNU Make: tools/Makefile.md
   - 数理基础:
     - math/index.md
     - Math for deep learning: math/mdl.md
