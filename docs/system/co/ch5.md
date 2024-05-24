@@ -188,6 +188,8 @@ Average Memory Access time = hit time + miss time
 
 ## Vitual Memory
 
+Main memory can act as a cache for the secondary storage(disk).
+
 ![](image/5.9.png)
 
 对于每个程序，我们希望它们只考虑自己的内存空间，并且认为它们的内存是连续的。虚拟内存的作用就是将程序连续的内存地址翻译成实际上碎片化的物理地址。
@@ -203,4 +205,25 @@ Advantages:
 虚拟内存映射的最小单位是 Page。
 
 ![](image/5.10.png)
+
+- 操作系统完全管理这个映射关系。
+- 我们采用 write-back 策略，因此需要一个额外的 dirty bit 位。The dirty bit is set when a page is first written.If the dirty bit of a page is set, the page must be written back to disk before being replaced.
+
+### Page Tables
+
+维护一张表，记录某个 virtual page number 转化到的实际 physical page number 是多少。
+
+![](image/5.11.png)
+
+由于每个程序都是连续的，自己的 pc 都是从零开始的，因此每个程序都拥有自己的 page table。并且使用全关联映射的方法。
+
+![](image/5.12.png)
+
+### Making Address Translation Fast: TLB
+
+TLB 是专用的高速查找硬件 cache，这里称它为 translation look-aside buffer (TLB)。它实际上就是 page table 的专用 cache，其 associativity 的设计可以根据实际情况决定。
+
+![](image/5.13.png)
+
+![](image/5.14.png)
 

@@ -236,7 +236,7 @@ Seaching over ways of dividing a collection of objects into subsets.
 
 但是我们的 construction 到这里为止，还并没有将所有的 node 完全覆盖，因此我们还需要一个叫做 cleanup gadget 的 core，来覆盖每一个 tip：
 
-$Q_i=\left\{q_i,q_i^{'}\right\}$, 构建三元组 $(q_i,q_i{'},b)$ for every tip $b$。
+$Q_i=\left\{q_i,q_i^{'}\right\}$, 构建三元组 $(q_i,q_i^{'},b)$ for every tip $b$。
 
 这时我们就可以证明构建出的实例存在 3D-Matching 当且仅当 $\Phi$ 可被满足。
 
