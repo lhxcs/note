@@ -125,3 +125,85 @@ $$
 
 这就回到了已知最优解贪心算法的形式，我们每次选择加入 center 集合的 site 都在当前 center $2r$ 距离以外，由于最后的 center 集合 $C$ 还有个点 $s$ 距离 $2r$, 因此算法返回的 center 集合个数大于 $k$ 造成矛盾。 
 
+## Set Cover
+
+!!! Example "Problem Description"
+
+    与前一节介绍的 Set Cover 问题不同之处在于，我们对每个集合 $S_i$ 赋予一个权重 $\omega_i\ge 0$, 我们要找到一个集合覆盖，使得权重和最小。
+
+
+我们考虑一个贪心算法：我们每次选一个集合，并希望下一次选的集合 **make the most progresss**。我们可以定义 $\frac{\omega_i}{\left|S_i\cap R\right|}$, 其中 $R$ 是未被覆盖的集合，可以很直观地理解这个定义，代表着 cost per element covered,即我们希望用尽可能少的权重覆盖尽可能多的点集。
+
+现在我们想要知道贪心算法产生的解会比最优解 $\omega^{*}$ 大多少？
+
+首先我们定义 $c_s=\frac{w_i}{\left|S_i\cap R\right|}$c, 代表我们选中的集合中每个元素的代价，很显然，$\sum_{S_i\in S} w_i=\sum_{s\in U}c_s$。
+接下来我们希望给出 $\sum_{s\in S_k}c_s$ 的一个上界, 并且该上界是 $\omega_i$ 的多项式，代表着如果我想覆盖一些 cost, 我必须要多少的 weight。
+
+??? Question "TO-DO"
+
+
+## The Pricing Method: Vertex Cover
+
+!!! Example "Problem Description"
+
+    Weighted vertex cover: Given a graph $G$ with vertex weights, find a vertex cover of minimum weight.
+
+Pricing Method 的定义：每一条边肯定会被某些顶点覆盖，对于边 $e=(i,j)$, 该边为使用点 $i,j$ 付出了 $p_e\ge 0$ 的代价。
+
+Fairness: Edges incident to vertex $i$ should pay $\le w_i$ in total. 
+
+**Lemma**: For any vertex cover $S$ and any fair prices $p_e$: $\sum_e p_e\le w(S)$
+
+
+??? note "Proof"
+
+    我们考虑任意一个 vertex cover $S^{*}$.
+    根据 fiarness 的定义，对所有属于 $S^{*}$ 的顶点， $\sum_{e=(i,j)}p_e\le w_i$
+
+    将这个不等式同时对 $S^{*}$ 中的所有点求和，得到 $\sum_{i\in S^{*}}\sum_{e=(i,j)}p_e\le\sum_{i\in S^{*}} w_i=w(S^{*})$
+
+    显然左边的和式中，右边被算了不止一次，因此可以得到 $\sum_{e\in E}\le w(S^{*})$.
+
+
+## The Knapsack Problem
+
+现在我们要讨论一个问题，对于该问题，我们可以设计出一个多项式时间的近似算法。
+
+!!! Example "Problem Description"
+
+    We have $n$ items to pack in a knapsack, each item has two integer parameters: a weight $w_i$ and a value $v_i$. Given a knapsack capacity $W$, find a subset $S$ of items of maximum value subject to the restriction that the total weight of the set should not exceed $W$.
+
+对于该算法，我们的输入是问题的输入加上一个精度 $\epsilon$, 算法会找到一个 $(1+\epsilon)$ 近似的解，并且对于任意固定的 $\epsilon$, 算法的运行时间是多项式的。但需要注意的是，运行时间关于 $\epsilon$ 并不是多项式的，当我们不断改变 $\epsilon$ 的值，使得近似算法的解不断接近最优时，算法就不再是一个多项式时间的算法。我们称这个算法是 polynomial-time approximation scheme(**PTAS**).
+
+回顾使用动态规划求解背包问题，算法运行时间是个伪多项式 $O(nV)$, 同时注意到 $V\le nv_{max}$, 所以该算法复杂度可以写成 $O(n^2v_{max})$。
+
+注意到对于伪多项式时间算法，如果 $v$ 很小的话，我们是可以在多项式时间内解决的。因此一个想法就是对于很大的 $v$, 我们先把 $v$ 相对于一个参数 $b$ 凑整，即 $\widetilde{v}_i=\lceil\frac{v_i}{b}\rceil b$, 这个新的值 $\widetilde{v}_i$ 与原先的 value 相差并不是很多 ($v_i \le \widetilde{v}_i \le v_i + b$)。在我们确保了所有新的 value 都有个因数 $b$ 之后，我们就可以通过将所有 value 同除一个 $b$, 得到 $\hat{v}_i=\frac{\widetilde{v}_i}{b}$作为原先 dp 算法的输入。
+
+最后，我们直接给出 $b$ 的值，$b=\frac{\epsilon}{n}\max_i v_i$ (这里我们假定 $\frac{1}{\epsilon}$ 是一个整数)。
+
+现在我们首先证明背包问题的近似算法对于固定的 $\epsilon\ge 0$, 是一个多项式时间的算法。
+
+- rounding 取整的过程显然可以在多项式时间内完成。
+- 考虑动态规划的步骤，运行时间是 $O(n^2\max_i v_i)$。因此该算法是否是多项式时间的算法就取决于 $\max_i v_i$。假设 $v_j=\max_i v_i$, 我们可以得到 $\max_i \hat{v_i}=\hat{v_j}=\lceil\frac{v_j}{b}\rceil=\frac{n}{\epsilon}$。因此我们的算法运行时间为 $O(\frac{n^3}{\epsilon})$。
+
+最后，我们需要证明该算法提供了一个 $(1+\epsilon)$ 的近似比。即：
+
+假设近似算法给出解集 $S$，最优解集为 $S^{*}$, 那么 $(1+\epsilon)\sum_{i\in S}v_i\ge \sum_{i\in S^{*}}v_i$。
+
+**Proof**:
+首先我们要分清楚，$S$ 是近似算法的解，即最大化了 $\sum\widetilde{v_i}$, $S^{*}$ 是原问题的解，最大化了没有 rounding 的价值 $\sum v_i$。
+
+首先我们有
+$$
+\sum_{i\in S}\widetilde{v_i}\ge\sum_{i\in S^{*}}\widetilde{v_i}
+$$
+
+并且我们有如下不等式
+$$
+\sum_{i\in S^{*}}v_i\le \sum_{i\in S^{*}}\widetilde{v_i}\le \sum_{i\in S}\widetilde{v_i}\le \sum_{i\in S}(v_i+b)\le nb+\sum_{i\in S}v_i
+$$
+
+接下来为了得到最终的结果，我们需要建立 $nb$ 和 $\sum_{i\in S}v_i$ 的联系。我们设最大元素为 $v_j=\frac{2nb}{\epsilon}$, 并且$v_j=\widetilde{v_j}$($v_j$本身就有 $b$ 因子，round后结果一样)。因此我们有 $\sum_{i\in S}v_i\ge \sum_{i\in S}\widetilde{v_i}-nb\ge \widetilde{v_j}-nb$, 即 $nb\le \epsilon \sum_{i\in S}v_i$, 因此得证：
+$$
+\sum_{i\in S^{*}}v_i\le nb+\sum_{i\in S}v_i \le (1+\epsilon)\sum_{i\in S}v_i
+$$
