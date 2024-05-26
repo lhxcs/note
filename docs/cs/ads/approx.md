@@ -194,13 +194,15 @@ Fairness: Edges incident to vertex $i$ should pay $\le w_i$ in total.
 首先我们要分清楚，$S$ 是近似算法的解，即最大化了 $\sum\widetilde{v_i}$, $S^{*}$ 是原问题的解，最大化了没有 rounding 的价值 $\sum v_i$。
 
 首先我们有
+
 $$
 \sum_{i\in S}\widetilde{v_i}\ge\sum_{i\in S^{*}}\widetilde{v_i}
 $$
 
 并且我们有如下不等式
+
 $$
-\sum_{i\in S^{*}}v_i\le \sum_{i\in S^{*}}\widetilde{v_i}\le \sum_{i\in S}\widetilde{v_i}\le \sum_{i\in S}(v_i+b)\le nb+\sum_{i\in S}v_i
+\sum_{i\in S^{*}}v_i\le\sum_{i\in S^{*}}\widetilde{v_i} \le \sum_{i\in S}\widetilde{v_i}\le \sum_{i\in S}(v_i+b)\le nb+\sum_{i\in S}v_i
 $$
 
 接下来为了得到最终的结果，我们需要建立 $nb$ 和 $\sum_{i\in S}v_i$ 的联系。我们设最大元素为 $v_j=\frac{2nb}{\epsilon}$, 并且$v_j=\widetilde{v_j}$($v_j$本身就有 $b$ 因子，round后结果一样)。因此我们有 $\sum_{i\in S}v_i\ge \sum_{i\in S}\widetilde{v_i}-nb\ge \widetilde{v_j}-nb$, 即 $nb\le \epsilon \sum_{i\in S}v_i$, 因此得证：

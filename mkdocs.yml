@@ -111,7 +111,6 @@ nav:
     - 算法:
       - cs/ads/index.md
       - 摊还分析: cs/ads/amortized.md
-      - 斐波那契堆: cs/ads/Fb_heap.md
       - 动态规划: cs/ads/dp.md
       - NP完全性: cs/ads/NP.md
       - 近似算法: cs/ads/approx.md
