@@ -16,7 +16,7 @@
         <link rel="prev" href="../dp/">
       
       
-        <link rel="next" href="../../oop/">
+        <link rel="next" href="../approx/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
@@ -776,20 +776,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Fb_heap/" class="md-nav__link">
-        斐波那契堆
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../dp/" class="md-nav__link">
         动态规划
       </a>
@@ -1016,6 +1002,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../approx/" class="md-nav__link">
+        近似算法
+      </a>
     </li>
   
 
@@ -2595,7 +2595,7 @@ there a tour of length <span class="arithmatex">\(\leq D\)</span> ?</p>
 <li>三个三元组。假设 <span class="arithmatex">\(C_j\)</span> 包含项 <span class="arithmatex">\(t\)</span>, 如果 <span class="arithmatex">\(t=x_i\)</span>,则定义三元组 <span class="arithmatex">\((p_j,p_j^{'},b_{i,2j})\)</span>;如果 <span class="arithmatex">\(t=\overline{x_i}\)</span>,则定义 <span class="arithmatex">\((p_j,p_j^{'},b_{i,2j-1})\)</span></li>
 </ul>
 <p>但是我们的 construction 到这里为止，还并没有将所有的 node 完全覆盖，因此我们还需要一个叫做 cleanup gadget 的 core，来覆盖每一个 tip：</p>
-<p><span class="arithmatex">\(Q_i=\left\{q_i,q_i^{'}\right\}\)</span>, 构建三元组 <span class="arithmatex">\((q_i,q_i{'},b)\)</span> for every tip <span class="arithmatex">\(b\)</span>。</p>
+<p><span class="arithmatex">\(Q_i=\left\{q_i,q_i^{'}\right\}\)</span>, 构建三元组 <span class="arithmatex">\((q_i,q_i^{'},b)\)</span> for every tip <span class="arithmatex">\(b\)</span>。</p>
 <p>这时我们就可以证明构建出的实例存在 3D-Matching 当且仅当 <span class="arithmatex">\(\Phi\)</span> 可被满足。</p>
 <h3 id="graph-coloring">Graph Coloring<a class="headerlink" href="#graph-coloring" title="Permanent link">&para;</a></h3>
 <p>3-COLOR: Given an undirected graph <span class="arithmatex">\(G\)</span>, does there exists a way to color the nodes red, green, and blue so that no adjacent nodes have the same color?</p>
@@ -2635,7 +2635,7 @@ there a tour of length <span class="arithmatex">\(\leq D\)</span> ?</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年5月20日 20:34:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年5月24日 11:06:06</span>
       
         <br>
         创建日期:
@@ -2686,13 +2686,13 @@ there a tour of length <span class="arithmatex">\(\leq D\)</span> ?</p>
         
         
           
-          <a href="../../oop/" class="md-footer__link md-footer__link--next" aria-label="下一页: 面向对象程序设计" rel="next">
+          <a href="../approx/" class="md-footer__link md-footer__link--next" aria-label="下一页: 近似算法" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                面向对象程序设计
+                近似算法
               </div>
             </div>
             <div class="md-footer__button md-icon">

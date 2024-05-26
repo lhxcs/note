@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://lhxcs.github.io/cs/ads/dp/">
       
       
-        <link rel="prev" href="../Fb_heap/">
+        <link rel="prev" href="../amortized/">
       
       
         <link rel="next" href="../NP/">
@@ -774,20 +774,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../Fb_heap/" class="md-nav__link">
-        斐波那契堆
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -824,29 +810,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    动态规划原理
+  <a href="#weighted-interval-scheduling" class="md-nav__link">
+    Weighted Interval Scheduling
   </a>
   
-    <nav class="md-nav" aria-label="动态规划原理">
+    <nav class="md-nav" aria-label="Weighted Interval Scheduling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    最优子结构
+  <a href="#designing-a-recursive-algorithm" class="md-nav__link">
+    Designing a Recursive Algorithm
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    重叠子问题
+  <a href="#memoizing-the-recursion" class="md-nav__link">
+    Memoizing the Recursion
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rna-secondary-structure" class="md-nav__link">
+    RNA Secondary Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="RNA Secondary Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-programming-over-intervals" class="md-nav__link">
+    Dynamic Programming over Intervals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-alignment" class="md-nav__link">
+    Sequence Alignment
+  </a>
   
 </li>
       
@@ -867,6 +880,20 @@
     <li class="md-nav__item">
       <a href="../NP/" class="md-nav__link">
         NP完全性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../approx/" class="md-nav__link">
+        近似算法
       </a>
     </li>
   
@@ -2078,29 +2105,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    动态规划原理
+  <a href="#weighted-interval-scheduling" class="md-nav__link">
+    Weighted Interval Scheduling
   </a>
   
-    <nav class="md-nav" aria-label="动态规划原理">
+    <nav class="md-nav" aria-label="Weighted Interval Scheduling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    最优子结构
+  <a href="#designing-a-recursive-algorithm" class="md-nav__link">
+    Designing a Recursive Algorithm
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    重叠子问题
+  <a href="#memoizing-the-recursion" class="md-nav__link">
+    Memoizing the Recursion
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rna-secondary-structure" class="md-nav__link">
+    RNA Secondary Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="RNA Secondary Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-programming-over-intervals" class="md-nav__link">
+    Dynamic Programming over Intervals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-alignment" class="md-nav__link">
+    Sequence Alignment
+  </a>
   
 </li>
       
@@ -2125,21 +2179,103 @@
 
 <h1 id="_1">动态规划<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 162 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1151 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
-<h2 id="_2">动态规划原理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">最优子结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>最优子结构性质：问题的最优解由相关子问题的最优解组合而成，而这些子问题可以独立求解。</p>
-<h3 id="_4">重叠子问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>适合用动态规划方法求解的最优化问题应该具备的第二个性质是子问题空间必须足够小，即问题的递归算法会反复求解相同的子问题，而不是一直生成新的子问题。</p>
-<p>如果递归算法反复求解相同的子问题，我们就称最优化问题具有重叠子问题性质。</p>
+<blockquote>
+<p><strong>Dynamic programming</strong>: Break up a problem into a series of overlapping sub-problems, and build up solutions to larger and larger sub-problems.</p>
+</blockquote>
+<h2 id="weighted-interval-scheduling">Weighted Interval Scheduling<a class="headerlink" href="#weighted-interval-scheduling" title="Permanent link">&para;</a></h2>
+<h3 id="designing-a-recursive-algorithm">Designing a Recursive Algorithm<a class="headerlink" href="#designing-a-recursive-algorithm" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Probblem Description</p>
+<ul>
+<li>Job <span class="arithmatex">\(j\)</span> starts at <span class="arithmatex">\(s_j\)</span>, finishes at <span class="arithmatex">\(f_j\)</span>, and has weight or value <span class="arithmatex">\(v_j\)</span>.</li>
+<li>Two jobs are compatible if they don't overlap.</li>
+<li>Goal: find maximum weight subset of mutually compatible jobs.</li>
+</ul>
+</div>
+<p>我们首先将所有的工作按完成时间排序并标记： <span class="arithmatex">\(f_1\le f_2\cdots\le f_n\)</span>。
+定义 <span class="arithmatex">\(p(j)\)</span> 是与工作 <span class="arithmatex">\(j\)</span> 兼容的最大下标工作 <span class="arithmatex">\(i\)</span>。</p>
+<p>现在我们考虑最优解 <span class="arithmatex">\(\mathcal{O}\)</span>。对于 <span class="arithmatex">\(\mathcal{O}\)</span>, 我们可以断定最后一个工作要么属于 <span class="arithmatex">\(\mathcal{O}\)</span>, 要么不属于。倘若属于，那么下标位于 <span class="arithmatex">\(p(n)\)</span> 和 <span class="arithmatex">\(n\)</span> 之间的工作肯定不属于 <span class="arithmatex">\(\mathcal{O}\)</span>，此时 <span class="arithmatex">\(\mathcal{O}\)</span> 就等于集合 <span class="arithmatex">\(\left\{1,\cdots, p(n)\right\}\)</span> 的最优解加上 <span class="arithmatex">\(v_n\)</span>。倘若不属于，<span class="arithmatex">\(\mathcal{O}\)</span> 就等于集合 <span class="arithmatex">\(\left\{1, \cdots,n-1\right\}\)</span> 的最优解。至此我们就将原问题分割为了几个子问题，并且我们可以定义 <span class="arithmatex">\(OPT(j)\)</span> 为集合 <span class="arithmatex">\(\left\{1,\cdots, j\right\}\)</span> 的最优解:</p>
+<div class="arithmatex">\[
+OPT(j)=\max (v_j+OPT(p(j)), OPT(j-1))
+\]</div>
+<p>并且第 <span class="arithmatex">\(j\)</span> 个工作属于最优解中当且仅当 <span class="arithmatex">\(v_j+OPT(p(j))\ge OPT(j-1)\)</span>。</p>
+<p>至此我们就得出了递归版本的算法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Compute-Opt(j)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    If j=0 then
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        Return 0
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    Else
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        Return max(v_j+Compute-Opt(p(j)), Compute-Opt(j-1))
+</code></pre></div>
+<p>然而，递归版本的算法花费了指数级别的时间，因为有些值我们需要重复计算，下图的递归树展示了这一点。</p>
+<p><img alt="" src="../image/dp1.png" /></p>
+<h3 id="memoizing-the-recursion">Memoizing the Recursion<a class="headerlink" href="#memoizing-the-recursion" title="Permanent link">&para;</a></h3>
+<p>可以观察到，我们的算法实际上只解决了 <span class="arithmatex">\(n+1\)</span> 个不同的子问题，即Compute-Opt(0), <span class="arithmatex">\(\cdots\)</span>, Computer-Opt(n), 为了消除递归的冗余，我们考虑将每次子问题被第一次计算后的结果存起来，即额外声明一个数组 <span class="arithmatex">\(M[0,\cdots, n]\)</span>:</p>
+<p><img alt="" src="../image/dp2.png" /></p>
+<p>显然上述算法的时间复杂度是 <span class="arithmatex">\(O(n)\)</span>。</p>
+<p>上述算法中，我们只计算了最优解，并不知道最优解中有哪些工作。实际上，通过第 <span class="arithmatex">\(j\)</span> 个工作属于最优解中当且仅当 <span class="arithmatex">\(v_j+OPT(p(j))\ge OPT(j-1)\)</span>的性质，我们可以在 <span class="arithmatex">\(O(n)\)</span> 时间内找到完整的解。</p>
+<details class="note">
+<summary>Exercise</summary>
+<p><img alt="" src="../image/dp3.png" /></p>
+</details>
+<p>现在，我们可以将递归的算法转化为迭代的算法：</p>
+<p><img alt="" src="../image/dp4.png" /></p>
+<p><strong>A Basic Outline of Dynamic Programming</strong></p>
+<ul>
+<li>There are only a polynomial number of subproblems.</li>
+<li>The solution to the original problem can be easily computed from the solutions to the subproblems.</li>
+<li>There is a natural ordering on subproblems from smallest to largest, together with an easy-to-compute recureence that allows one to determine the solution to a subproblem from the solutions to some number of smaller subproblems</li>
+</ul>
+<h2 id="rna-secondary-structure">RNA Secondary Structure<a class="headerlink" href="#rna-secondary-structure" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Problem Description</p>
+<p>A single-stranded RNA molecule can be viewed as a sequence of <span class="arithmatex">\(n\)</span> symbols drawn form the alphabet <span class="arithmatex">\(\left\{A,C,G,U\right\}\)</span>.
+Let <span class="arithmatex">\(B=b_1b_2\cdots b_n\)</span> be a single-stranded RNA molecule. A set of secondary structure on <span class="arithmatex">\(B\)</span> is a set of pairs <span class="arithmatex">\(S={(i,j)}\)</span>, where <span class="arithmatex">\(i,j\in {1,2,\cdots, n}\)</span>, that satisfies the following conditions:</p>
+<ul>
+<li>The ends of each pair in <span class="arithmatex">\(S\)</span> are separated by at least four intervening bases; that is, if <span class="arithmatex">\((i,j)\in S\)</span>, then <span class="arithmatex">\(i&lt;j-4\)</span>.</li>
+<li>The elements of any pair in <span class="arithmatex">\(S\)</span> consist of either <span class="arithmatex">\(\left\{A,U\right\}\)</span> or <span class="arithmatex">\(\left\{C,G\right\}\)</span>.</li>
+<li>if <span class="arithmatex">\((i,j)\)</span> and <span class="arithmatex">\((k,l)\)</span> are two pairs in <span class="arithmatex">\(S\)</span>, then we cannot have <span class="arithmatex">\(i&lt;k&lt;j&lt;l\)</span> (The noncrossing condition).</li>
+</ul>
+<p>We want to maximize the possible number of base pairs.</p>
+</div>
+<p>现在我们开始为这个问题设计动态规划算法。首先我们从最 trival 的想法开始，我们定义 <span class="arithmatex">\(OPT(j)\)</span> 是 <span class="arithmatex">\(b_1b_2\cdots b_j\)</span> 的最优解。根据之前的思路, <span class="arithmatex">\(b_j\)</span> 要么在最优解中，要么不在。倘若不在的话，<span class="arithmatex">\(OPT(j)=OPT(j-1)\)</span>。但是如果在的话，<span class="arithmatex">\(j\)</span> 一定和 <span class="arithmatex">\(t\)</span> 匹配，并且 <span class="arithmatex">\(t&lt;j-4\)</span>。这样的话，由于 noncrossing condition 的存在，我们要求没有其它的组合一端在 <span class="arithmatex">\((0,t-1)\)</span>, 另一端在 <span class="arithmatex">\((t+1, j-1)\)</span> 中，这将我们的子问题分成了两个，其中一个是找到 <span class="arithmatex">\((t+1, j-1)\)</span> 的最优解，但这并不符合我们定义的范式。因此我们思考添加一个变量，扩大子问题的范围。</p>
+<h3 id="dynamic-programming-over-intervals">Dynamic Programming over Intervals<a class="headerlink" href="#dynamic-programming-over-intervals" title="Permanent link">&para;</a></h3>
+<p>定义 <span class="arithmatex">\(OPT(i,j)\)</span> 是 <span class="arithmatex">\(b_ib_{i+1}\cdots b_j\)</span> 的最优解。同样地，我们考虑最后一个基 <span class="arithmatex">\(b_j\)</span>：</p>
+<ul>
+<li><span class="arithmatex">\(j\)</span> 在最优解中, 和 <span class="arithmatex">\(t&lt;j-4\)</span> 进行匹配。此时 <span class="arithmatex">\(OPT(i,j)=OPT(i,t-1)+OPT(t+1,j-1)+1\)</span></li>
+<li><span class="arithmatex">\(j\)</span> 不在最优解中。此时 <span class="arithmatex">\(OPT(i,j)=OPT(i,j-1)\)</span></li>
+</ul>
+<p>因此可以得到我们的状态转移方程：<span class="arithmatex">\(OPT(i,j)=\max(OPT(i,j-1),\max_{i&lt;t&lt;j}(OPT(i,t-1)+OPT(t+1,j-1)+1))\)</span>。</p>
+<p>接下来我们考虑：is there a natural ordering on subproblems from smallest to largest?
+很显然，我们按间隔(<span class="arithmatex">\(k=j-i\)</span>)从小到大依次计算。</p>
+<p><img alt="" src="../image/dp5.png" /></p>
+<p>总共有 <span class="arithmatex">\(O(n^2)\)</span> 的子问题，计算 <span class="arithmatex">\(OPT\)</span> 需要 <span class="arithmatex">\(O(n)\)</span>，因此总时间复杂度为 <span class="arithmatex">\(O(n^3)\)</span>。</p>
+<h2 id="sequence-alignment">Sequence Alignment<a class="headerlink" href="#sequence-alignment" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Edit Distance</p>
+<ul>
+<li>Gap penalty <span class="arithmatex">\(\delta\)</span>.</li>
+<li>Mismatch penalty <span class="arithmatex">\(\alpha_{pq}\)</span></li>
+<li>Cost: sum of gap and mismatch penalties.</li>
+<li>Goal: minimize the cost.</li>
+</ul>
+<p><img alt="" src="../image/dp6.png" /></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Sequence Alignment</p>
+<p><img alt="" src="../image/dp7.png" /></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">TODO</p>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年4月20日 22:02:37</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年5月26日 16:02:54</span>
       
         <br>
         创建日期:
@@ -2174,7 +2310,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../Fb_heap/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 斐波那契堆" rel="prev">
+          <a href="../amortized/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 摊还分析" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2183,7 +2319,7 @@
                 <span class="md-footer__direction">
                   上一页
                 </span>
-                斐波那契堆
+                摊还分析
               </div>
             </div>
           </a>

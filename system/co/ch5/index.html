@@ -772,20 +772,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cs/ads/Fb_heap/" class="md-nav__link">
-        斐波那契堆
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../cs/ads/dp/" class="md-nav__link">
         动态规划
       </a>
@@ -802,6 +788,20 @@
     <li class="md-nav__item">
       <a href="../../../cs/ads/NP/" class="md-nav__link">
         NP完全性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs/ads/approx/" class="md-nav__link">
+        近似算法
       </a>
     </li>
   
@@ -1492,6 +1492,20 @@
           <li class="md-nav__item">
   <a href="#pages-virtual-memory-blocks" class="md-nav__link">
     Pages: virtual memory blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-tables" class="md-nav__link">
+    Page Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-address-translation-fast-tlb" class="md-nav__link">
+    Making Address Translation Fast: TLB
   </a>
   
 </li>
@@ -2367,6 +2381,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#page-tables" class="md-nav__link">
+    Page Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-address-translation-fast-tlb" class="md-nav__link">
+    Making Address Translation Fast: TLB
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2393,7 +2421,7 @@
 
 <h1 id="exploiting-memory-hierarchy">Exploiting Memory Hierarchy<a class="headerlink" href="#exploiting-memory-hierarchy" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1601 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 5 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1803 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 6 分钟</p>
 </div>
 <h2 id="memory-technologies">Memory Technologies<a class="headerlink" href="#memory-technologies" title="Permanent link">&para;</a></h2>
 <p>回顾计逻的知识:</p>
@@ -2589,6 +2617,7 @@
 <h3 id="measuring-cache-performance">Measuring cache performance<a class="headerlink" href="#measuring-cache-performance" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../image/5.8.png" /></p>
 <h2 id="vitual-memory">Vitual Memory<a class="headerlink" href="#vitual-memory" title="Permanent link">&para;</a></h2>
+<p>Main memory can act as a cache for the secondary storage(disk).</p>
 <p><img alt="" src="../image/5.9.png" /></p>
 <p>对于每个程序，我们希望它们只考虑自己的内存空间，并且认为它们的内存是连续的。虚拟内存的作用就是将程序连续的内存地址翻译成实际上碎片化的物理地址。</p>
 <p>Advantages:</p>
@@ -2600,13 +2629,26 @@
 <h3 id="pages-virtual-memory-blocks">Pages: virtual memory blocks<a class="headerlink" href="#pages-virtual-memory-blocks" title="Permanent link">&para;</a></h3>
 <p>虚拟内存映射的最小单位是 Page。</p>
 <p><img alt="" src="../image/5.10.png" /></p>
+<ul>
+<li>操作系统完全管理这个映射关系。</li>
+<li>我们采用 write-back 策略，因此需要一个额外的 dirty bit 位。The dirty bit is set when a page is first written.If the dirty bit of a page is set, the page must be written back to disk before being replaced.</li>
+</ul>
+<h3 id="page-tables">Page Tables<a class="headerlink" href="#page-tables" title="Permanent link">&para;</a></h3>
+<p>维护一张表，记录某个 virtual page number 转化到的实际 physical page number 是多少。</p>
+<p><img alt="" src="../image/5.11.png" /></p>
+<p>由于每个程序都是连续的，自己的 pc 都是从零开始的，因此每个程序都拥有自己的 page table。并且使用全关联映射的方法。</p>
+<p><img alt="" src="../image/5.12.png" /></p>
+<h3 id="making-address-translation-fast-tlb">Making Address Translation Fast: TLB<a class="headerlink" href="#making-address-translation-fast-tlb" title="Permanent link">&para;</a></h3>
+<p>TLB 是专用的高速查找硬件 cache，这里称它为 translation look-aside buffer (TLB)。它实际上就是 page table 的专用 cache，其 associativity 的设计可以根据实际情况决定。</p>
+<p><img alt="" src="../image/5.13.png" /></p>
+<p><img alt="" src="../image/5.14.png" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年5月19日 20:37:20</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年5月24日 11:06:06</span>
       
         <br>
         创建日期:
