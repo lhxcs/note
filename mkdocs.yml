@@ -182,6 +182,10 @@ nav:
       - Random Variables--Distribution and Expectation: math/probability/note15.md
       - Variance and covariance: math/probability/note16.md
     - 量子力学: math/quantum.md
+
+  - Research:
+    - 论文阅读:
+      - PuzzleAvatar: research/paper/puzzle_avatar.md
   # - English:
   #   - Reading:
   #     - TOFEL Reading: English/reading/reading.md 
