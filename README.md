@@ -14,7 +14,7 @@ https://lhxcs.github.io/note
 
 ## Comupter System(计算机系统)
 - 计算机逻辑设计基础(ZJU课程笔记，较完善)
-- 计算机组成与设计(ZJU课程笔记，TODO)
+- 计算机组成与设计(ZJU课程笔记，一般完善)
 
 ## AI(人工智能相关)
 - 计算机视觉导论(ZJU课程笔记，较完善)
