@@ -101,7 +101,81 @@ Circumvent estimating human body poses and cameras, performing implicit human ca
         - 被选中的资产通过像素级联合操作形成一个掩码的集合，表示所有选中资产的可见区域 $\mathcal{M}_{\cup}=\cup_{i=1}^{j}\mathcal{M_i}$
         - 图像的联合表示：$\mathcal{I}_{\cup}=\mathcal{I}\odot \mathcal{M}_{\cup}$,即最终得到的联合图像相当于从原始图像中剪出了所有选中的 asset。
         - 构建联合文本 prompt: 该 propmpt 通过串联所选资产的描述来形成。
+- Losses
+    - Masked Diffusion Loss
+        - 在分割掩码区域内确保模型生成的图像尽可能接近真实图像。
+        - $\mathcal{L}_{rec}=\mathbb{E}_{z,\epsilon\sim\mathcal{N}(0,1),t}[\Vert[\epsilon-\epsilon_\theta(z_t,t,p_{\cup})]\odot \mathcal{M}_{\cup}\Vert_2^2]$
+        - $\mathcal{M}_{\cup}$ is union mask, $\epsilon_\theta$ is the denoised output at diffusion step $t$ given the union prompt $p_{\cup}$.
+    - Cross-Attention Loss
+        - 确保新添加的 token 与它们各自目标 asset 之间的专一性关联。
+    - Prior Preservation Loss
+        - 保持模型泛化能力
+        - $\mathcal{L}=\mathbb{E}_{z^{pr},\epsilon\sim\mathcal{N}(0,1),t}[\Vert[\epsilon-\epsilon_{\theta}(z_t^{pr},t,p_{\cup}^{*})]\Vert_2^2]$
+        - 其中 $p_{\cup}^*$ 是没有特殊标记的文本提示，即只包含通用概念，不包含微调过程中新添加的资产标记。
 
 #### 为什么能 work
 
 #### technical advantage
+
+
+### Pipeline Module 2: PuzzleAvatar: Put Puzzle Pieces Together
+
+#### Motivation
+
+
+#### Method
+
+!!! note
+
+    图像数据的分布：图像在所有可能的图像空间中的出现概率。
+    在生成模型中，我们的目标是学习输入图片的分布，这样我们就可以在这个分布中采样并生成新的图像。
+
+- Score Distillation Sampling(SDS)
+    - 最早在 dreamfusion 中提出，从 diffusion 模型中蒸馏知识。
+    - 想法就是 dreamfusion 中优化的损失函数含有一个 UNet 的梯度，非常慢而且很难算，想法就是跳过这个梯度的计算。
+    - 因此可以对 $L_{diff}$ 通过链式法则进行分解，将 UNet 的梯度分离出来，然后扔掉。
+    - 最终表达式 : $\nabla_{\theta}\mathcal{L}_{SDS}=\mathbb{E}_{t, \epsilon}[w(t)(\hat{\epsilon}(z_t|y)-\epsilon)\dfrac{\partial x}{\partial \theta}]$, 其中三维场景辐射场的参数是 $\theta$。
+
+- Noise-Free Distillation Sampling
+    - NFDS 是 SDS 的改进版本，解决 SDS 颜色过饱和的问题(why)。
+    - NFDS 将重建残差分为两个独立的残差项 $\delta_C,\delta_D$。
+        - 其中 $\delta_C$ 比较了给定扩散输出的潜在表示 $z_t$ 下，考虑资产 $p$ 和不考虑时图像的重建结果 (为了能够使模型专注于生成与特定资产相关的图像内容)。$\delta_C(z_t,p,t)=\epsilon_{\theta}(z_t;p,t)-\epsilon_{\theta}(z_t;\emptyset,t)$
+        - $\delta_D$ 根据 step $t$ 的不同，调整了重建过程中的图像对比度。(动态调整图像的对比度，实现更平滑的图像细节过渡和更自然的颜色分布)
+
+- Representation and initialization
+    - 3D Human avatar is parameterized with DMTet
+    - geometry $\phi_g$ is initialized to an A-posed SMPL-X body.(3D模型的结构部分，如人物的身体形状)
+- Optimization
+    - use full-text prompts from $p^{all}$ as a guiding prompt.
+    - 两阶段优化
+        - 几何优化：用表面法线空间引导几何。并且加文本提示进行指示。
+        - 外观优化
+
+#### 为什么能 work
+
+#### technical advantage
+
+## Experiments
+
+- 利用 4D Scanner (synced with IOI color cameras) 来捕捉真实的 3D 形状和外观作为 benchmark 来衡量重建误差
+
+### PuzzleIOI Dataset
+
+### 量化评估的方法
+
+- quality of shape reconstruction
+    - Chamfer 距离： $A$ 中每个点到 $B$ 中最近邻点的距离之和加上 $B$ 中每个点到 $A$ 中最近邻点的距离之和。
+    - P2S 距离：单向点到表面的距离度量。
+    - $L_2$ error for normal maps rendered for four views to capture local surface details.
+- quality of appearance reconstruction
+    - PSNR: PSNR 越高，表示重建图像的质量越接近原始图像
+    - SSIM: 考虑亮度、对比度、结构(图像中纹理和细节)，结果在 $-1$ 到 $1$ 之间，越接近 $1$ 表示两幅图像越相似。
+    - LPIPS：使用预训练的深度网络来提取图像特征，然后计算这些特征之间的距离，以评估图像之间的感知相似度。LPIPS的值越低表示两张图像越相似
+
+
+### Benchmark
+
+
+### Ablations
+
+消融实验是通过移除或修改模型的某些部分来理解这些部分对最终性能的贡献。
