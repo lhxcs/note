@@ -108,6 +108,8 @@ Circumvent estimating human body poses and cameras, performing implicit human ca
         - $\mathcal{M}_{\cup}$ is union mask, $\epsilon_\theta$ is the denoised output at diffusion step $t$ given the union prompt $p_{\cup}$.
     - Cross-Attention Loss
         - 确保新添加的 token 与它们各自目标 asset 之间的专一性关联。
+        - $\mathcal{L}_{attn}=\mathbb{E}_{z,j,t}[\Vert\mathcal{CA}_{\theta}(v_j,z_t)-\mathcal{M}_j\Vert_2^2]$
+        - 其中 $\mathcal{CA}_{\theta}$ 代表 $v_j$ 和 $z_t$ 某部分的相关性强度，该损失函数最小化交叉注意力和分割掩码 $M_j$ 差异，即新添加的标记 $v_j$ 只与目标资产 $j$ 相关联。
     - Prior Preservation Loss
         - 保持模型泛化能力
         - $\mathcal{L}=\mathbb{E}_{z^{pr},\epsilon\sim\mathcal{N}(0,1),t}[\Vert[\epsilon-\epsilon_{\theta}(z_t^{pr},t,p_{\cup}^{*})]\Vert_2^2]$
@@ -179,3 +181,9 @@ Circumvent estimating human body poses and cameras, performing implicit human ca
 ### Ablations
 
 消融实验是通过移除或修改模型的某些部分来理解这些部分对最终性能的贡献。
+
+- view prompt $[d]$ helps the reconstruction
+- NSFD outperforms vanilla SDS
+- syntheic human prior helps
+- token $[v_i]$ encode the identity and features of assets, but more detailed prompts can introduce bias
+

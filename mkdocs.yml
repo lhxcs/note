@@ -186,6 +186,8 @@ nav:
   - Research:
     - 论文阅读:
       - PuzzleAvatar: research/paper/puzzle_avatar.md
+    - 杂项:
+      - SDS Loss: research/misc/sds.md
   # - English:
   #   - Reading:
   #     - TOFEL Reading: English/reading/reading.md 
