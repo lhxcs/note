@@ -169,6 +169,8 @@ nav:
         - Lec10 Recognition: AI/cv/icv/lec10.md
         - Lec12 Computational Photography: AI/cv/icv/lec12.md
         - COLMAP: AI/cv/icv/COLMAP.md
+    - Large Language Model:
+        - Understanding LLMs: AI/LLM/ch1.md
   # - 常用工具:
   #   - tools/index.md
   #   - GNU Make: tools/Makefile.md
