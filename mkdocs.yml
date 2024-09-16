@@ -128,6 +128,8 @@ nav:
       - Chapter5 Digital Hardware Implementation: system/CLDF/lec5.md
       - Chapter6 Registers and Register Transfers: system/CLDF/lec6.md
       - Chapter7 Memory Basics: system/CLDF/lec7.md
+    - CSAPP:
+      - 引言: system/CSAPP/ch1.md
     # - 数据库系统:
     #   - system/db/index.md
     #   - Chapter1 Introduction: system/db/lec1.md
@@ -171,6 +173,8 @@ nav:
         - COLMAP: AI/cv/icv/COLMAP.md
     - Large Language Model:
         - Understanding LLMs: AI/LLM/ch1.md
+    - Efficient AI:
+        - Pruning: AI/EfficientAI/pruning.md
   # - 常用工具:
   #   - tools/index.md
   #   - GNU Make: tools/Makefile.md
@@ -185,11 +189,11 @@ nav:
       - Variance and covariance: math/probability/note16.md
     - 量子力学: math/quantum.md
 
-  - Research:
-    - 论文阅读:
-      - PuzzleAvatar: research/paper/puzzle_avatar.md
-    - 杂项:
-      - SDS Loss: research/misc/sds.md
+  # - Research:
+  #   - 论文阅读:
+  #     - PuzzleAvatar: research/paper/puzzle_avatar.md
+  #   - 杂项:
+  #     - SDS Loss: research/misc/sds.md
   # - English:
   #   - Reading:
   #     - TOFEL Reading: English/reading/reading.md 
