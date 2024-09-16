@@ -16,7 +16,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://lhxcs.github.io/AI/EfficientAI/LLM/</loc>
+         <lastmod>2024-09-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://lhxcs.github.io/AI/EfficientAI/pruning/</loc>
+         <lastmod>2024-09-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/AI/EfficientAI/quantization/</loc>
          <lastmod>2024-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
