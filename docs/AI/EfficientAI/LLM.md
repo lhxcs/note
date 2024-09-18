@@ -29,7 +29,7 @@
     - 朴素实现就是一个 2 层 MLP 并使用 ReLU
         - $FFN(x)=ReLU(xW_1+b_1)W_2+b_2$
 - LayerNorm & Residual connectioni
-    - LN 对每个 token 进行规范化，随后作用放射变化。(BatchNorm 是对整个 batch 进行规范化)
+    - LN 对每个 token 进行规范化，随后作用仿射变化。(BatchNorm 是对整个 batch 进行规范化)
     - ![](image/24.png)
     - Transformer Block
         - 添加 LN 和 Residual Connectioin 来促进训练的稳定性。

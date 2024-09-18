@@ -177,6 +177,7 @@ nav:
         - Pruning: AI/EfficientAI/pruning.md
         - Quantization: AI/EfficientAI/quantization.md
         - Transformer & LLM: AI/EfficientAI/LLM.md
+    - Transformer: AI/Transformer.md
   # - 常用工具:
   #   - tools/index.md
   #   - GNU Make: tools/Makefile.md
