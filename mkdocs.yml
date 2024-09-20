@@ -181,6 +181,9 @@ nav:
   # - 常用工具:
   #   - tools/index.md
   #   - GNU Make: tools/Makefile.md
+  - MLSys:
+    - MLsys/index.md
+    - vLLM: MLsys/vLLM.md
   - 数理基础:
     - math/index.md
     - Math for deep learning: math/mdl.md
