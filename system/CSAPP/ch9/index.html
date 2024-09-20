@@ -1219,6 +1219,26 @@
     虚拟内存：作为缓存的工具
   </a>
   
+    <nav class="md-nav" aria-label="虚拟内存：作为缓存的工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dram" class="md-nav__link">
+    DRAM 缓存的组织结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    页表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2397,6 +2417,26 @@
     虚拟内存：作为缓存的工具
   </a>
   
+    <nav class="md-nav" aria-label="虚拟内存：作为缓存的工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dram" class="md-nav__link">
+    DRAM 缓存的组织结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    页表
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2420,7 +2460,7 @@
 
 <h1 id="_1">虚拟内存<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 894 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1452 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 5 分钟</p>
 </div>
 <p>一个系统中的进程是与其它进程共享 CPU 和主存资源的。但是共享主存会存在一些问题：</p>
 <ul>
@@ -2450,13 +2490,31 @@
 <p>地址空间的概念区分了数据对象(字节)和它们的属性(地址)。这样就允许我们让每个数据对象具有多个独立的地址，其中每个地址都选自一个不同的地址空间。这就是虚拟内存的基本思想，主存中的每个字节都有一个选自虚拟地址空间的虚拟地址和一个选自物理地址空间的物理地址。</p>
 </div>
 <h2 id="_4">虚拟内存：作为缓存的工具<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>虚拟内存被组织为一个由存放在磁盘上的 <span class="arithmatex">\(N\)</span> 个连续的字节大小的单元组成的数组，每个字节都有一个唯一的虚拟地址作为到数组的索引。磁盘上数组的内容被 cached 在主存中。VM 将虚拟内存分割为虚拟页(搬运的一个块)，任意时刻虚拟页的集合都分为如下三个不相交的子集：</p>
+<ul>
+<li>未分配：VM 系统还未分配的页，没有任何数据和它们相关联，因此不占用磁盘空间。</li>
+<li>缓存的：已经缓存在物理内存中的分配页。</li>
+<li>未缓存的：未缓存在物理内存中的已分配页。</li>
+</ul>
+<p><img alt="" src="../image/9.3.png" /></p>
+<h3 id="dram">DRAM 缓存的组织结构<a class="headerlink" href="#dram" title="Permanent link">&para;</a></h3>
+<ul>
+<li>SRAM： CPU 和主存之间的高速缓存。</li>
+<li>DRAM：虚拟内存的缓存，在主存中缓存虚拟页。</li>
+</ul>
+<p>需要注意的是，DRAM 缓存的 miss 非常昂贵，DRAM 不命中要由磁盘服务，而磁盘读非常慢。因此虚拟页往往很大，通常是 4KB-2MB，并且 DRAM 缓存是全相联的(任何虚拟页可以放置在任何的物理页)</p>
+<h3 id="_5">页表<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>虚拟内存必须有某种方法来判定一个虚拟页是否缓存在 DRAM 的某个地方。如果是，还必须确定这个虚拟页存放在哪个物理页中。如果 miss, 系统要判断这个虚拟页存放在磁盘的哪个位置，并在物理内存中选择一个 victime page 进行替换。</p>
+<p>这些功能由软硬件联合提供，包括 os 和 MMU 中的地址翻译硬件，以及一个存放在物理内存中的页表。页表将虚拟页映射到物理页，每次地址翻译硬件将一个虚拟地址翻译成物理地址时都需要读取页表。操作系统负责维护页表，并在磁盘和 DRAM 中传送 page.</p>
+<p><img alt="" src="../image/9.4.png" /></p>
+<p>如上图所示，页表是一个页表条目(PTE)组成的数组。有效位表明该虚拟页当前被缓存在 DRAM 中，如果有效位为 1， 则地址字段表示 DRAM 中相应物理页的起始位置，该物理页缓存了虚拟页。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月20日 11:40:39</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月20日 23:08:14</span>
       
         <br>
         创建日期:

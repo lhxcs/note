@@ -2169,6 +2169,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    Method
+  </a>
+  
+    <nav class="md-nav" aria-label="Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pagedattention" class="md-nav__link">
+    PagedAttention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kv-cache-manager" class="md-nav__link">
+    KV Cache Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoding-with-pagedattention-and-vllm" class="md-nav__link">
+    Decoding with PagedAttention and vLLM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-to-other-decodig-scenarios" class="md-nav__link">
+    Application to Other Decodig Scenarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Application to Other Decodig Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallel-sampling" class="md-nav__link">
+    Parallel sampling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beam-search" class="md-nav__link">
+    Beam Search
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduling-and-preemption" class="md-nav__link">
+    Scheduling and Preemption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-execution" class="md-nav__link">
+    Distributed Execution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2463,6 +2538,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    Method
+  </a>
+  
+    <nav class="md-nav" aria-label="Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pagedattention" class="md-nav__link">
+    PagedAttention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kv-cache-manager" class="md-nav__link">
+    KV Cache Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoding-with-pagedattention-and-vllm" class="md-nav__link">
+    Decoding with PagedAttention and vLLM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-to-other-decodig-scenarios" class="md-nav__link">
+    Application to Other Decodig Scenarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Application to Other Decodig Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parallel-sampling" class="md-nav__link">
+    Parallel sampling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beam-search" class="md-nav__link">
+    Beam Search
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduling-and-preemption" class="md-nav__link">
+    Scheduling and Preemption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-execution" class="md-nav__link">
+    Distributed Execution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2484,7 +2634,7 @@
 
 <h1 id="efficient-memory-management-for-large-language-model-serving-withe-pagedattention">Efficient Memory Management for Large Language Model Serving withe PagedAttention<a class="headerlink" href="#efficient-memory-management-for-large-language-model-serving-withe-pagedattention" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1206 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 4 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2938 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 10 分钟</p>
 </div>
 <h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>在这一节简单介绍 LLM 的背景。</p>
@@ -2540,13 +2690,91 @@ $$
 <li>external fragmentation: 两个请求的分配导致中间一段内存不可用。</li>
 </ul>
 <p>internal/external fragmentation 不会再被使用，是纯粹的内存浪费(pure memory waste), reserved slots 最终会被使用，但是可能这段空间会被保留很长一段时间，但其实可以被其它的请求使用。这是非常低效的。</p>
+<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
+<h3 id="pagedattention">PagedAttention<a class="headerlink" href="#pagedattention" title="Permanent link">&para;</a></h3>
+<p><strong>PagedAttention</strong> 受操作系统中 paging 思想的启发，允许我们在非连续的内存空间中存储连续的 key/value。</p>
+<p>PagedAttention 将每个序列的 KV cache 切分成一系列 KV Blocks, 每个 block 包含固定长度 token 的 key/value 向量。我们用 <span class="arithmatex">\(K_j=(k_{(j-1)B+1},\cdots,k_{jB})\)</span> 来表示 key block, 用 <span class="arithmatex">\(V_j=(v_{(j-1)B+1},\cdots,v_{jB})\)</span> 来表示 value block。于是，原有的 attention 计算被替换成 block-wise 的计算：</p>
+<div class="arithmatex">\[
+A_{ij}=\dfrac{exp(q_i^TK_j/\sqrt{d})}{\sum_{t=1}^iexp(q_i^Tk_t/\sqrt{d})},\ o_i=\sum_{j=1}^{\lceil i/b\rceil}V_jA_{ij}^T
+\]</div>
+<p>其中 <span class="arithmatex">\(A_{ij}=(a_{i,(j-1)B+1},\cdots,a_{i,jB})\)</span>, <span class="arithmatex">\(B\)</span> 是 block size. <span class="arithmatex">\(A_{ij}\)</span> 代表了第 <span class="arithmatex">\(j\)</span> 个 KV Block 与第 <span class="arithmatex">\(i\)</span> 个查询向量的注意力得分。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="" src="../image/vllm2.png" /></p>
+<p>如图所示，key/value 向量被存在三个不同的 block 里，并且这几个 Block 在物理内存中不是连续的。每次我们都计算 <span class="arithmatex">\(q_i\)</span> 和 <span class="arithmatex">\(K_j\)</span> 的乘积来计算 attention score (e.g. forth 和第 0 块中的 "Four score and seven")，然后将 <span class="arithmatex">\(A_{ij}\)</span> 与 <span class="arithmatex">\(V_j\)</span> 相乘得到最终的 attention 输出。</p>
+</div>
+<h3 id="kv-cache-manager">KV Cache Manager<a class="headerlink" href="#kv-cache-manager" title="Permanent link">&para;</a></h3>
+<p><strong>High Level Idea</strong>: 类似 os 中的 virtual memory。</p>
+<p>操作系统将内存分为定长的 pages, 并且能够将进程的逻辑页映射到物理页。连续的逻辑页对应着不连续的物理页，但是让用户感觉它们访问的是连续的内存。除此之外，我们不需要提前保留这些物理地址空间，操作系统可以根据需要对物理页进行动态的分配。</p>
+<ul>
+<li>一个请求的 KV cache 表示为一系列逻辑(logical) KV blocks, 这些 blocks 从左向右填充。最后一个 KV block 可能不会被填满，那么剩余的位置可以用来放后面生成 token 的 KV cache。</li>
+<li>在 GPU 工作器上，一个 block engine 分配一个块连续的 GPU DRAM，并将其划分为物理 KV 块。</li>
+<li>除此之外，KV block manager 还维护一个 block table(类似操作系统的页表)来管理逻辑块和物理块之间的映射。</li>
+<li>好处：vLLM 可以动态增加 KV cache memory, 这样就不用提前预留内存空间，避免内存浪费。</li>
+</ul>
+<h3 id="decoding-with-pagedattention-and-vllm">Decoding with PagedAttention and vLLM<a class="headerlink" href="#decoding-with-pagedattention-and-vllm" title="Permanent link">&para;</a></h3>
+<p>我们使用一个例子来看看 vLLM 是怎么利用 PagedAttention 和 KV Cache Maneger 来进行输入序列的 decode。</p>
+<p><img alt="" src="../image/vllm3.png" /></p>
+<ul>
+<li>首先，我们的 prompt 有 7 个 tokens, 所以 vLLM 先分配前两个logical KV blocks(0 和 1)，并将这两个 logical block 映射到两个 physical blocks(7 和 1)</li>
+<li>在 prefill 这一步，vLLM 使用传统的 attention 算法生成 prompt 的 KV cache，并把前 4 个 token 的 cache 放到 logical block 0 ,把后 3 个 token 的 cache 放到 logical block 1。block 1 还剩下一个 slot, 可以用来放接下来生成的 token。</li>
+<li>在第一次 autoregressive 后，logical block 1 被填满。</li>
+<li>在第二次 decode 步骤，vLLM 将新生成的 KV cache 存在新的 logical block 中，并为其分配一个新的 physical block，并将映射关系存储在 block table 中。</li>
+</ul>
+<h3 id="application-to-other-decodig-scenarios">Application to Other Decodig Scenarios<a class="headerlink" href="#application-to-other-decodig-scenarios" title="Permanent link">&para;</a></h3>
+<h4 id="parallel-sampling">Parallel sampling<a class="headerlink" href="#parallel-sampling" title="Permanent link">&para;</a></h4>
+<p>对于一个 Input prompt, LLM 生成多个 output 供 user 选择。并且 vLLM 可以支持这些输出能够共享 KV cache。</p>
+<p><img alt="" src="../image/vllm4.png" /></p>
+<p>上图是一个例子:</p>
+<ul>
+<li>由于两个输出共享一个 prompt, 我们只需要存一份 prompt，并且 logical block 被映射到同一块 physical block。</li>
+<li>由于一个物理块可能对应多个逻辑块，对每个物理块我们需要一个 reference count (引用计数)。在这个例子中，物理块 7 和 1 的引用计数都是 2.</li>
+<li>在生成阶段，两个输出序列可能生成不同的 Token, 因此需要为它们的 KV cache 分配单独的存储空间。因此 bLLM 实现了块细粒度的 <strong>copy-on-write</strong> 的机制，当多个序列需要修改同一个物理块时被触发。<ul>
+<li>当一个序列需要写入其最后一个逻辑块时，vLLM 会检查相应物理块的引用计数。</li>
+<li>如果引用计数大于 1， 意味着有其它序列在使用这个物理块，那么 vLLM 会分配一个新的物理块，并将物理块 1 的信息复制到物理块 3，并减小物理块 1 的引用计数。</li>
+<li>当另一个序列需要写入物理块 1 时，由于引用计数已经是 1，那么可以直接将新生成的 cache 写入该块。</li>
+</ul>
+</li>
+</ul>
+<h4 id="beam-search">Beam Search<a class="headerlink" href="#beam-search" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Background: 在机器翻译任务中，user 想要前 <span class="arithmatex">\(k\)</span> 个最好的翻译结果。Beam Search 就在每次迭代中保留 top-k 个候选序列。其中 <span class="arithmatex">\(k\)</span> 是 beam width。</li>
+<li>不仅可以共享 prompt 块，还可以在不同候选之间共享其它块。</li>
+<li>操作系统进程树？</li>
+</ul>
+<h3 id="scheduling-and-preemption">Scheduling and Preemption<a class="headerlink" href="#scheduling-and-preemption" title="Permanent link">&para;</a></h3>
+<ul>
+<li>当请求量超过系统的容量时，vLLM 需要决定优先处理的请求集合。vLLM 使用 <strong>first-come-first-serve(FCFS)</strong> 的调度策略来保证公平性并且避免饿死(starvation)，即当 vLLM 需要抢占请求时，能够保证先来的请求最先被处理，最后来的请求最先被抢占。</li>
+<li>LLM service 一个独特的挑战：输入和输出的长度未知。所以当请求数量和输出长度变大时，GPU 可能会耗尽内存。因此我们需要解决两个问题：<ul>
+<li>我们应该逐出哪些块？</li>
+<li>如果再次需要，我们如何恢复被逐出的块？</li>
+</ul>
+</li>
+<li>逐出策略<ul>
+<li>使用启发式方法来预测哪个块最不可能被访问。</li>
+<li>一个序列的所有块是一起被访问的，因此实现 all-or-nothing 的策略，要么全部逐出，要么不逐出。</li>
+<li>一个请求中的多个序列可能存在内存共享，因此它们总是一起被抢占或重新调度。</li>
+</ul>
+</li>
+<li>恢复逐出块<ul>
+<li>Swapping: 被逐出的块被复制到 CPU 内存中。当 vLLM 用光所有自由的物理块时，它会选择合适的序列逐出，并将它们的 KV cache 转移到 CPU 中。vLLM 一旦抢占了一个序列，那么它就停止接受新请求，直到所有抢占的序列完成。这时候内存中就有空心啊的块，我们就可以从 CPU 中把它搬回来。</li>
+<li>Recomputation: 当被抢占的序列重新调度时，系统重新计算 KV cache。</li>
+</ul>
+</li>
+</ul>
+<h3 id="distributed-execution">Distributed Execution<a class="headerlink" href="#distributed-execution" title="Permanent link">&para;</a></h3>
+<p>很多 LLM 的参数量都会超过单个 GPU 的容量，因此需要将模型分割在多个 GPU 上并行执行。</p>
+<ul>
+<li>作者观察到即使并行执行，每个模型分片(shard)仍然会处理相同的输入 token，这样的话对相同的位置需要多个 KV Cache。因此我们使用一个全局的 KV Cache manager，即不同的 GPU 共享一个 manager 以及从逻辑页到物理页的映射关系。每个 GPU worker 只保存 KV Cache 的一部分(8 个 attention head, 4 个 GPU， 那么每个 GPU 保存两个 attention heads 的 KV Cache)。</li>
+<li>具体步骤不是很懂，到时候去看一下分布式系统。</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月20日 11:40:39</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月20日 23:08:14</span>
       
         <br>
         创建日期:
