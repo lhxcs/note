@@ -130,6 +130,7 @@ nav:
       - Chapter7 Memory Basics: system/CLDF/lec7.md
     - CSAPP:
       - 引言: system/CSAPP/ch1.md
+      - 虚拟内存: system/CSAPP/ch9.md
     # - 数据库系统:
     #   - system/db/index.md
     #   - Chapter1 Introduction: system/db/lec1.md
