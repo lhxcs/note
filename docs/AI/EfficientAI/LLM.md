@@ -166,3 +166,26 @@ LLMs exhibit some "emergent" abilities that are only available with a lagre enou
 - 一个逻辑 KV 缓存块，一个块表，一个物理 KV cache 块。块表负责从 logical 到 Physical 的映射
     - 对一个 prompt, 它在逻辑地址上是连续的，而在物理地址上是可以不连续的
     - 动态块映射支持在并行采样中进行即时共享，即我们可以喂一个 prompt, 随后由多个进程共享，生成多个不同的输出。
+
+### StreamingLLM
+
+- 在流媒体应用程序中迫切需要 LLM，多轮对话需要长时间的交互。但是我们面临挑战；
+    - 消耗大量内存
+    - 无法泛化到超出训练序列长度的文本(Model Performance Breaks)
+- 一个自然的想法：window attention
+    - 我们只关注最近的 KV 状态
+    - 但是当文本长度超过 cache 大小时，最初的 token 会被逐出。
+- Observation: 最初的 token 有很大的 attention score, 尽管这个 token 在语义上并不重要。
+    - softmax 中我们需要让 attention scores 和为 1。
+    - 由于第一个 token 的可见性，后续所有 token 都会关注第一个 token。
+    - 因此如果某个部分不太相关，网络就会决定将所有分数集中到第一个标记上。
+    - 即 **initial tokens** 的重要性来自它的 position 而非语义。
+- StreamingLLM
+    - Objective: 让 LLM 能通过有限的 attention windows 训练， 这样就可以在不额外进行训练的情况下解决无限文本长度问题。
+    - Idea: 保存 attention sink tokens 的 KV 值，和 sliding windows 一起计算来保持模型的行为稳定。
+    - 位置编码时我们使用 cache 里的位置。
+
+### FlashAttention
+
+
+

@@ -195,7 +195,8 @@ nav:
       - Random Variables--Distribution and Expectation: math/probability/note15.md
       - Variance and covariance: math/probability/note16.md
     - 量子力学: math/quantum.md
-
+  - 工具
+    - Makefile: tools/makefile.md
   # - Research:
   #   - 论文阅读:
   #     - PuzzleAvatar: research/paper/puzzle_avatar.md
