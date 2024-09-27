@@ -3,7 +3,9 @@
 !!! note "Reference"
     
     [Paper](https://arxiv.org/abs/1909.08053)
+
     [图解大模型训练之：张量模型并行(TP)，Megatron-LM](https://zhuanlan.zhihu.com/p/622212228)
+    
     [李沐论文精度](https://www.bilibili.com/video/BV1nB4y1R7Yz/?spm_id_from=333.337.search-card.all.click&vd_source=49519b2e89bff31aec426f55ae7d4afa)
     
 ## Background
@@ -100,4 +102,4 @@ $$
         - 在每块 GPU 上计算各自维护部分的 $\dfrac{e}{\sum e}$, 将其与真值做交叉熵，得到每行的 loss，按行加起来得到 GPU 上的 loss
         - 将所有 GPU 的 Loss 做 all reduce, 得到总 loss。
         - 通讯量为 $b\times s+N$.
-        - ![](image/mat5.png)
+        - ![](image/met5.png)

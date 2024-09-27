@@ -185,9 +185,11 @@ nav:
   #   - GNU Make: tools/Makefile.md
   - MLSys:
     - MLsys/index.md
+    - vLLM: MLsys/vLLM.md
     - Inference Overview: MLsys/Survey.md
     - Megatron-LM: MLsys/Megatron-LM.md
-    - vLLM: MLsys/vLLM.md
+    - PTD-P: MLsys/PTD-P.md
+    
   - 数理基础:
     - math/index.md
     - Math for deep learning: math/mdl.md
