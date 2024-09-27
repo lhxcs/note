@@ -1,5 +1,11 @@
 # Megatron-LM
 
+!!! note "Reference"
+    
+    [Paper](https://arxiv.org/abs/1909.08053)
+    [图解大模型训练之：张量模型并行(TP)，Megatron-LM](https://zhuanlan.zhihu.com/p/622212228)
+    [李沐论文精度](https://www.bilibili.com/video/BV1nB4y1R7Yz/?spm_id_from=333.337.search-card.all.click&vd_source=49519b2e89bff31aec426f55ae7d4afa)
+    
 ## Background
 
 ### Neural Language Model Pretraining
@@ -60,9 +66,38 @@ $$
 
 ![](image/met2.png)
 
+手写图解:
+
+![](image/met4.jpg)
+
 
 ### Self-Attention
 
 每个 Head 分到一个 GPU 上，其余的思想类似 MLP。
 
 ![](image/met3.png)
+
+手写图解：
+
+![](image/met5.jpg)
+
+### 输入嵌入层和输出层
+
+这两块的切法要一样，因为二者是共用的。
+
+- 输入层
+    - word embedding 就是用 Token 的序号去词表中查找对应的词向量。
+    - 如果查找到就返回，没有就返回 $0$ 向量，最后 all-reduce。
+    - ![](image/met4.png)
+- 输出层
+    - 输入和输出层共用一个 word embedding。
+- 计算交叉熵损失
+    - 正常做法是对输出层的结果 $[Y_1,Y_2]$ 做 all-gather，将它们 concat 成 $Y$, 然后对 $Y$ 的每一行做 softmax，就得到当前位置每个词出现的概率，然后用该概率和真值做交叉熵。
+    - 通讯量为 $b\times s\times v$。$v$ 可能很大。
+    - 优化：
+        - 每块 GPU 上先按行求和
+        - 将每块 GPU 的结果做 all reduce, 得到每行最终的 sum, 也就是 softmax 的分母。
+        - 在每块 GPU 上计算各自维护部分的 $\dfrac{e}{\sum e}$, 将其与真值做交叉熵，得到每行的 loss，按行加起来得到 GPU 上的 loss
+        - 将所有 GPU 的 Loss 做 all reduce, 得到总 loss。
+        - 通讯量为 $b\times s+N$.
+        - ![](image/mat5.png)

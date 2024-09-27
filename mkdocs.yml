@@ -130,6 +130,7 @@ nav:
       - Chapter7 Memory Basics: system/CLDF/lec7.md
     - CSAPP:
       - 引言: system/CSAPP/ch1.md
+      - 异常控制流: system/CSAPP/ch8.md
       - 虚拟内存: system/CSAPP/ch9.md
     # - 数据库系统:
     #   - system/db/index.md
@@ -184,6 +185,8 @@ nav:
   #   - GNU Make: tools/Makefile.md
   - MLSys:
     - MLsys/index.md
+    - Inference Overview: MLsys/Survey.md
+    - Megatron-LM: MLsys/Megatron-LM.md
     - vLLM: MLsys/vLLM.md
   - 数理基础:
     - math/index.md
@@ -195,7 +198,7 @@ nav:
       - Random Variables--Distribution and Expectation: math/probability/note15.md
       - Variance and covariance: math/probability/note16.md
     - 量子力学: math/quantum.md
-  - 工具
+  - 工具:
     - Makefile: tools/makefile.md
   # - Research:
   #   - 论文阅读:
