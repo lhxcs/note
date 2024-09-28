@@ -16,7 +16,7 @@
         <link rel="prev" href="../Megatron-LM/">
       
       
-        <link rel="next" href="../../math/">
+        <link rel="next" href="../Gemini/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
@@ -2092,6 +2092,8 @@
         
           
         
+          
+        
       
       
         
@@ -2222,10 +2224,51 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#performance-analysis-of-parallelization-configurations" class="md-nav__link">
+    Performance Analysis of Parallelization Configurations
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Analysis of Parallelization Configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensor-and-pipeline-model-parallelism" class="md-nav__link">
+    Tensor and Pipeline Model Parallelism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-and-model-parallelism" class="md-nav__link">
+    Data and Model Parallelism
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Gemini/" class="md-nav__link">
+        Gemini
+      </a>
     </li>
   
 
@@ -2542,6 +2585,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#performance-analysis-of-parallelization-configurations" class="md-nav__link">
+    Performance Analysis of Parallelization Configurations
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Analysis of Parallelization Configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensor-and-pipeline-model-parallelism" class="md-nav__link">
+    Tensor and Pipeline Model Parallelism
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-and-model-parallelism" class="md-nav__link">
+    Data and Model Parallelism
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2563,7 +2633,7 @@
 
 <h1 id="efficient-large-scale-language-model-training-on-gpu-clusters-using-megatron-lm">Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM<a class="headerlink" href="#efficient-large-scale-language-model-training-on-gpu-clusters-using-megatron-lm" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1003 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1433 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 5 分钟</p>
 </div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>现有模型的参数量不断变大，导致两个问题：</p>
@@ -2628,17 +2698,42 @@
 <li>Warm-up Phase: 不同的 worker 执行不同数量的前向传播，以逐渐填充流水线，确保每个阶段都开始工作但是没有太多未完成的工作积压。</li>
 <li>In-flight Microbatches: 已经开始执行但是尚未完成所有前向和后向传播的微批处理。该策略将这一数量限制为流水线的深度 <span class="arithmatex">\(p\)</span>。</li>
 <li>Steady State: Warm-up 阶段后每个工作器进入稳态，在此状态下每个工作器执行一个前向传播，紧接着执行一个反向传播，称为 1F1B。</li>
-<li>批次的最后，完成所有剩余在 in-flight 处理的反向传播</li>
+<li>批次的最后，完成所有剩余在 in-flight 阶段的反向传播。</li>
+<li>尽管 bubble 的时间相同，但该调度策略中每个工作器保存的激活数量最多是流水线的深度 <span class="arithmatex">\(p\)</span>，因此当 <span class="arithmatex">\(m\)</span> 远大于 <span class="arithmatex">\(p\)</span> 时，该策略更高效(不用像 default 的那样占用过多内存)</li>
+</ul>
+</li>
+<li>Schedule with Interleaved Stages<ul>
+<li>在传统的流水线并行中，每个 GPU 通常负责模型的连续 layers</li>
+<li>我们可以将每个设备分配多个不连续的层的子集，称为模型块(model chunk)。e.g., 原来每个设备处理 4 层，现在每个设备处理两个模型块，每个模型块包含两层(设备 1 处理 1、2、9、10，设备 2 处理 3、4、11、12 etc.)</li>
+<li>要求批次中的微批处理数量时流水线并行度的整数倍。</li>
+<li>如果每个设备有 <span class="arithmatex">\(v\)</span> 个 model chunks, 那么每个阶段前向和反向传播的时间分别为 <span class="arithmatex">\(\frac{t_f}{v}\)</span> 和 $\frac{t_b}{v}。</li>
+<li>流水线 bubble 时间为 <span class="arithmatex">\((p-1)\cdot \frac{t_f+t_b}{v}\)</span>。</li>
+<li>bubble time fraction: <span class="arithmatex">\(\dfrac{1}{v}\cdot \dfrac{p-1}{m}\)</span>。</li>
+<li>缺点：由于计算量变小，会增加额外的通讯。</li>
 </ul>
 </li>
 </ul>
+<p><img alt="" src="../image/met7.png" /></p>
+<h2 id="performance-analysis-of-parallelization-configurations">Performance Analysis of Parallelization Configurations<a class="headerlink" href="#performance-analysis-of-parallelization-configurations" title="Permanent link">&para;</a></h2>
+<p>首先是一些记号：</p>
+<ul>
+<li><span class="arithmatex">\((p,t,d)\)</span>: Parallelization dimensions. <span class="arithmatex">\(p\)</span> for pipeline-model-parallel size, <span class="arithmatex">\(t\)</span> for the tensor-model-parallel size, <span class="arithmatex">\(d\)</span> for the data-parallel size</li>
+<li><span class="arithmatex">\(n\)</span>: number of GPUs. <span class="arithmatex">\(p\cdot t\cdot d =n\)</span>.</li>
+<li><span class="arithmatex">\(B\)</span>: Global batch size(provided as input)</li>
+<li><span class="arithmatex">\(b\)</span>: Microbatch size</li>
+<li><span class="arithmatex">\(m=\frac{1}{b}{B}{d}\)</span>: Number of microbatches in a batch per pipeline.</li>
+</ul>
+<h3 id="tensor-and-pipeline-model-parallelism">Tensor and Pipeline Model Parallelism<a class="headerlink" href="#tensor-and-pipeline-model-parallelism" title="Permanent link">&para;</a></h3>
+<p><strong>When considering different forms of model parallelism, tensor model parallelism should generally be used up to degree <span class="arithmatex">\(g\)</span> when using <span class="arithmatex">\(g\)</span>-GPU serves, and then pipeline model parallelism can be used to scale up to larger models across serves.</strong></p>
+<h3 id="data-and-model-parallelism">Data and Model Parallelism<a class="headerlink" href="#data-and-model-parallelism" title="Permanent link">&para;</a></h3>
+<p><strong>When using data and model parallelism, a total model-parallel size of <span class="arithmatex">\(M=t\cdot p\)</span> should be used so that the model's parameters and intermediate metadata fit in GPU memory; data parallelism can be used to scale up training to more GPUs.</strong></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月27日 22:58:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年9月28日 23:33:27</span>
       
         <br>
         创建日期:
@@ -2689,13 +2784,13 @@
         
         
           
-          <a href="../../math/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数学基础" rel="next">
+          <a href="../Gemini/" class="md-footer__link md-footer__link--next" aria-label="下一页: Gemini" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   下一页
                 </span>
-                数学基础
+                Gemini
               </div>
             </div>
             <div class="md-footer__button md-icon">
