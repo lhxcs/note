@@ -189,6 +189,7 @@ nav:
     - Inference Overview: MLsys/Survey.md
     - Megatron-LM: MLsys/Megatron-LM.md
     - PTD-P: MLsys/PTD-P.md
+    - Gemini: MLsys/Gemini.md
     
   - 数理基础:
     - math/index.md
