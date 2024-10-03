@@ -185,6 +185,8 @@ nav:
   #   - GNU Make: tools/Makefile.md
   - MLSys:
     - MLsys/index.md
+    - AI 模型相关:
+      - Qstar: MLsys/model/qstar.md
     - vLLM: MLsys/vLLM.md
     - Inference Overview: MLsys/Survey.md
     - Megatron-LM: MLsys/Megatron-LM.md
