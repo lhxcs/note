@@ -1,5 +1,9 @@
 # Alpa: Automating Inter- and Intra-Operator Parallelism for Distributed Deep Learning
 
+## Introduction
+
+
+
 ## Background: Distributed Deep Learning
 
 ### Conventional View of ML Parallelism
@@ -35,3 +39,4 @@
     - 通信效率: 有可能造成设备空闲。
 
 ## Overview
+

@@ -132,10 +132,6 @@ nav:
       - 引言: system/CSAPP/ch1.md
       - 异常控制流: system/CSAPP/ch8.md
       - 虚拟内存: system/CSAPP/ch9.md
-    # - 数据库系统:
-    #   - system/db/index.md
-    #   - Chapter1 Introduction: system/db/lec1.md
-    #   - Relational Model: system/db/lec2.md
     - 计算机组成与设计:
       - system/co/index.md
       - CS61C:
@@ -148,7 +144,9 @@ nav:
       - 计算机的算术运算: system/co/ch3.md
       - 处理器: system/co/ch4.md
       - 内存层次架构: system/co/ch5.md
-
+    - 操作系统:
+      - system/os/index.md
+      - 进程: system/os/process.md
   - AI:
     - Computer Vision:
       - Stanford:CS231n:
@@ -180,13 +178,11 @@ nav:
         - Quantization: AI/EfficientAI/quantization.md
         - Transformer & LLM: AI/EfficientAI/LLM.md
     - Transformer: AI/Transformer.md
-  # - 常用工具:
-  #   - tools/index.md
-  #   - GNU Make: tools/Makefile.md
   - MLSys:
     - MLsys/index.md
     - AI 模型相关:
       - Qstar: MLsys/model/qstar.md
+      - Sora: MLsys/model/sora.md
     - vLLM: MLsys/vLLM.md
     - Inference Overview: MLsys/Survey.md
     - Megatron-LM: MLsys/Megatron-LM.md
@@ -205,14 +201,5 @@ nav:
     - 量子力学: math/quantum.md
   - 工具:
     - Makefile: tools/makefile.md
-  # - Research:
-  #   - 论文阅读:
-  #     - PuzzleAvatar: research/paper/puzzle_avatar.md
-  #   - 杂项:
-  #     - SDS Loss: research/misc/sds.md
-  # - English:
-  #   - Reading:
-  #     - TOFEL Reading: English/reading/reading.md 
-  #     - Foreign Magazines: English/reading/note.md
-  #   - Writing:
-  #     - TOFEL Writing: English/writing/Writing.md
+    - MIT-Missing-Semester: tools/missing_semester.md
+
