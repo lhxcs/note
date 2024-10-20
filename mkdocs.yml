@@ -147,6 +147,7 @@ nav:
     - 操作系统:
       - system/os/index.md
       - 进程: system/os/process.md
+      - 进程间通信: system/os/IPCs.md
   - AI:
     - Computer Vision:
       - Stanford:CS231n:
