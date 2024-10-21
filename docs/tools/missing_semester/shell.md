@@ -1,8 +1,6 @@
-# MIT-Missing-Semester
+# Shell
 
-## Shell
-
-### 使用 Shell
+## 使用 Shell
 
 ```bash
 missing: ~$
@@ -242,3 +240,5 @@ find . -name '*.png' -exec convert {} {}.jpg \;
 - `grep` 对输入文本进行匹配。
     - `grep -C 5` 输出匹配结果前后五行。
 - `ripgrep` TBD
+
+
