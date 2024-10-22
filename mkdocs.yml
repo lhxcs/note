@@ -148,6 +148,7 @@ nav:
       - system/os/index.md
       - 进程: system/os/process.md
       - 进程间通信: system/os/IPCs.md
+      - 线程: system/os/thread.md
   - AI:
     - Computer Vision:
       - Stanford:CS231n:
@@ -202,5 +203,10 @@ nav:
     - 量子力学: math/quantum.md
   - 工具:
     - Makefile: tools/makefile.md
-    - MIT-Missing-Semester: tools/missing_semester.md
+    - MIT-Missing-Semester: 
+      - shell: tools/missing_semester/shell.md
+      - git: tools/missing_semester/git.md
+      - 元编程: tools/missing_semester/meta.md
+      - 命令行环境: tools/missing_semester/env.md
+      
 
