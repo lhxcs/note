@@ -2,522 +2,567 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://lhxcs.github.io/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/changelog/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/Transformer/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/pytorch/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/EfficientAI/LLM/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/EfficientAI/pruning/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/EfficientAI/quantization/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/LLM/ch1/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/LLM/ch2/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec2/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec3/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec4/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec5/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec6/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec7/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/cs231n/lec8/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/COLMAP/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec1/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec10/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec12/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec2/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec3/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec4/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec5/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec6/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec7/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/AI/cv/icv/lec8/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/English/reading/note/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/English/reading/reading/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/English/writing/Writing/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/English/writing/topic/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/MLsys/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/MLsys/Alpa/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/MLsys/Gemini/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/MLsys/JIT/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/MLsys/Megatron-LM/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/MLsys/PTD-P/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/MLsys/Survey/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/MLsys/vLLM/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/MLsys/model/qstar/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/MLsys/model/sora/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/Linux/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/dm/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/CG/lec1/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/MIT-missing-semester/lec/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ads/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ads/Fb_heap/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ads/NP/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ads/amortized/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ads/approx/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ads/dp/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/ch1/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/ch4/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/ch5/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/graph/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/hashing/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/pta/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/sorting/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/ds/tree/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/language/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/language/python/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/language/c/c/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/oop/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/oop/CS106L/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/cs/oop/oop/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/algebra/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/analysis/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/mdl/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/quantum/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/probability/note14/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/probability/note15/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/math/probability/note16/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/paper_reading/NeRF/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/paper_reading/Neuralangelo/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/research/misc/sds/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/research/paper/puzzle_avatar/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CLDF/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CLDF/lec1/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CLDF/lec2/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CLDF/lec3/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CLDF/lec4/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CLDF/lec5/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CLDF/lec6/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CLDF/lec7/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CSAPP/ch1/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CSAPP/ch8/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/CSAPP/ch9/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/co/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/co/ch2/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/co/ch3/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/co/ch4/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/co/ch5/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/co/cs61c/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/co/cs61c/fp/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/co/cs61c/memory/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/co/cs61c/risc-v_convention/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/system/co/cs61c/riscv/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/system/os/</loc>
+         <lastmod>2024-10-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/system/os/IPCs/</loc>
+         <lastmod>2024-10-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/system/os/process/</loc>
+         <lastmod>2024-10-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/system/os/sync/</loc>
+         <lastmod>2024-10-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/system/os/thread/</loc>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://lhxcs.github.io/tools/makefile/</loc>
-         <lastmod>2024-10-04</lastmod>
+         <lastmod>2024-10-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/tools/missing_semester/env/</loc>
+         <lastmod>2024-10-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/tools/missing_semester/git/</loc>
+         <lastmod>2024-10-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/tools/missing_semester/meta/</loc>
+         <lastmod>2024-10-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://lhxcs.github.io/tools/missing_semester/shell/</loc>
+         <lastmod>2024-10-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
