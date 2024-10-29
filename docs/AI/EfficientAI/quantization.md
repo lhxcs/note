@@ -110,3 +110,40 @@ How should we get the optimal linear quantization paremeters $(S,Z)$?
 
 ![](image/45.png)
 
+## Quantization-Aware Training
+
+How should we improve preformance of quantized models?
+
+当我们把模型量化后，可能需要微调来提供更好的精度。
+
+考虑一个问题，我们在训练过程中使用 fp32, 在模型推理的时候使用 post-training quantization 直接量化为 int8 模型，可能会导致模型精度存在损失。量化感知训练在模型训练过程中引入了伪量化来模拟量化过程带来的误差。
+
+- 为什么存在量化误差
+    - 主要原因为量化-反量化
+    - 模型经过量化后，在推理框架运行的时候会根据不同的 op 调用相应的算子
+        - 某些算子可以支持低精度的输入输出，这时候就会直接调用 INT8 计算
+        - 某些算子需要高精度输入输出，那么我们就会将 INT8 反量化为 FP32 计算。
+        - 这个过程造成精度损失。
+- QAT
+    - 首先在数据集上以 FP32 精度进行模型训练，得到训练好的 baseline
+    - 在 baseline 模型中插入伪量化节点，得到 QAT 模型，并进行 finetune
+    - 伪量化节点模拟推理时的量化过程并且保存 finetune 过程中计算得到的量化参数。
+    - finetune 完成后，使用 3 中得到的量化参数对 QAT 模型进行量化得到 INT8 模型。
+- Fake-quantize
+    - quantization + dequantization 的结合，实际上就是模拟量化 round 引起的误差。
+    - ![](image/46.png)
+
+### Straight-Through Estimator
+
+神经网络训练中，反向传播算法依赖于链式法则，但是量化函数通常不可微。因此我们 BP 的时候就应该用近似方法计算梯度。
+
+STE 近似地将量化函数的梯度视为恒等函数的梯度。
+
+
+## Binary/Ternary Quantization
+
+Can we push the quantization precision to 1 bit?
+
+## Mixed-Precision Quantization
+
+不同层对量化的敏感程度不同，因此引入混合精度量化，为不同层设计不同的量化精度。
