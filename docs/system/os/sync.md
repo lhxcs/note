@@ -205,5 +205,82 @@ P2:
     S2;
 ```
 
+### Semaphore waiting queue
+
+- With each semaphore there is an associated waiting queue.
+- Each entry in a waiting queue has two data items:
+    - value
+    - pointer to nex record in the list
+
+```c
+typedef struct{
+    int value;
+    struct list_head * waiting_queue;
+} semaphore;
+```
+
+- Two operations:
+    - block: place the process invoking the operation on the appropriate waiting queue.
+    - wakeup: remove one of processes in the waiting queue and place it in the ready queue.
+
+```c
+struct semaphore {
+    value;
+    waiting_list;
+};
+
+<atomic> wait(reference S) {
+    S->value--;
+    if (S->value < 0) {
+        S->waiting_list.push(current process);
+        sleep();
+    }
+}
+
+<atomic> signal(reference S) {
+    S->value++;
+    if (S->value <= 0) {
+        p = S->waiting_list.pop();
+        wakeup(p);
+    }
+}
+
+```
+## Deadlock and starvation
+
+- Deadlock: two or more processes are waiting indefinitely for an event that can be caused by only one of the waiting processes.
+- starvation: indefinite blocking. a process may never be removed from the semaphore's waiting queue.
+
 ## Priotity Inversion
+
+- a higher priority process is indirectly preempted by a lower priority task.
+
+即具有中等优先级的某个进程运行时间影响了具有较高优先级进程的等待时间。我们可以通过 priority inheritance 来解决这个问题：如果低优先级的进程拿到了锁，并且这个锁有高优先级的进程在等，就提高低优先级进程的优先级。
+
+## Examples
+
+### The Bounded-Buffer problem
+
+又称 Producer-Consumer Problem. 该问题中有两个角色：
+
+- producer: 产生 item 存放到 buffer 中
+- consumer: 从 buffer 中取出 item.
+
+现在我们考虑在并行条件下，`produce()` 和 `consume()` 同时发生，容易出现 race condition 的问题。
+
+这里我们使用信号量来解决这个问题：
+
+```c
+// suppose the capacity of the buffer is n
+semaphore mutex = 1;
+semaphore empty = n;
+semaphore full  = 0;
+```
+
+### The Readers-Writers Problem
+
+用户使用数据库修改数据，会出现 read write 以及 write write 冲突。
+
+### The Dining Philosophers Problem
+
 

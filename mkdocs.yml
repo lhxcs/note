@@ -149,6 +149,7 @@ nav:
       - 进程: system/os/process.md
       - 进程间通信: system/os/IPCs.md
       - 线程: system/os/thread.md
+      - 同步: system/os/sync.md
   - AI:
     - Computer Vision:
       - Stanford:CS231n:
