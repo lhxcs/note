@@ -277,10 +277,57 @@ semaphore empty = n;
 semaphore full  = 0;
 ```
 
+- The producer process
+
+
+
 ### The Readers-Writers Problem
 
 用户使用数据库修改数据，会出现 read write 以及 write write 冲突。
 
+Solution:
+
+- semaphore mutex initialized to 1
+- semaphore write initialized to 1
+- semaphore readcount initialized to 1
+
+- The writer process
+
+```c
+do {
+    wait(write);
+    //write the shared data
+    ......
+    signal(write);
+}while(True);
+```
+
+- The reader process
+
+```c
+do {
+    wait(mutex)
+    readcount++;
+    if(readcount == 1)
+        wait(write);
+    signal(mutex);
+
+    //reading data
+    ...
+
+    wait(mutex);
+    readcount--;
+    if(readcount == 0)
+        signal(write);
+    signal(mutex);
+}while(True);
+
+```
+
+`mutex` 用来保护 `readcount`, 如果 readcount=1, 就获得 `write` 的锁来保护这个 read。假设 writer 拿到了锁，这时候来了 5 个 reader, 那么第一个会 sleep 在 write 上，剩下 4 个 reader 会 sleep 在 mutex 上。假设此时 writer 完事了，那么此时第一个离开了 wait(write), signal(mutex),这时候所有的 reader 就可以同时开始读了。
+
 ### The Dining Philosophers Problem
 
+Philosophers spend their lives thinking and eating, they sit in a round table, but don’t interact with each other.
 
+They occasionally try to pick up 2 chopsticks(one at a time) to eat. 

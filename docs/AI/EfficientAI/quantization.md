@@ -60,3 +60,53 @@
         - 确定 $S,Z$: 当我们量化的位数确定后，使用二进制补码表示法，$q_{max}$ 和 $q_{min}$ 就是 $2^{N-1}-1$ 和 $-2^{N-1}$。这时候如果知道了 $r_{max},r_{min}$ 就可以求出 $S,Z$.
         - ![](image/20.png)
 - 线性量化下的矩阵乘法 TODO
+
+
+## Post-Training Quantization
+
+How should we get the optimal linear quantization paremeters $(S,Z)$?
+
+### Quantization Granularity
+
+- Per-Tensor Quantization
+    - $|r|_{max}=|\bf{W}|_{max}$,即取每个 tensor 的最大值
+    - 使用单个缩放因子 $S$ (对于大模型效果好，对于小模型精度会下降)
+    - 因为不同的输出通道权重范围较大不同。
+- Per-Channel Quantization
+    - 每个通道使用单独的缩放因子
+    - 优点：更细粒度，量化误差更小，在视觉模型表现出色
+    - 缺点：需要额外的内存存储每个通道的缩放因子
+
+![](image/41.png)
+
+- Group Quantization
+    - VS-Quant: Per-vector Scaled Quantization
+        - 对同一个通道里每多少个元素分组做相同的量化
+        - 原方程多了一个缩放因子 $\gamma$：$r=\gamma \cdot S_q(q-z)$, $\gamma$ 是一个浮点数粗粒度缩放因子，一个张量共享一个，$S_q$ 是整数缩放因子，每个向量有一个单独的。
+        - 实现精度和硬件效率的平衡。
+
+        ![](image/42.png)
+
+    - Multi-level scaling scheme
+        - 使用更多层次的缩放因子。
+        - ![](image/43.png)
+        - 还不是很懂
+
+### Dynamic Range Clipping
+
+- weight 是静态的，但是 activation 是动态的，我们需要确定 activation 的范围，在部署模型前收集 activatioin 的统计信息。
+- Type1: during training
+    - 在训练过程中跟踪指数移动平均值(EMA)
+    - ![](image/44.png)
+- Type2: 使用少量校准数据集来确定R的最大值最小值，这种方式不需要大量的训练.
+    - 通过 KL 散度衡量信息的损失，用来找最适合 clip 的地方
+    - 在训练后的模型上运行几个 calibration batches 来校准。
+    - 不是很懂
+
+### Rounding
+
+- Rounding-to-nearest 不是最佳的，因为权重会相互影响。对于单个权重最好的 rounding 不一定是对整个矩阵最好的。
+- optimal: rounding that reconstructs the original activation the best. 
+
+![](image/45.png)
+
