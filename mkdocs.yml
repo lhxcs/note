@@ -186,11 +186,15 @@ nav:
     - AI 模型相关:
       - Qstar: MLsys/model/qstar.md
       - Sora: MLsys/model/sora.md
-    - vLLM: MLsys/vLLM.md
-    - Inference Overview: MLsys/Survey.md
-    - Megatron-LM: MLsys/Megatron-LM.md
-    - PTD-P: MLsys/PTD-P.md
-    - Gemini: MLsys/Gemini.md
+    - system level:
+      - vLLM: MLsys/vLLM.md
+      - Inference Overview: MLsys/Survey.md
+      - Megatron-LM: MLsys/Megatron-LM.md
+      - PTD-P: MLsys/PTD-P.md
+      - Gemini: MLsys/Gemini.md
+    - algorithm level:
+      - SmoothQuant: MLsys/SmoothQuant.md
+      - AWQ: MLsys/AWQ.md
     
   - 数理基础:
     - math/index.md
