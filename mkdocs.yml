@@ -208,6 +208,7 @@ nav:
     - 量子力学: math/quantum.md
   - 工具:
     - Makefile: tools/makefile.md
+    - Docker: tools/docker.md
     - MIT-Missing-Semester: 
       - shell: tools/missing_semester/shell.md
       - git: tools/missing_semester/git.md
