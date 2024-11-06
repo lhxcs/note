@@ -10,23 +10,27 @@
       
       
       
-        <link rel="canonical" href="https://lhxcs.github.io/paper_reading/Neuralangelo/">
+        <link rel="canonical" href="https://lhxcs.github.io/system/os/mm/">
       
       
+        <link rel="prev" href="../deadlock/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      
+        <link rel="next" href="../../../AI/cv/cs231n/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
     
     
       
-        <title>Neuralangelo: High-Fidelity Neural Surface Reconstruction - Iridescent的cs笔记本</title>
+        <title>main memory - Iridescent的cs笔记本</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9c788c91.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -36,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../../css/timeline.css">
+      <link rel="stylesheet" href="../../../css/timeline.css">
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
     
@@ -44,11 +48,11 @@
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-      <link rel="stylesheet" href="../../css/custom.css">
+      <link rel="stylesheet" href="../../../css/custom.css">
     
-      <link rel="stylesheet" href="../../css/counter.css">
+      <link rel="stylesheet" href="../../../css/counter.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#neuralangelo-high-fidelity-neural-surface-reconstruction" class="md-skip">
+        <a href="#main-memory" class="md-skip">
           跳转至
         </a>
       
@@ -91,7 +95,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="Iridescent的cs笔记本" class="md-header__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
+    <a href="../../.." title="Iridescent的cs笔记本" class="md-header__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -110,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Neuralangelo: High-Fidelity Neural Surface Reconstruction
+              main memory
             
           </span>
         </div>
@@ -196,7 +200,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         Home
       </a>
     </li>
@@ -212,7 +216,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../cs/" class="md-tabs__link">
+      <a href="../../../cs/" class="md-tabs__link">
         Computer Science
       </a>
     </li>
@@ -222,13 +226,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../system/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Computer System
       </a>
     </li>
@@ -254,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../AI/cv/cs231n/" class="md-tabs__link">
+      <a href="../../../AI/cv/cs231n/" class="md-tabs__link">
         AI
       </a>
     </li>
@@ -274,7 +280,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../MLsys/" class="md-tabs__link">
+      <a href="../../../MLsys/" class="md-tabs__link">
         MLSys
       </a>
     </li>
@@ -290,7 +296,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../math/" class="md-tabs__link">
+      <a href="../../../math/" class="md-tabs__link">
         数理基础
       </a>
     </li>
@@ -306,7 +312,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../tools/makefile/" class="md-tabs__link">
+      <a href="../../../tools/makefile/" class="md-tabs__link">
         工具
       </a>
     </li>
@@ -334,7 +340,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Iridescent的cs笔记本" class="md-nav__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
+    <a href="../../.." title="Iridescent的cs笔记本" class="md-nav__button md-logo" aria-label="Iridescent的cs笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -385,7 +391,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../..">Home</a>
+          <a href="../../..">Home</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -408,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/" class="md-nav__link">
+      <a href="../../../changelog/" class="md-nav__link">
         更新记录
       </a>
     </li>
@@ -458,7 +464,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../cs/">Computer Science</a>
+          <a href="../../../cs/">Computer Science</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -503,7 +509,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../cs/language/">编程语言</a>
+          <a href="../../../cs/language/">编程语言</a>
           
             <label for="__nav_2_2">
               <span class="md-nav__icon md-icon"></span>
@@ -526,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/language/python/" class="md-nav__link">
+      <a href="../../../cs/language/python/" class="md-nav__link">
         Python
       </a>
     </li>
@@ -540,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/language/c/c/" class="md-nav__link">
+      <a href="../../../cs/language/c/c/" class="md-nav__link">
         C
       </a>
     </li>
@@ -561,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/dm/" class="md-nav__link">
+      <a href="../../../cs/dm/" class="md-nav__link">
         离散数学理论基础
       </a>
     </li>
@@ -607,7 +613,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../cs/ds/">数据结构基础</a>
+          <a href="../../../cs/ds/">数据结构基础</a>
           
             <label for="__nav_2_4">
               <span class="md-nav__icon md-icon"></span>
@@ -630,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ds/ch1/" class="md-nav__link">
+      <a href="../../../cs/ds/ch1/" class="md-nav__link">
         Algorithm Analysis
       </a>
     </li>
@@ -644,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ds/ch4/" class="md-nav__link">
+      <a href="../../../cs/ds/ch4/" class="md-nav__link">
         树
       </a>
     </li>
@@ -658,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ds/ch5/" class="md-nav__link">
+      <a href="../../../cs/ds/ch5/" class="md-nav__link">
         堆
       </a>
     </li>
@@ -672,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ds/graph/" class="md-nav__link">
+      <a href="../../../cs/ds/graph/" class="md-nav__link">
         图
       </a>
     </li>
@@ -686,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ds/hashing/" class="md-nav__link">
+      <a href="../../../cs/ds/hashing/" class="md-nav__link">
         哈希
       </a>
     </li>
@@ -700,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ds/sorting/" class="md-nav__link">
+      <a href="../../../cs/ds/sorting/" class="md-nav__link">
         排序
       </a>
     </li>
@@ -714,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ds/pta/" class="md-nav__link">
+      <a href="../../../cs/ds/pta/" class="md-nav__link">
         理论题
       </a>
     </li>
@@ -761,7 +767,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../cs/ads/">算法</a>
+          <a href="../../../cs/ads/">算法</a>
           
             <label for="__nav_2_5">
               <span class="md-nav__icon md-icon"></span>
@@ -784,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ads/amortized/" class="md-nav__link">
+      <a href="../../../cs/ads/amortized/" class="md-nav__link">
         摊还分析
       </a>
     </li>
@@ -798,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ads/dp/" class="md-nav__link">
+      <a href="../../../cs/ads/dp/" class="md-nav__link">
         动态规划
       </a>
     </li>
@@ -812,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ads/NP/" class="md-nav__link">
+      <a href="../../../cs/ads/NP/" class="md-nav__link">
         NP完全性
       </a>
     </li>
@@ -826,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/ads/approx/" class="md-nav__link">
+      <a href="../../../cs/ads/approx/" class="md-nav__link">
         近似算法
       </a>
     </li>
@@ -867,7 +873,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../cs/oop/">面向对象程序设计</a>
+          <a href="../../../cs/oop/">面向对象程序设计</a>
           
             <label for="__nav_2_6">
               <span class="md-nav__icon md-icon"></span>
@@ -890,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cs/oop/CS106L/" class="md-nav__link">
+      <a href="../../../cs/oop/CS106L/" class="md-nav__link">
         CS106L
       </a>
     </li>
@@ -917,14 +923,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
         
@@ -945,7 +953,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../system/">Computer System</a>
+          <a href="../../">Computer System</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1000,7 +1008,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../system/CLDF/">计算机逻辑设计基础</a>
+          <a href="../../CLDF/">计算机逻辑设计基础</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -1023,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/CLDF/lec1/" class="md-nav__link">
+      <a href="../../CLDF/lec1/" class="md-nav__link">
         Chapter1 Digital Systems and Information
       </a>
     </li>
@@ -1037,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/CLDF/lec2/" class="md-nav__link">
+      <a href="../../CLDF/lec2/" class="md-nav__link">
         Chapter2 Combinational Logic Circuits
       </a>
     </li>
@@ -1051,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/CLDF/lec3/" class="md-nav__link">
+      <a href="../../CLDF/lec3/" class="md-nav__link">
         Chapter3 Combinational Logic Design
       </a>
     </li>
@@ -1065,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/CLDF/lec4/" class="md-nav__link">
+      <a href="../../CLDF/lec4/" class="md-nav__link">
         Chapter4 Sequential Circuits
       </a>
     </li>
@@ -1079,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/CLDF/lec5/" class="md-nav__link">
+      <a href="../../CLDF/lec5/" class="md-nav__link">
         Chapter5 Digital Hardware Implementation
       </a>
     </li>
@@ -1093,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/CLDF/lec6/" class="md-nav__link">
+      <a href="../../CLDF/lec6/" class="md-nav__link">
         Chapter6 Registers and Register Transfers
       </a>
     </li>
@@ -1107,7 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/CLDF/lec7/" class="md-nav__link">
+      <a href="../../CLDF/lec7/" class="md-nav__link">
         Chapter7 Memory Basics
       </a>
     </li>
@@ -1163,7 +1171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/CSAPP/ch1/" class="md-nav__link">
+      <a href="../../CSAPP/ch1/" class="md-nav__link">
         引言
       </a>
     </li>
@@ -1177,7 +1185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/CSAPP/ch8/" class="md-nav__link">
+      <a href="../../CSAPP/ch8/" class="md-nav__link">
         异常控制流
       </a>
     </li>
@@ -1191,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/CSAPP/ch9/" class="md-nav__link">
+      <a href="../../CSAPP/ch9/" class="md-nav__link">
         虚拟内存
       </a>
     </li>
@@ -1240,7 +1248,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../system/co/">计算机组成与设计</a>
+          <a href="../../co/">计算机组成与设计</a>
           
             <label for="__nav_3_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1289,7 +1297,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../system/co/cs61c/">CS61C</a>
+          <a href="../../co/cs61c/">CS61C</a>
           
             <label for="__nav_3_4_2">
               <span class="md-nav__icon md-icon"></span>
@@ -1312,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/co/cs61c/fp/" class="md-nav__link">
+      <a href="../../co/cs61c/fp/" class="md-nav__link">
         浮点数的表示
       </a>
     </li>
@@ -1326,7 +1334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/co/cs61c/memory/" class="md-nav__link">
+      <a href="../../co/cs61c/memory/" class="md-nav__link">
         C内存管理
       </a>
     </li>
@@ -1340,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/co/cs61c/riscv/" class="md-nav__link">
+      <a href="../../co/cs61c/riscv/" class="md-nav__link">
         RISCV汇编
       </a>
     </li>
@@ -1354,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/co/cs61c/risc-v_convention/" class="md-nav__link">
+      <a href="../../co/cs61c/risc-v_convention/" class="md-nav__link">
         RISC-V Conventions
       </a>
     </li>
@@ -1375,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/co/ch2/" class="md-nav__link">
+      <a href="../../co/ch2/" class="md-nav__link">
         指令(RISC-V)
       </a>
     </li>
@@ -1389,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/co/ch3/" class="md-nav__link">
+      <a href="../../co/ch3/" class="md-nav__link">
         计算机的算术运算
       </a>
     </li>
@@ -1403,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/co/ch4/" class="md-nav__link">
+      <a href="../../co/ch4/" class="md-nav__link">
         处理器
       </a>
     </li>
@@ -1417,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/co/ch5/" class="md-nav__link">
+      <a href="../../co/ch5/" class="md-nav__link">
         内存层次架构
       </a>
     </li>
@@ -1436,14 +1444,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" checked>
       
       
         
@@ -1457,12 +1467,20 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../system/os/">操作系统</a>
+          <a href="../">操作系统</a>
           
             <label for="__nav_3_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1485,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/os/process/" class="md-nav__link">
+      <a href="../process/" class="md-nav__link">
         进程
       </a>
     </li>
@@ -1499,7 +1517,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/os/IPCs/" class="md-nav__link">
+      <a href="../scheduling/" class="md-nav__link">
+        调度
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IPCs/" class="md-nav__link">
         进程间通信
       </a>
     </li>
@@ -1513,9 +1545,255 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/os/thread/" class="md-nav__link">
+      <a href="../thread/" class="md-nav__link">
         线程
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sync/" class="md-nav__link">
+        同步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deadlock/" class="md-nav__link">
+        死锁
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          main memory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        main memory
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#partition-evolution" class="md-nav__link">
+    Partition Evolution
+  </a>
+  
+    <nav class="md-nav" aria-label="Partition Evolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protection" class="md-nav__link">
+    Protection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-allocation-strategies" class="md-nav__link">
+    Memory Allocation Strategies
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Allocation Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-partitions" class="md-nav__link">
+    Fixed partitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-partions" class="md-nav__link">
+    Variable partions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segmentation" class="md-nav__link">
+    Segmentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#address-binding" class="md-nav__link">
+    Address Binding
+  </a>
+  
+    <nav class="md-nav" aria-label="Address Binding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-vs-physical-address" class="md-nav__link">
+    Logical vs. Physical address
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memmory-managment-unitmmu" class="md-nav__link">
+    Memmory-Managment Unit(MMU)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paging" class="md-nav__link">
+    Paging
+  </a>
+  
+    <nav class="md-nav" aria-label="Paging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-idea" class="md-nav__link">
+    Basic idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-table" class="md-nav__link">
+    Page Table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-translation" class="md-nav__link">
+    Address Translation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paging-hardware" class="md-nav__link">
+    Paging Hardware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-protection" class="md-nav__link">
+    Memory Protection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-sharing" class="md-nav__link">
+    Page Sharing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-page-table" class="md-nav__link">
+    Structure of Page Table
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure of Page Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-level-paging" class="md-nav__link">
+    Two-Level Paging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashed-page-tables" class="md-nav__link">
+    Hashed Page Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverted-page-tables" class="md-nav__link">
+    Inverted Page Tables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1644,7 +1922,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../AI/cv/cs231n/">Stanford:CS231n</a>
+          <a href="../../../AI/cv/cs231n/">Stanford:CS231n</a>
           
             <label for="__nav_4_1_1">
               <span class="md-nav__icon md-icon"></span>
@@ -1667,7 +1945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/cs231n/lec2/" class="md-nav__link">
+      <a href="../../../AI/cv/cs231n/lec2/" class="md-nav__link">
         Lec2 Image Classification
       </a>
     </li>
@@ -1681,7 +1959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/cs231n/lec3/" class="md-nav__link">
+      <a href="../../../AI/cv/cs231n/lec3/" class="md-nav__link">
         Lec3 Regularization and Optimization
       </a>
     </li>
@@ -1695,7 +1973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/cs231n/lec4/" class="md-nav__link">
+      <a href="../../../AI/cv/cs231n/lec4/" class="md-nav__link">
         Lec4 Neural Networks and Backpropagation
       </a>
     </li>
@@ -1709,7 +1987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/cs231n/lec5/" class="md-nav__link">
+      <a href="../../../AI/cv/cs231n/lec5/" class="md-nav__link">
         Lec5 Image Classification with CNNs
       </a>
     </li>
@@ -1723,7 +2001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/cs231n/lec6/" class="md-nav__link">
+      <a href="../../../AI/cv/cs231n/lec6/" class="md-nav__link">
         Lec6 Training Neural Networks(I)
       </a>
     </li>
@@ -1737,7 +2015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/cs231n/lec7/" class="md-nav__link">
+      <a href="../../../AI/cv/cs231n/lec7/" class="md-nav__link">
         Lec7 Training Neural Networks(II)
       </a>
     </li>
@@ -1751,7 +2029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/cs231n/lec8/" class="md-nav__link">
+      <a href="../../../AI/cv/cs231n/lec8/" class="md-nav__link">
         Lec8 Deep Learning Frameworks
       </a>
     </li>
@@ -1812,7 +2090,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../AI/cv/icv/">ZJU:计算机视觉导论</a>
+          <a href="../../../AI/cv/icv/">ZJU:计算机视觉导论</a>
           
             <label for="__nav_4_1_2">
               <span class="md-nav__icon md-icon"></span>
@@ -1835,7 +2113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/lec1/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/lec1/" class="md-nav__link">
         Lec1 Introduction
       </a>
     </li>
@@ -1849,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/lec2/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/lec2/" class="md-nav__link">
         Lec2 Image Formation
       </a>
     </li>
@@ -1863,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/lec3/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/lec3/" class="md-nav__link">
         Lec3 Image Processing
       </a>
     </li>
@@ -1877,7 +2155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/lec4/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/lec4/" class="md-nav__link">
         Lec4 Model Fitting and Optimization
       </a>
     </li>
@@ -1891,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/lec5/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/lec5/" class="md-nav__link">
         Lec5 Image Matching and Motion Estimation
       </a>
     </li>
@@ -1905,7 +2183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/lec6/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/lec6/" class="md-nav__link">
         Lec6 Image Stitching
       </a>
     </li>
@@ -1919,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/lec7/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/lec7/" class="md-nav__link">
         Lec7 Structure from Motion
       </a>
     </li>
@@ -1933,7 +2211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/lec8/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/lec8/" class="md-nav__link">
         Lec8 Depth Estimation and 3D Reconstruction
       </a>
     </li>
@@ -1947,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/lec10/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/lec10/" class="md-nav__link">
         Lec10 Recognition
       </a>
     </li>
@@ -1961,7 +2239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/lec12/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/lec12/" class="md-nav__link">
         Lec12 Computational Photography
       </a>
     </li>
@@ -1975,7 +2253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/cv/icv/COLMAP/" class="md-nav__link">
+      <a href="../../../AI/cv/icv/COLMAP/" class="md-nav__link">
         COLMAP
       </a>
     </li>
@@ -2034,7 +2312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/LLM/ch1/" class="md-nav__link">
+      <a href="../../../AI/LLM/ch1/" class="md-nav__link">
         Understanding LLMs
       </a>
     </li>
@@ -2090,7 +2368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/EfficientAI/pruning/" class="md-nav__link">
+      <a href="../../../AI/EfficientAI/pruning/" class="md-nav__link">
         Pruning
       </a>
     </li>
@@ -2104,7 +2382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/EfficientAI/quantization/" class="md-nav__link">
+      <a href="../../../AI/EfficientAI/quantization/" class="md-nav__link">
         Quantization
       </a>
     </li>
@@ -2118,7 +2396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/EfficientAI/LLM/" class="md-nav__link">
+      <a href="../../../AI/EfficientAI/LLM/" class="md-nav__link">
         Transformer & LLM
       </a>
     </li>
@@ -2139,7 +2417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/Transformer/" class="md-nav__link">
+      <a href="../../../AI/Transformer/" class="md-nav__link">
         Transformer
       </a>
     </li>
@@ -2180,18 +2458,12 @@
         
           
         
-          
-        
-          
-        
-          
-        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../MLsys/">MLSys</a>
+          <a href="../../../MLsys/">MLSys</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -2247,7 +2519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MLsys/model/qstar/" class="md-nav__link">
+      <a href="../../../MLsys/model/qstar/" class="md-nav__link">
         Qstar
       </a>
     </li>
@@ -2261,7 +2533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MLsys/model/sora/" class="md-nav__link">
+      <a href="../../../MLsys/model/sora/" class="md-nav__link">
         Sora
       </a>
     </li>
@@ -2281,8 +2553,47 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
+          system level
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="system level" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          system level
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../MLsys/vLLM/" class="md-nav__link">
+      <a href="../../../MLsys/vLLM/" class="md-nav__link">
         vLLM
       </a>
     </li>
@@ -2296,7 +2607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MLsys/Survey/" class="md-nav__link">
+      <a href="../../../MLsys/Survey/" class="md-nav__link">
         Inference Overview
       </a>
     </li>
@@ -2310,7 +2621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MLsys/Megatron-LM/" class="md-nav__link">
+      <a href="../../../MLsys/Megatron-LM/" class="md-nav__link">
         Megatron-LM
       </a>
     </li>
@@ -2324,7 +2635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MLsys/PTD-P/" class="md-nav__link">
+      <a href="../../../MLsys/PTD-P/" class="md-nav__link">
         PTD-P
       </a>
     </li>
@@ -2338,9 +2649,84 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MLsys/Gemini/" class="md-nav__link">
+      <a href="../../../MLsys/Gemini/" class="md-nav__link">
         Gemini
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="false">
+          algorithm level
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="algorithm level" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          algorithm level
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MLsys/SmoothQuant/" class="md-nav__link">
+        SmoothQuant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MLsys/AWQ/" class="md-nav__link">
+        AWQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -2388,7 +2774,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../math/">数理基础</a>
+          <a href="../../../math/">数理基础</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -2411,7 +2797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/mdl/" class="md-nav__link">
+      <a href="../../../math/mdl/" class="md-nav__link">
         Math for deep learning
       </a>
     </li>
@@ -2425,7 +2811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/analysis/" class="md-nav__link">
+      <a href="../../../math/analysis/" class="md-nav__link">
         数学分析
       </a>
     </li>
@@ -2439,7 +2825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/algebra/" class="md-nav__link">
+      <a href="../../../math/algebra/" class="md-nav__link">
         线性代数
       </a>
     </li>
@@ -2488,7 +2874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/probability/note14/" class="md-nav__link">
+      <a href="../../../math/probability/note14/" class="md-nav__link">
         Conditional Probability, Independence, and Combinations of Events
       </a>
     </li>
@@ -2502,7 +2888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/probability/note15/" class="md-nav__link">
+      <a href="../../../math/probability/note15/" class="md-nav__link">
         Random Variables--Distribution and Expectation
       </a>
     </li>
@@ -2516,7 +2902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/probability/note16/" class="md-nav__link">
+      <a href="../../../math/probability/note16/" class="md-nav__link">
         Variance and covariance
       </a>
     </li>
@@ -2537,7 +2923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/quantum/" class="md-nav__link">
+      <a href="../../../math/quantum/" class="md-nav__link">
         量子力学
       </a>
     </li>
@@ -2572,6 +2958,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
@@ -2592,8 +2980,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/makefile/" class="md-nav__link">
+      <a href="../../../tools/makefile/" class="md-nav__link">
         Makefile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/docker/" class="md-nav__link">
+        Docker
       </a>
     </li>
   
@@ -2611,7 +3013,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
       
       
         
@@ -2625,13 +3027,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_7_2" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_7_3" tabindex="0" aria-expanded="false">
           MIT-Missing-Semester
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="MIT-Missing-Semester" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_2">
+        <label class="md-nav__title" for="__nav_7_3">
           <span class="md-nav__icon md-icon"></span>
           MIT-Missing-Semester
         </label>
@@ -2643,7 +3045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/missing_semester/shell/" class="md-nav__link">
+      <a href="../../../tools/missing_semester/shell/" class="md-nav__link">
         shell
       </a>
     </li>
@@ -2657,7 +3059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/missing_semester/git/" class="md-nav__link">
+      <a href="../../../tools/missing_semester/git/" class="md-nav__link">
         git
       </a>
     </li>
@@ -2671,7 +3073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/missing_semester/meta/" class="md-nav__link">
+      <a href="../../../tools/missing_semester/meta/" class="md-nav__link">
         元编程
       </a>
     </li>
@@ -2685,7 +3087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/missing_semester/env/" class="md-nav__link">
+      <a href="../../../tools/missing_semester/env/" class="md-nav__link">
         命令行环境
       </a>
     </li>
@@ -2733,31 +3135,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#abstract" class="md-nav__link">
-    Abstract
+  <a href="#partition-evolution" class="md-nav__link">
+    Partition Evolution
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#method" class="md-nav__link">
-    Method
-  </a>
-  
-    <nav class="md-nav" aria-label="Method">
+    <nav class="md-nav" aria-label="Partition Evolution">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#multi-resolution-hash-encoding" class="md-nav__link">
-    多分辨率哈希编码(Multi-resolution hash encoding)
-  </a>
-  
-    <nav class="md-nav" aria-label="多分辨率哈希编码(Multi-resolution hash encoding)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pipeline" class="md-nav__link">
-    Pipeline
+  <a href="#protection" class="md-nav__link">
+    Protection
   </a>
   
 </li>
@@ -2766,17 +3153,148 @@
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-allocation-strategies" class="md-nav__link">
+    Memory Allocation Strategies
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Allocation Strategies">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#numerical-gradient-computation" class="md-nav__link">
-    Numerical Gradient Computation
+  <a href="#fixed-partitions" class="md-nav__link">
+    Fixed partitions
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#progressive-levels-of-details" class="md-nav__link">
-    Progressive Levels of Details
+  <a href="#variable-partions" class="md-nav__link">
+    Variable partions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segmentation" class="md-nav__link">
+    Segmentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#address-binding" class="md-nav__link">
+    Address Binding
+  </a>
+  
+    <nav class="md-nav" aria-label="Address Binding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-vs-physical-address" class="md-nav__link">
+    Logical vs. Physical address
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memmory-managment-unitmmu" class="md-nav__link">
+    Memmory-Managment Unit(MMU)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paging" class="md-nav__link">
+    Paging
+  </a>
+  
+    <nav class="md-nav" aria-label="Paging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-idea" class="md-nav__link">
+    Basic idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-table" class="md-nav__link">
+    Page Table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#address-translation" class="md-nav__link">
+    Address Translation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paging-hardware" class="md-nav__link">
+    Paging Hardware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-protection" class="md-nav__link">
+    Memory Protection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-sharing" class="md-nav__link">
+    Page Sharing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-page-table" class="md-nav__link">
+    Structure of Page Table
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure of Page Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-level-paging" class="md-nav__link">
+    Two-Level Paging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashed-page-tables" class="md-nav__link">
+    Hashed Page Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverted-page-tables" class="md-nav__link">
+    Inverted Page Tables
   </a>
   
 </li>
@@ -2805,54 +3323,246 @@
 
 
 
-<h1 id="neuralangelo-high-fidelity-neural-surface-reconstruction">Neuralangelo: High-Fidelity Neural Surface Reconstruction<a class="headerlink" href="#neuralangelo-high-fidelity-neural-surface-reconstruction" title="Permanent link">&para;</a></h1>
+<h1 id="main-memory">Main Memory<a class="headerlink" href="#main-memory" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 881 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 3 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2337 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 8 分钟</p>
 </div>
-<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
-<p>从NeRF开始，基于神经表示的稠密三维重建掀起一股热潮，但是现有的方法在恢复真实世界场景的细节上表现不好。Neualangelo是一种新的3D表面重建方法，无需依赖深度信息，仅通过RGB图像即可实现高保真的3D场景重建。它将<strong>多分辨率3D哈希网格</strong>的表示能力和神经表面渲染SDF相结合。论文中使得这种方法得以实施的两个关键因素：</p>
+<p>Program must be brought into memory and placed within a process for it to be run.</p>
+<h2 id="partition-evolution">Partition Evolution<a class="headerlink" href="#partition-evolution" title="Permanent link">&para;</a></h2>
+<p>Partition requirements</p>
 <ul>
-<li>numerical gradients for computing higher-order derivatives as a smoothing operation.</li>
-<li>coarse-to-fine optimization on the hash grids controlling different levels of details.</li>
+<li>Protection: keep processes from smahsing each other.</li>
+<li>Fast execution: memory accesses can't be slowe by protection mechanisms</li>
+<li>Fast context switch: cannot take forever to setup mapping of addresses.</li>
 </ul>
-<h2 id="method">Method<a class="headerlink" href="#method" title="Permanent link">&para;</a></h2>
-<h3 id="multi-resolution-hash-encoding">多分辨率哈希编码(Multi-resolution hash encoding)<a class="headerlink" href="#multi-resolution-hash-encoding" title="Permanent link">&para;</a></h3>
-<p>一种高效的空间表示方法，使用不同分辨率的网格来编码三维点的空间信息。</p>
-<h4 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h4>
+<p>当进程运行起来后，我们不能把它的内存整体往后挪。因为如果要挪的话要把所有指针往后挪，这样代价很大。</p>
+<p>但是考虑下述图片所示的情形：内存中碎片化很严重。系统有很多内存但是我们都用不了。</p>
+<p>Solution: 逻辑地址！</p>
 <ul>
-<li>在三维空间中设置多个分辨率的网格系统(即多分辨率图像，可以理解为我们划分的小立方体块的数量)。最粗糙的网格提供了最大的空间概览，最详细的网格有助于捕捉物体表面的细节。</li>
-<li>哈希映射：对于每个输入位置，我们找到其在每个网格分辨率对应的位置，每个网格单元的角点都被映射到一个哈希条目中，这其中存储着编码的特征向量。我们使用三线性插值得到该输入点在特定分辨率下的特征向量。</li>
-<li>我们将所有分辨率下的特征向量通过加权得到整合形成的特征向量，作为MLP的输入，这些权重由网络学习得到。</li>
+<li>translated into physical address at runtime.</li>
+<li>Define logical address as the offset within the partition.<ul>
+<li>E.g., when program utters <code>0x00346</code></li>
+<li>Machine accesses <code>0x14346</code> instead.</li>
 </ul>
-<p><img alt="" src="../image/2.png" /></p>
-<h3 id="numerical-gradient-computation">Numerical Gradient Computation<a class="headerlink" href="#numerical-gradient-computation" title="Permanent link">&para;</a></h3>
-<p>在NeuS的文章里我们知道，SDF梯度场的范数为1，我们也利用这一性质进行优化：
-$$
-L_{eik}=\frac{1}{N}\sum_{i=1}^{N}(\Vert\nabla f(x_i)\Vert_2-1)^2
-$$
-但是对于哈希网格来说，由于<span class="arithmatex">\(x_i\)</span>跨越网格单元边界时，哈希条目发生变化，因此哈希编码的导数并不是全局连续的，仅在局部的voxel里连续。</p>
-<p>因此在文章中将分析梯度改为数值梯度，如果数值梯度的步长<span class="arithmatex">\(\epsilon\)</span>小于哈希编码的网格大小，则数值梯度等于分析梯度；否则，我们采用多个网格单元的哈希条目参与SDF梯度的计算。因此，通过表面法线反向传播允许多个网格的哈希条目同时接收优化更新。</p>
-<p><img alt="" src="../image/1.png" /></p>
-<h3 id="progressive-levels-of-details">Progressive Levels of Details<a class="headerlink" href="#progressive-levels-of-details" title="Permanent link">&para;</a></h3>
+</li>
+<li>我们可以自定义逻辑地址的形式。</li>
+</ul>
+<h3 id="protection">Protection<a class="headerlink" href="#protection" title="Permanent link">&para;</a></h3>
 <ul>
-<li>步长</li>
+<li>Base and Limit registers</li>
 </ul>
-<p>在数值梯度中较大的步长可以确保SDF法线在更大范围内保持一致，对应的是整体的轮廓；较小的步长避免平滑细节，有助于高保真表面的生成。在训练的过程中，将步长初始化为最粗的哈希网格大小，在优化的过程中不断减小。</p>
+<p>每一个进程在内存中都应当有一块连续的内存空间，而单个进程应当只能访问自己的内存空间，这就是内存保护的基本要求。</p>
+<p>我们引入 base 和 limit 两个寄存器来实现框定进程的内存空间。当前进程的内存空间始于 base 寄存器中存储的地址，终于 base+limit 对应的地址。这两个寄存器只能由内核通过特定的特权指令来修改。内存管理单元 （MMU）会在每次访问内存时检查访问的地址是否在 base 和 limit 寄存器所定义的范围内，如果不在，会产生一个异常终端程序的执行。</p>
+<p>每个进程有自己的 base 和 limit 寄存器，每次进程切换的时候 OS 都会将 base 和 limit 寄存器的值更新为当前进程 base 和 limit 的值.</p>
 <ul>
-<li>哈希网格分辨率</li>
+<li>Hardware Address Protecion<ul>
+<li>CPU must check every memory access generated in user mode to be sure it is between base and limit for that user.</li>
+<li>The instructions must be priviledge.</li>
 </ul>
-<p>在优化开始时，算法并不一开始就激活所有的哈希网格。相反，它只启用一套初始的粗糙哈希网格。这样做主要是因为如果一开始就激活了所有的网格，那么在要捕获几何细节时，细哈希网格首先必须要从使用大步长ϵ的粗略优化中“遗忘”，然后用更小的ϵ重新学习。在整个优化过程中当步长ϵ减小到哈希网格的空间大小时，逐步激活更细的哈希网格。</p>
+</li>
+<li>Advantage<ul>
+<li>Built-in protection provided by limit register.</li>
+<li>Fast execution: addition and limit check at hardware speeds within each instruction. (放到硬件里做，不会影响速度)</li>
+<li>Fast context switch</li>
+<li>No relocation of program addresses at load time</li>
+<li>Partition can be suspended and moved at any time<ul>
+<li>Process is unaware of change(修改 base 即可移动进程，进程意识不到)</li>
+<li>Expensive for larger processes(移动进程需要改 base, 还要把旧的东西移到新位置，很耗时间)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="memory-allocation-strategies">Memory Allocation Strategies<a class="headerlink" href="#memory-allocation-strategies" title="Permanent link">&para;</a></h2>
+<h3 id="fixed-partitions">Fixed partitions<a class="headerlink" href="#fixed-partitions" title="Permanent link">&para;</a></h3>
+<p>divide memory into equal sized pieces</p>
+<ul>
+<li>Degree of multiprogramming = number of partitions</li>
+<li>Simple policy to implement<ul>
+<li>All processes must fit into partition space. (如果一个进程比 partition 大就 divide)</li>
+<li>Find any free partition and load process</li>
+</ul>
+</li>
+</ul>
+<p>但是一个问题就是 size 大小的问题，如果太小可能有大进程不能 load 进来，如果太大可能有 internal fragmentation.(unused memory within partition, it is a big waste of memory.)</p>
+<h3 id="variable-partions">Variable partions<a class="headerlink" href="#variable-partions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Memory is dynamically divided into partitions based on process needs.</p>
+</li>
+<li>
+<p>How to satisfy a request of size n from a list of free memory blocks?</p>
+<ul>
+<li>first-fit: allocate from the first block that is big enough</li>
+<li>best-fit: allocate from the smallest block that is big enough</li>
+<li>worst-fit: allocate from the largest hole</li>
+</ul>
+</li>
+<li>
+<p>Problem: external fragmentation (Unused memory between partitions too small to be used by any processes)</p>
+<ul>
+<li>total amount of free memory space is larger than a request.</li>
+<li>the request cannot be fulfilled because the free memory is not contiguous.</li>
+</ul>
+</li>
+<li>External fragmentation can be reduced by compaction<ul>
+<li>shuffle memory contents to place all free memory in one large block.</li>
+<li>program needs to be relocatable at runtime</li>
+<li>performance overhead, timing to do this operation.</li>
+</ul>
+</li>
+</ul>
+<h2 id="segmentation">Segmentation<a class="headerlink" href="#segmentation" title="Permanent link">&para;</a></h2>
+<p>我们认为 ELF 中的 text,data,stack 等是多个区域，每个区域可以用一个 Partition 来代表它。</p>
+<p>Logical address consists of a pair:</p>
+<ul>
+<li><code>&lt;segement-number, offset&gt;</code>, segement-number 表示属于第几组, offset is the address offset within the segment.</li>
+<li>Segment table where each entry has:<ul>
+<li>Base: starting physical address</li>
+<li>Limit: length of segment.</li>
+</ul>
+</li>
+</ul>
+<p>根据 segment-number 在 table 里找到对应的 base 和 limit, 将 offset 和 limit 对比后如果没超出 limit, 将 offset 加上 base 就得到了 physical address.</p>
+<h2 id="address-binding">Address Binding<a class="headerlink" href="#address-binding" title="Permanent link">&para;</a></h2>
+<p>内存分为三种：</p>
+<ul>
+<li>符号地址(symbolic addresses)</li>
+<li>可重定位地址(relocatable addresses)</li>
+<li>绝对地址(absolute addresses)</li>
+</ul>
+<p>静态代码程序转化成动态的进程的步骤：</p>
+<ul>
+<li>source code addresses are usually symbolic (e,g., variable name)</li>
+<li>compile time: compiler 将代码中的 symbol 转为 relocatable addresses(e.g., 14 bytes from beginning of this module)</li>
+<li>load time: relocatable addresses 转化为 absolute addresses</li>
+<li>execution time: 如果进程在 execution time 时，允许被移动，那么可能从 relocatable addresses 转为 absolute addresses 这一步就需要延迟到 execution time 来执行</li>
+</ul>
+<h3 id="logical-vs-physical-address">Logical vs. Physical address<a class="headerlink" href="#logical-vs-physical-address" title="Permanent link">&para;</a></h3>
+<ul>
+<li>logical address: generated by the CPU; also referred to as <strong>virtual address</strong>.<ul>
+<li>CPU 看不到物理地址，只用逻辑地址，需要经过特定的部件将逻辑地址转化为屋物理地址。</li>
+</ul>
+</li>
+<li>Physical address: address seen by the memory unti</li>
+</ul>
+<p>Logical address space: the set of all addresses generated by a program. Physical address space likewise.</p>
+<h2 id="memmory-managment-unitmmu">Memmory-Managment Unit(MMU)<a class="headerlink" href="#memmory-managment-unitmmu" title="Permanent link">&para;</a></h2>
+<p>Hardware device that at run time maps logical to physical address. (在 CPU 和内存之间进行地址的翻译)</p>
+<h2 id="paging">Paging<a class="headerlink" href="#paging" title="Permanent link">&para;</a></h2>
+<p>Contiguous -&gt; Noncontiguous</p>
+<p>想要解决的问题是：系统必须使用连续内存的限制。需要使用连续内存是需要一种逻辑上的连续，因此在物理地址和虚拟地址的语境下，我们只需要保证虚拟地址是连续的即可。</p>
+<h3 id="basic-idea">Basic idea<a class="headerlink" href="#basic-idea" title="Permanent link">&para;</a></h3>
+<p>过于稀碎的物理地址会导致内存访问缓慢！</p>
+<ul>
+<li>帧 &amp; 页<ul>
+<li>我们将物理内存划分为固定大小的块，称为帧(frames)，每个帧对应虚拟地址中等大的一块页 (pages)<ul>
+<li>frame's size is power of 2, usually 4KB</li>
+</ul>
+</li>
+<li>用帧来作为连续的虚拟地址的物理基础，用虚拟的页号来支持连续虚拟地址。</li>
+<li>难点：keep track of all free frames(要追踪 page 和 fram 的映射)</li>
+<li>To run a program of size N pages, need to find N free frames and load program.</li>
+<li>帧与页的对应关系是通过页表来实现的。</li>
+</ul>
+</li>
+<li>has no external fragmentation, but internal fragmentatioin<ul>
+<li>一般只有最后的区域会有 fragmentation.(前面的都填满了)</li>
+</ul>
+</li>
+<li>页如果小，碎片比较少，但是映射更多，页表需要更大的空间；页如果大，碎片多，页表较小。现在页逐渐变大(内存变得 cheap)</li>
+<li>每个进程都应当有自己的页表，我们称页表是 per-process data structures.</li>
+</ul>
+<h3 id="page-table">Page Table<a class="headerlink" href="#page-table" title="Permanent link">&para;</a></h3>
+<p>Store the logical page to physical fram mapping.</p>
+<ul>
+<li>Frame Table: which frame is free and how many frames have been allocated.(标记哪些 frame 空闲)</li>
+</ul>
+<p>页表里存的是帧号，不存页号。页号就是访问 page table 里面的 index.</p>
+<h3 id="address-translation">Address Translation<a class="headerlink" href="#address-translation" title="Permanent link">&para;</a></h3>
+<p>A logical address is divied into:</p>
+<ul>
+<li>page number(p)<ul>
+<li>used as an index into a page table</li>
+<li>page table entry contains the corresponding physical frame number.</li>
+</ul>
+</li>
+<li>page offset(d)<ul>
+<li>offset within the page/frame</li>
+<li>combined with fram number to get the physical address.</li>
+</ul>
+</li>
+</ul>
+<p>首先把 p 拿出来，从 page table 里读出物理帧号，随后和 d 拼接起来就得到了物理地址。</p>
+<h3 id="paging-hardware">Paging Hardware<a class="headerlink" href="#paging-hardware" title="Permanent link">&para;</a></h3>
+<p>早期的想法是每一个页用一组寄存器实现，虽然速度很快，但是寄存器数量有限，无法存储多的页表。</p>
+<p>所以页表应该被放到内存中（为了保证效率，我们放在主存里）。我们通过用寄存器维护一个指向页表的指针来维护页表。这个寄存器被称为页表基址寄存器(page-table base register PTBR),当进程不处于 RUNNING 态时，PTBR 应当被存储在 PCB 中，在 context switch 的过程中我们也对 PTBR 进行交换。以及我们还有一个 page-table length register(PTLR), which indicates the size of the page table.</p>
+<p>但是这样每次数据/指令访问需要两次内存访问，第一次把页表读出来去查询帧号得到物理地址，再去内存里查询。</p>
+<ul>
+<li>TLB(translation look-aside buffer) caches the address translation<ul>
+<li>if page number is in the TLB, no need to access the page table.</li>
+<li>if page number is not in the TLB, need to replace one TLB entry.</li>
+<li>TLB usually use a fast-lookup hardware cache called associative memory<ul>
+<li>associative memory: memory that supprots parallel search</li>
+</ul>
+</li>
+<li>TLB is usually small, 64 to 1024 entries. (TLB 数量有限，为了覆盖更大的区域，我们希望把页变得更大(page size))</li>
+</ul>
+</li>
+</ul>
+<p>页号和帧号以键值对的形式存储在 TLB 中，TLB 也允许并行地查询所有键值对。
+每一个进程有自己的页表，所以我们 context switch 时要切换页表，要把 TLB 清空，否则下一个进程就会访问到上一个进程的页表。</p>
+<h3 id="memory-protection">Memory Protection<a class="headerlink" href="#memory-protection" title="Permanent link">&para;</a></h3>
+<p>我们可以以页为粒度放上一些权限(可读、可写、可执行)用来实现内存保护。</p>
+<ul>
+<li>Each page table entry has a present(valid) bit.<ul>
+<li>present: the page has a valid physical frame, thus can be accessed.</li>
+</ul>
+</li>
+<li>Each page table entry contains some protection bits<ul>
+<li>Any violations of memory protection result in a trap to the kernel.</li>
+</ul>
+</li>
+<li>XN: protecting code</li>
+<li>PXN: privileged execute never</li>
+</ul>
+<h3 id="page-sharing">Page Sharing<a class="headerlink" href="#page-sharing" title="Permanent link">&para;</a></h3>
+<p>虚拟地址与物理地址的映射并不需要是单射，即多个 page 可以对应同一个 frame。</p>
+<p>Paging allows to share memory between processes</p>
+<ul>
+<li>shared memory can be used for inter-process communication</li>
+<li>shared libraries</li>
+</ul>
+<h2 id="structure-of-page-table">Structure of Page Table<a class="headerlink" href="#structure-of-page-table" title="Permanent link">&para;</a></h2>
+<p>Page table must be physically contiguous. (因为只有一个 BASE 指针指向它，而且硬件没有虚拟地址的概念，这样硬件才能去跑)</p>
+<p>如果只有一级的页表，那么页表所占用的内存很大，因此我们需要压缩页表：</p>
+<ul>
+<li>break up the logical address space into multiple-level of page tables</li>
+<li>first-level page table contains the frame for second-level page tables.</li>
+</ul>
+<h3 id="two-level-paging">Two-Level Paging<a class="headerlink" href="#two-level-paging" title="Permanent link">&para;</a></h3>
+<p>A logical address is divided into:</p>
+<ul>
+<li>a page directory number(first level page table)</li>
+<li>a page table number(2nd level page table)</li>
+<li>a page offset</li>
+</ul>
+<h3 id="hashed-page-tables">Hashed Page Tables<a class="headerlink" href="#hashed-page-tables" title="Permanent link">&para;</a></h3>
+<p>哈希页表维护了一张哈希表，以页号的哈希为索引，维护了一个链表，每一个链表项包含页号、帧号和链表 next 指针，以此来实现页号到帧号的映射。</p>
+<h3 id="inverted-page-tables">Inverted Page Tables<a class="headerlink" href="#inverted-page-tables" title="Permanent link">&para;</a></h3>
+<p>索引 physical address 而非 logical address, 整个系统只有一个页表，每个物理内存的 frame 只有一条相应的条目。寻址时，CPU 遍历页表，找到对应的 pid 和 page number, 其在页表中所处的位置即为 frame number.</p>
+<p>但这样每次都需要遍历整个页表，效率很低，而且不能实现共享内存。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月19日 19:56:02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月5日 15:46:22</span>
       
         <br>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月19日 19:56:02</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年11月5日 15:46:22</span>
       
     
   </small>
@@ -2878,6 +3588,42 @@ $$
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../deadlock/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 死锁" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  上一页
+                </span>
+                死锁
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../AI/cv/cs231n/" class="md-footer__link md-footer__link--next" aria-label="下一页: Index" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                Index
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -2905,14 +3651,14 @@ $$
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
-        <script src="../../js/katex.js"></script>
+        <script src="../../../js/katex.js"></script>
       
     
   </body>
