@@ -161,3 +161,70 @@ A logical address is divied into:
     - combined with fram number to get the physical address.
 
 首先把 p 拿出来，从 page table 里读出物理帧号，随后和 d 拼接起来就得到了物理地址。
+
+### Paging Hardware
+
+早期的想法是每一个页用一组寄存器实现，虽然速度很快，但是寄存器数量有限，无法存储多的页表。
+
+所以页表应该被放到内存中（为了保证效率，我们放在主存里）。我们通过用寄存器维护一个指向页表的指针来维护页表。这个寄存器被称为页表基址寄存器(page-table base register PTBR),当进程不处于 RUNNING 态时，PTBR 应当被存储在 PCB 中，在 context switch 的过程中我们也对 PTBR 进行交换。以及我们还有一个 page-table length register(PTLR), which indicates the size of the page table.
+
+但是这样每次数据/指令访问需要两次内存访问，第一次把页表读出来去查询帧号得到物理地址，再去内存里查询。
+
+- TLB(translation look-aside buffer) caches the address translation
+    - if page number is in the TLB, no need to access the page table.
+    - if page number is not in the TLB, need to replace one TLB entry.
+    - TLB usually use a fast-lookup hardware cache called associative memory
+        - associative memory: memory that supprots parallel search
+    - TLB is usually small, 64 to 1024 entries. (TLB 数量有限，为了覆盖更大的区域，我们希望把页变得更大(page size))
+
+页号和帧号以键值对的形式存储在 TLB 中，TLB 也允许并行地查询所有键值对。
+每一个进程有自己的页表，所以我们 context switch 时要切换页表，要把 TLB 清空，否则下一个进程就会访问到上一个进程的页表。
+
+### Memory Protection
+
+我们可以以页为粒度放上一些权限(可读、可写、可执行)用来实现内存保护。
+
+- Each page table entry has a present(valid) bit.
+    - present: the page has a valid physical frame, thus can be accessed.
+- Each page table entry contains some protection bits
+    - Any violations of memory protection result in a trap to the kernel.
+- XN: protecting code
+- PXN: privileged execute never
+
+### Page Sharing
+
+虚拟地址与物理地址的映射并不需要是单射，即多个 page 可以对应同一个 frame。
+
+Paging allows to share memory between processes
+
+- shared memory can be used for inter-process communication
+- shared libraries
+
+## Structure of Page Table
+
+Page table must be physically contiguous. (因为只有一个 BASE 指针指向它，而且硬件没有虚拟地址的概念，这样硬件才能去跑)
+
+如果只有一级的页表，那么页表所占用的内存很大，因此我们需要压缩页表：
+
+- break up the logical address space into multiple-level of page tables
+- first-level page table contains the frame for second-level page tables.
+
+
+### Two-Level Paging
+
+A logical address is divided into:
+
+- a page directory number(first level page table)
+- a page table number(2nd level page table)
+- a page offset
+
+### Hashed Page Tables
+
+哈希页表维护了一张哈希表，以页号的哈希为索引，维护了一个链表，每一个链表项包含页号、帧号和链表 next 指针，以此来实现页号到帧号的映射。
+
+
+### Inverted Page Tables
+
+索引 physical address 而非 logical address, 整个系统只有一个页表，每个物理内存的 frame 只有一条相应的条目。寻址时，CPU 遍历页表，找到对应的 pid 和 page number, 其在页表中所处的位置即为 frame number.
+
+但这样每次都需要遍历整个页表，效率很低，而且不能实现共享内存。

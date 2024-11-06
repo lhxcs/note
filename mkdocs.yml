@@ -147,9 +147,12 @@ nav:
     - 操作系统:
       - system/os/index.md
       - 进程: system/os/process.md
+      - 调度: system/os/scheduling.md
       - 进程间通信: system/os/IPCs.md
       - 线程: system/os/thread.md
       - 同步: system/os/sync.md
+      - 死锁: system/os/deadlock.md
+      - main memory: system/os/mm.md
   - AI:
     - Computer Vision:
       - Stanford:CS231n:
