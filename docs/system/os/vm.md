@@ -163,6 +163,7 @@ Each process needs minimum number of frames - according to instructions semantic
 
 ## Thrashing
 
+内存管理不善导致 CPU 利用率过低,具体来说：
 倘若系统的多道程度过高，那么可能分配给每一个 process 的 frames 数量就会比较少，process 所使用的 frames 中被频繁使用的 page 占比更大。这时候可能就会产生较为频繁的 paging 活动——几乎所有 frames 都正在被使用，相当于每次置换都会导致一个新的 page fault——进而导致 CPU 的利用率下降，这种现象被称为抖动(thrashing)。
 
 例如，process A 可能抢走了 process B 的正要被使用的 frame，于是导致 process B 之后会产生一次 page fault；而在处理这个 page fault 的时候，可能又把 process C 的正要使用的 frame 给抢走了.
@@ -180,3 +181,25 @@ Why does thrashing occur?: total memory size < total size of locality(一个 loc
     - to avoid, if$D>m$, suspend or swap out some processes.
     - 确定一个进程频繁访问的页面，保证这些页面不被换出；需要调页时从剩余的页面进行交换。如果频繁访问的页面数已经大于了当前进程可用的页面数，操作系统就应当把整个进程换出，以防止出现抖动现象。
 - Keeping track of the working set
+
+- Page-Fault Frenquency
+    - 缺页频率，PFF 与进程可用的 frame 数量大致成负相关，我们可用设定当 process 的 PFF 过高的时候增加它可用的 frames 数量，当 process 的 PFF 较低的时候可以减少它可用的 frames 数量。
+
+
+## Memory Managment in Linux
+
+一个进程有自己的 `mm_struct`,所有线程共享同一个页表，内核空间有自己的页表 `swapper_pg_dir`, 这里的 `pgd` (page global directory) 存的是虚拟地址，加载到 `satp` 的时候会转化为物理地址。 
+
+- Buddy system
+    - 可以用来分配物理连续的内存，每次分配内存大小是 2 的幂次，例如请求是 11KB, 则分配 16KB。
+    - 当我们进行分配的时候，从物理段上切分出对应的大小，并且每次切分都是平分。
+    - 当它被释放时，会合并(coalesce) 相邻的块形成更大的块供之后使用。
+    
+    ![](image/7.12.png)
+
+- Slab Allocation
+    - Slab allocator is a cache of objects
+    - a cache in a slab allocator consists of one or  more slabs.
+    - A slab contains one or more pages, divided into equal-sized objects.
+
+预先了解到 kernel 内的常见数据结构(称作 object)的大小，并预先准备好对应粒度的小内存块，注册到每类 Object 的 cache 里。当一个 object 需要使用内存时，我们就查询对应 cache 里是否有空闲的内存块，如果有就分配，没有就向 buddy system 申请。

@@ -153,6 +153,7 @@ nav:
       - 同步: system/os/sync.md
       - 死锁: system/os/deadlock.md
       - main memory: system/os/mm.md
+      - virtual memory: system/os/vm.md
   - AI:
     - Computer Vision:
       - Stanford:CS231n:
