@@ -11,9 +11,24 @@ Consider ability to execute partially-loaded program:
 
 需要注意的是虚拟地址只是范围，并不能真正的存储数据，数据只能存在物理空间里。
 
+!!! note "Kernel Addresses & Userspace Addresses"
+
+    每个进程的虚拟地址空间被分为了 kernel portion 和 user portion. Kernel 代码可以访问这两块空间，而 user 代码只能访问 user portion.
+
+    每个进程的 AS 的 kernel portion 都映射到了同一块物理内存1。原因是显然的：所有进程用到的都是同一套 kernel，因此没必要把 kernel 用的内存（存例如各个进程的页表、各种队列之类的东西）复制好几份。
+
+    在 32 位虚拟地址空间的设计中，kernel 默认使用高 1GB, 各个进程的 user portion 使用低 3GB 的虚拟地址空间。
+
+    ![](image/8.2.png)
+
+    而对于 64 位虚拟地址空间的设计，由于根本用不了这么多，因此 kernel space 和 user space 被自然分隔开。
+
+    ![](image/8.3.png)
+
+
 ## Demand Paging
 
-按需换页，只把被需要的页载入内存。（当我们需要读写这个页的时候，说明我们需要这个页，这个时候再把这个页调入内存。）
+操作系统在分配 user space 的内存时，会使用 lazy allocation：当用户程序申请一块内存时，操作系统并不会真的立即在物理内存中分配对应的内存；直到这块内存被真正访问。
 
 - if page is invalid (error) -> abort the operation.
 - if page is valid but not in memory -> bring it to memory.
@@ -121,9 +136,9 @@ To page in a page:
     - stack-based
         - keep a stack of page numbers(in double linked list)
         - when a page is referenced, move it to the top of the stack
-        - lease used frame 总是位于序列尾部，因此不需要额外的搜索。
+        - least used frame 总是位于序列尾部，因此不需要额外的搜索。
     - LRU Approximation Implementation
-        - 计数器做法，维护 clock 很慢，并且对于两者没醋访问内存的时候都需要维护，如果通过 interrupt 来调用 algorithm, 开销很大。
+        - 计数器做法，维护 clock 很慢，并且对于两者没访问内存的时候都需要维护，如果通过 interrupt 来调用 algorithm, 开销很大。
         - LRU approximation with a reference bit
             - when page is referenced, set the bit to 1(done by hardware)
             - replace any page with reference bit = 0 (if one exists)
@@ -178,7 +193,7 @@ Why does thrashing occur?: total memory size < total size of locality(一个 loc
 - Total working sets: $D=\sum \text{WSS}_i$
     - approximation of total locality
     - if $D>m$, possibility of thrashing(即所有进程的 working set 的大小之和大于可用 frame 的数量，那么就可能会出现 thrashing)
-    - to avoid, if$D>m$, suspend or swap out some processes.
+    - to avoid, if $D>m$, suspend or swap out some processes.
     - 确定一个进程频繁访问的页面，保证这些页面不被换出；需要调页时从剩余的页面进行交换。如果频繁访问的页面数已经大于了当前进程可用的页面数，操作系统就应当把整个进程换出，以防止出现抖动现象。
 - Keeping track of the working set
 
