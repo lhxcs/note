@@ -2,7 +2,7 @@
 
 ## Process Concept
 
-Process: a unit of resource allocation and protection
+Process: a unit of resource allocation and protection (**操作系统分配资源的基本单位**)
 
 - A process is a program in execution
     - program becomes a process when it is loaded in memory
@@ -43,6 +43,8 @@ Process: a unit of resource allocation and protection
     - ![](image/1.4.png)
 
 ## Process Control Block(PCB)
+
+每个进程有且仅有一个 PCB.
 
 - information associated with each process (also called **task control block**)
 - **Each process has and only has a PCB**
@@ -87,7 +89,7 @@ As a process executes, it changes state
     - or be an entirely new program
 
 - `fork` system call
-    - `fork()` ceates a new process
+    - `fork()` creates a new process
     - The child is a copy of the parent(完整的一模一样的拷贝)
         - it has a different pid
         - its resource utilization(so far) is set to 0
@@ -106,7 +108,7 @@ As a process executes, it changes state
             fprintf(stdout, "I am parent and my child has pid%d\n",pid);
             while(1);
         } else {
-            fprintf(stdout, "I am child, and my pidis %d\n", getpid());
+            fprintf(stdout, "I am child, and my pid is %d\n", getpid());
             while(1);
         }
     ```

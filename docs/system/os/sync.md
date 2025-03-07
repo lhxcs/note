@@ -12,7 +12,7 @@
 ![](image/5.1.png)
 
 
-- critical section: (a critical sectioin segment of code, e.g. to change common variables, update table, write files etc.)
+- critical section: (a critical section segment of code, e.g. to change common variables, update table, write files etc.)
     - only one process in critical section, 
         - when one process in critical section, no other may be in its critical section.
         - each process must ask permission to enter critica section in entry section

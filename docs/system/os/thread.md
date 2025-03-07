@@ -10,7 +10,7 @@
 
 ## Thread Definition
 
-- A thread is a basic unit of execution within a process. (线程是执行单元。)
+- A thread is a basic unit of execution within a process. (**线程是执行单元**)
     - Each thread has its own:
         - thread ID
         - program counter
