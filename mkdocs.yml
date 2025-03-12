@@ -189,6 +189,7 @@ nav:
     - MLsys/index.md
     - MLSys 基础:
       - DNN 架构: MLsys/basics/ch1.md
+      - 硬件加速基础: MLsys/basics/ch2.md
     - AI 模型相关:
       - Qstar: MLsys/model/qstar.md
       - Sora: MLsys/model/sora.md
